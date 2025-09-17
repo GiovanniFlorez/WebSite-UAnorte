@@ -39,7 +39,7 @@ body{
 }
 
 .links:hover{
-    color: rgb(144, 165, 211);
+    color: rgb(87, 167, 231);
 }
 
 .navbar {
@@ -169,6 +169,34 @@ a{
 
 .imagenes a img:hover{
     transform: scale(1.05);
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.slider img.active {
+    display: block;
+    animation: fade 1s;
+}
+
+  @keyframes fade {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
 }
 
 .palabraEducacion{
