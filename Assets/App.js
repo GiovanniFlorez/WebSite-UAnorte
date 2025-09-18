@@ -1,4 +1,4 @@
-/*-------------Movimiento de imágenes del slider con flechas y automático--------*/
+/*------------------Movimiento de imágenes del slider con flechas y automático-------------*/
 const images = document.querySelectorAll(".slider img");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
@@ -43,7 +43,7 @@ function resetInterval() {
 showImage(index);
 startInterval();
 
-/*----------------------------Agregar el footer----------*/
+/*-------------------------------------Agregar el footer-------------------------------------------*/
 fetch("../SRC/footer.html")
   .then(response => response.text())
   .then(data => {
