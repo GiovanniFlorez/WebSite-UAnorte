@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/css.css">
-
+    <link rel="stylesheet" href="Assets/index.css">
     <title>Prueba</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:
     ANd9GcQVG1LrcPoACGb5X_a6MCL3D180QQ_Fi-8mOg&s" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="div1">
             <a href="Prueba.html">
             <img class="imgRedireccion" src="https://moria.aurens.com/organizations/b2ab68e0-38a9-4aab-81d9-c6b98fb6a711/logos/3fe60e-UA-NORTE-Logo-P.png" alt="Logo de UANorte">
             </a>
-            <a href="redirección" target="_blank" class="links">Aspirantes</a>|
-            <a href="redirección" target="_blank" class="links">Estudiantes</a>|
-            <a href="redirección" target="_blank" class="links">Docentes</a>|
-            <a href="redirección" target="_blank" class="links">Administrativos</a>|
-            <a href="redirección" target="_blank" class="links">Graduados</a>|
-            <a href="redirección" target="_blank" class="links">Carnet Digital</a>|
-            <a href="redirección" target="_blank" class="links">Pagos</a>
+            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Aspirantes</a>|
+            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Estudiantes</a>|
+            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Docentes</a>|
+            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Administrativos</a>|
+            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Graduados</a>|
+            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Carnet Digital</a>|
+            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Pagos</a>
 
     </div>
 
@@ -81,20 +80,22 @@
 
               <li><a href="#" class="palabra">Pagos</a></li>
               <li><a href="#" class="palabra">PQRSF</a></li>
-              <li><a href="https://appcerficados.uanorte.edu.co/" target="_blank" class="palabra">Certificados</a></li>
+              <li><a href="https://appcerficados.uanorte.edu.co/" target="_blank" rel="noopener noreferrer" class="palabra">Certificados</a></li>
             </ul>
           </nav>
     </div>
 
-    <div class="slider">
-      <img src="" class="active">
-      <img src="">
-      <img src="">
-      <img src="">
-      <img src="">
-      <img src="">
-      <img src="">
-    </div>
+      <button class="slider-btn prev">&#10094;</button>
+      <div class="slider">
+        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/42.png" class="active">
+        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/114-1-e1731450834696.png">
+        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/8.png">
+        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Estudiantes-Posg-1024x620.png">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOlbLBOtjpsxAEWSUScZemV4Lc_jP2ila8Jw&s">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiHB67Yg79hHIdM-1oS88xRrua9K3dP7hPMev1ezi82ZPkMEIj_NJ6_59-5nmA84kc2Gs&usqp=CAU">
+        <img src="https://portalhistorico.unidadvictimas.gov.co/sites/default/files/styles/slide_700_350/public/n_santader_universidad.jpg?itok=lPGlP5pS">
+      </div>
+      <button class="slider-btn next">&#10095;</button>
 
     <div class="imagenes">
       <a href="">
@@ -128,12 +129,66 @@
 
       <div class="columna admisiones">
         <div class="filaAdmisiones">
-        <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
-        <p class="palabraAdmisiones">Admisiones</p>
+          <div class="columna2">
+            <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
+          </div>
+          <div class="columna2">
+            <p class="palabraAdmisiones">Admisiones</p>
+            <hr class="hrAdmisiones">
+          </div>
         </div>
-        <hr class="hrAdmisiones">
+        <div class="textoAdmisiones">
+          <p>Ingresa tus datos, recibirás asesoría y más información sobre el proceso de admisión</p>
+        </div>
+        <div class="tituloFormularioContacto">
+          Contáctanos para más información
+        </div>
+        <div class="formularioContacto">
+          <div class="columna3">
+            <p class="pFormularioContacto">Nombres y Apellidos</p>
+            <input type="text" name="" id="" placeholder="Nombres y Apellidos" required>
+            <p class="pFormularioContacto">Correo Electrónico</p>
+            <input type="text" name="" id="" placeholder="Correo Electrónico" required>
+            <p class="pFormularioContacto">Asunto</p>
+            <input type="text" name="" id="" placeholder="Asunto" required>
+            <p class="pFormularioContacto">Carrera de Interés</p>
+            <select name="selectCarreraInteres" id="">
+              <option value="">Seleccione una opción</option>
+              <option value="">Pregrado en Derecho</option>
+              <option value="">Pregrado en Trabajo Social</option>
+              <option value="">Pregrado en Psicología</option>
+              <option value="">Pregrado en Comunicación</option>
+              <option value="">Posgrado en Intervención Comunitaria</option>
+              <option value="">Posgrado en  Derecho Administrativo</option>
+              <option value="">Cursos y Diplomados</option>
+            </select>
+          </div>
+          <div class="columna3">
+            <p class="pFormularioContacto">Número de Documento de Identidad:</p>
+            <input type="number" min="0" id="" placeholder="Número de identidad" required>
+            <p class="pFormularioContacto">Teléfono:</p>
+            <input type="number" min="0" name="" id="" placeholder="Número de teléfono" required>
+            <p class="pFormularioContacto">Descripción:</p>
+            <textarea name="" id="" placeholder="Descripción" required></textarea>
+          </div>
+        </div>
+        <hr class="hrFormularioContacto">
+        <input type="checkbox"><p class="textoFormulario">Acepto</p>
+        <p class="textoFormulario">En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
+          en calidad de titular(es) de la información de manera libre, expresa e 
+          informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE 
+          y/o a la persona natural o jurídica a quien este encargue a recolectar, 
+          almacenar, utilizar, circular, suprimir y en general, a usar mis datos 
+          personales. Declaro que he conocido la Política de tratamiento de datos 
+          personales.</p>
+          <p class="textoFormulario">Gracias por tu opinión.</p>
+          <hr class="hrFormularioContacto">
+            <button class="botonEnviar">ENVIAR</button>
+          <hr class="hrFormularioContacto">
       </div>
     </div>
+    <div id="footer"></div>
     <script src="Assets/App.js"></script>
+    
 </body>
 </html>
