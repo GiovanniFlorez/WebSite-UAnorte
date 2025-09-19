@@ -4,6 +4,37 @@ body, html{
     overflow: auto;
 }
 
+.whatsapp-float {
+    position: fixed; 
+    width: 60px;
+    height: 60px;
+    bottom: 40px; 
+    right: 40px;  
+    color: #fff;
+    border-radius: 50px; 
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #128c7e;
+    transition: filter 0.3s ease; 
+   
+}
+
+.whatsapp-float:hover {
+    filter: hue-rotate(20deg) saturate(1.2);
+}
+
+.whatsapp-icon {
+    margin: 0; 
+    width: 100%; 
+    border-radius: 30px;
+}
+.whatsapp-icon:hover{
+    color: #128c7e;
+}
+
 .imgRedireccion{
     display: flex;
     align-content: center;
@@ -22,7 +53,6 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
-
 
 .div1{
     font-size: 85%;
