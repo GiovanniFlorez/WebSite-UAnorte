@@ -9,88 +9,39 @@
     <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="SRC/Preloader/CSS/preloader.css">
+    <link rel="stylesheet" href="SRC/Header/CSS/header.css">
     <script src="SRC/Preloader/JavaScript/preloader.js"></script>
   </head>
+
   <body>
-    <a href="https://web.whatsapp.com/send?phone=573172566612&text=Hola%2C%20te%20escribo%20desde%20la%20pagina%20web.%0AQuiero%20mas%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" class="whatsapp-float">
-      <img src="https://store-images.s-microsoft.com/image/apps.8453.13655054093851568.4a371b72-2ce8-4bdb-9d83-be49894d3fa0.7f3687b9-847d-4f86-bb5c-c73259e2b38e?h=210" alt="Ícono de WhatsApp" class="whatsapp-icon">
-    </a>
+
+    <div class="whatsapp-float" id="whatsappBtn" aria-label="Abrir WhatsApp">
+      <img src="https://store-images.s-microsoft.com/image/apps.8453.13655054093851568.4a371b72-2ce8-4bdb-9d83-be49894d3fa0.7f3687b9-847d-4f86-bb5c-c73259e2b38e?h=210" 
+           alt="Ícono de WhatsApp" class="whatsapp-icon" />
+    </div>
+    
+    <div class="whatsapp-popup" id="whatsappPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+      <button class="popup-close" id="closePopupBtn" aria-label="Cerrar ventana">×</button>
+      <p id="popupTitle">Hola<br>¿En qué podemos ayudarte?</p>
+    
+      <button class="btn-open-chat" id="openChatBtn">
+        <span id="chatText">Abrir chat</span>
+        <span class="icon">
+          <svg id="iconAvion" viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+          <svg id="iconChat" viewBox="0 0 32 32">
+            <path d="M16 3C8.82 3 3 8.37 3 15c0 3.12 1.39 5.95 3.67 8.09L6 29l6.45-2.72C13.78 26.76 14.86 27 16 27c7.18 0 13-5.37 13-12S23.18 3 16 3z"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+    
   
-    <div class="div1">
-            <a href="index.html">
-            <img class="imgRedireccion" src="https://moria.aurens.com/organizations/b2ab68e0-38a9-4aab-81d9-c6b98fb6a711/logos/3fe60e-UA-NORTE-Logo-P.png" alt="Logo de UANorte">
-            </a>
-            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Aspirantes</a>|
-            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Estudiantes</a>|
-            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Docentes</a>|
-            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Administrativos</a>|
-            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Graduados</a>|
-            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Carnet Digital</a>|
-            <a href="redirección" target="_blank" rel="noopener noreferrer" class="links">Pagos</a>
-
-    </div>
-
-    <div class="div2">
-        <nav class="navbar">
-            <ul>
-              <li>
-                <a href="#" class="palabra flecha">UAnorte <span class="chevron"></span> </a>
-                <ul class="fondoAzul">
-                  <li><a href="#">Quienes Somos</a></li>
-                  <li><a href="#">Identidad Institucional</a></li>
-                  <li><a href="#">Direccionamiento Estratégico</a></li>
-                  <li><a href="#">SIGAC-UANORTE</a></li>
-                  <li><a href="#">Órganos de Gobierno</a></li>
-                  <li><a href="#">Estructura Organizativa</a></li>
-                  <li><a href="#">Recursos Físicos y Tecnológicos</a></li>
-                  <li><a href="#">Normatividad</a></li>
-                  <li><a href="#">Derechos Pecuniarios</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#" class="palabra">Oferta Académica <span class="chevron"></span></a>
-                <ul class="fondoAzul">
-                  <li><a href="#">Pregrado</a></li>
-                  <li><a href="#">Posgrado</a></li>
-                  <li><a href="#">Financiación, Becas y Convenios</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#" class="palabra">Bienestar <span class="chevron"></span></a>
-                <ul class="fondoAzul">
-                  <li><a href="#">Tutorías Académicas</a></li>
-                  <li><a href="#">Atención Psicológica</a></li>
-                  <li><a href="#">Zona de Bien-Estar</a></li>
-                  <li><a href="#">Acompañamiento Permanente</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#" class="palabra">Extensión <span class="chevron"></span></a>
-                <ul class="fondoAzul">
-                  <li><a href="#">Educación Continua</a></li>
-                  <li><a href="#">Consultorio Jurídico</a></li>
-                  <li><a href="#">Biblioteca</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a class="palabra" href="#">Ciencia e Innovación <span class="chevron"></span></a>
-                <ul class="fondoAzul">
-                  <li><a href="#">Innovación y Emprendimiento</a></li>
-                </ul>
-              </li>
-
-              <li><a href="#" class="palabra">Pagos</a></li>
-              <li><a href="#" class="palabra">PQRSF</a></li>
-              <li><a href="https://appcerficados.uanorte.edu.co/" target="_blank" rel="noopener noreferrer" class="palabra">Certificados</a></li>
-            </ul>
-          </nav>
-    </div>
+    <div id="header"></div>
 
       <button class="slider-btn prev">&#10094;</button>
+
       <div class="slider">
         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/42.png" class="active">
         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/114-1-e1731450834696.png">
@@ -135,20 +86,26 @@
 
       <div class="columna admisiones">
         <div class="filaAdmisiones">
+
           <div class="columna2">
             <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
           </div>
+
           <div class="columna2">
             <p class="palabraAdmisiones">Admisiones</p>
             <hr class="hrAdmisiones">
           </div>
+
         </div>
+
         <div class="textoAdmisiones">
           <p>Ingresa tus datos, recibirás asesoría y más información sobre el proceso de admisión</p>
         </div>
+
         <div class="tituloFormularioContacto">
           Contáctanos para más información
         </div>
+
         <div class="formularioContacto">
           <div class="columna3">
             <p class="pFormularioContacto">Nombres y Apellidos</p>
@@ -169,6 +126,7 @@
               <option value="">Cursos y Diplomados</option>
             </select>
           </div>
+
           <div class="columna3">
             <p class="pFormularioContacto">Número de Documento de Identidad:</p>
             <input type="number" min="0" id="" placeholder="Número de identidad" required>
@@ -178,22 +136,37 @@
             <textarea name="" id="" placeholder="Descripción" required></textarea>
           </div>
         </div>
+
         <hr class="hrFormularioContacto">
-        <input type="checkbox"><p class="textoFormulario">Acepto</p>
-        <p class="textoFormulario">En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
+
+        <div class="checkbox-container">
+          <label class="textoFormulario">
+            <input type="checkbox" id="checkboxAcepto"> Acepto
+          </label>
+        </div>
+
+        <p class="textoFormulario">
+          En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
           en calidad de titular(es) de la información de manera libre, expresa e 
           informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE 
           y/o a la persona natural o jurídica a quien este encargue a recolectar, 
           almacenar, utilizar, circular, suprimir y en general, a usar mis datos 
           personales. Declaro que he conocido la Política de tratamiento de datos 
-          personales.</p>
-          <p class="textoFormulario">Gracias por tu opinión.</p>
-          <hr class="hrFormularioContacto">
-            <button class="botonEnviar">ENVIAR</button>
-          <hr class="hrFormularioContacto">
+          personales.
+        </p>
+
+        <p class="textoFormulario">Gracias por tu opinión.</p>
+
+        <hr class="hrFormularioContacto">
+
+        <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
+
+        <hr class="hrFormularioContacto">
       </div>
     </div>
+
     <div id="footer"></div>
+
     <script src="SRC/JavaScript/App.js"></script>
     
   </body>
