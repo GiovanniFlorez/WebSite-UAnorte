@@ -7,99 +7,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/**--------------------------------------------Agregar botón flotante de whatsapp------------------------------------*/
+fetch("SRC/WhatsappButtom/whatsappButtom.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("whatsapp-container").innerHTML = data;
 
-/**------------------------------------------------Boton flotante de whatsapp-------------------------------------------*/
-const whatsappBtn = document.getElementById('whatsappBtn');
-const whatsappPopup = document.getElementById('whatsappPopup');
-const openChatBtn = document.getElementById('openChatBtn');
-const closePopupBtn = document.getElementById('closePopupBtn');
-
-const chatText = document.getElementById('chatText');
-
-let isHoveringBtn = false;
-let isHoveringPopup = false;
-let manualOpen = false;
-
-function mostrarAbrir() {
-  chatText.textContent = "Abrir chat";
-}
-
-function mostrarCerrar() {
-  chatText.textContent = "Cerrar chat";
-}
-
-whatsappBtn.addEventListener('mouseenter', () => {
-  isHoveringBtn = true;
-  if (!manualOpen) {
-    whatsappPopup.classList.add('visible');
-  }
-});
-
-whatsappBtn.addEventListener('mouseleave', () => {
-  isHoveringBtn = false;
-  setTimeout(() => {
-    if (!isHoveringBtn && !isHoveringPopup && !manualOpen) {
-      whatsappPopup.classList.remove('visible');
-    }
-  }, 150);
-});
-
-whatsappPopup.addEventListener('mouseenter', () => {
-  isHoveringPopup = true;
-  if (!manualOpen) {
-    whatsappPopup.classList.add('visible');
-  }
-});
-
-whatsappPopup.addEventListener('mouseleave', () => {
-  isHoveringPopup = false;
-  setTimeout(() => {
-    if (!isHoveringBtn && !isHoveringPopup && !manualOpen) {
-      whatsappPopup.classList.remove('visible');
-    }
-  }, 150);
-});
-
-whatsappBtn.addEventListener('click', () => {
-  if (manualOpen) {
-    manualOpen = false;
-    whatsappPopup.classList.remove('manual-open');
-    whatsappPopup.classList.remove('visible');
-    mostrarAbrir();
-  } else {
-    manualOpen = true;
-    whatsappPopup.classList.add('manual-open');
-    whatsappPopup.classList.remove('visible');
-    mostrarCerrar();
-  }
-});
-
-openChatBtn.addEventListener('click', () => {
-  window.open(
-    'https://web.whatsapp.com/send?phone=573172566612&text=Hola%2C%20te%20escribo%20desde%20la%20pagina%20web.%0AQuiero%20mas%20informaci%C3%B3n',
-    '_blank',
-    'noopener'
-  );
-  manualOpen = false;
-  whatsappPopup.classList.remove('manual-open');
-  whatsappPopup.classList.remove('visible');
-  mostrarAbrir();
-});
-
-closePopupBtn.addEventListener('click', () => {
-  manualOpen = false;
-  whatsappPopup.classList.remove('manual-open');
-  whatsappPopup.classList.remove('visible');
-  mostrarAbrir();
-});
-
-document.addEventListener('click', (e) => {
-  if (!whatsappBtn.contains(e.target) && !whatsappPopup.contains(e.target)) {
-    if (manualOpen) return;
-    whatsappPopup.classList.remove('visible');
-  }
-});
-
+      const script = document.createElement("script");
+      script.src = "SRC/WhatsappButtom/JavaScript/whatsappButtom.js";
+      document.body.appendChild(script);
+    })
+    .catch(error => console.error("Error cargando WhatsApp:", error));
 
 /**-----------------------------------------------------Agregar el header--------------------------------------------------*/
 fetch('SRC/Header/header.html')

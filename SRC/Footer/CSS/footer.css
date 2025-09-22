@@ -14,9 +14,26 @@
   gap: 40px;
 }
 
+.contacto{
+  font-size: 130%;
+  color: white;
+  font-weight: 700;
+}
+
 .footer-column {
   flex: 1;
   min-width: 250px;
+  text-decoration: none;
+}
+
+.primeracolumnaLinks{
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.primeracolumnaLinks:hover{
+  color: #34b4db;
 }
 
 .footer-logo {
@@ -48,6 +65,16 @@
   color: #3498db;
 }
 
+.linkFooter{
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.linkFooter:hover{
+  color: #3498db;
+}
+
 .footer-bottom {
   border-top: 1px solid #555;
   margin-top: 25px;
@@ -65,18 +92,25 @@
 .footer-icons {
   display: flex;
   gap: 15px;
+  margin-right: 20%;
+}
+
+.links{
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .links:hover{
-  color: #3498db;
+  color: #34b4db;
 }
 
 .footer-icons a {
   color: #ccc;
   font-size: 16px;
-  border: 1px dotted #ccc;
-  border-radius: 50%;
-  padding: 8px;
+  border: 2px dotted #ccc;
+  border-radius: 60%;
+  padding: 10px;
   transition: 0.3s;
 }
 

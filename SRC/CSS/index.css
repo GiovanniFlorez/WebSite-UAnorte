@@ -4,136 +4,6 @@ body, html{
     overflow: auto;
 }
 
-.whatsapp-float {
-    position: fixed; 
-    width: 60px;
-    height: 60px;
-    bottom: 40px; 
-    right: 40px;  
-    color: #fff;
-    border-radius: 50px; 
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #128c7e;
-    transition: filter 0.3s ease; 
-    cursor: pointer;
-  }
-  
-  .whatsapp-float:hover {
-    filter: hue-rotate(20deg) saturate(1.2);
-  }
-  
-  .whatsapp-icon {
-    margin: 0; 
-    width: 100%; 
-    border-radius: 30px;
-  }
-  
-  .whatsapp-popup {
-    position: fixed;
-    bottom: 110px;
-    right: 40px;
-    width: 260px;
-    background-color: #075e54;
-    border-radius: 10px;
-    color: white;
-    padding: 15px;
-    font-family: Arial, sans-serif;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(10px);
-    pointer-events: none;
-    transition: opacity 1s ease, transform 1s ease;
-    z-index: 101;
-  }
-  
-  .whatsapp-popup.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  
-  .whatsapp-popup.manual-open {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    pointer-events: auto !important;
-    display: block !important;
-  }
-  
-  .whatsapp-popup p {
-    margin: 0 0 10px 0;
-    line-height: 1.3;
-    padding-right: 25px;
-  }
-  
-  .popup-close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    color: white;
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    line-height: 1;
-    padding: 0;
-  }
-  
-  .btn-open-chat {
-    background-color: #25d366;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.3s ease;
-    margin-top: 10px;
-  }
-  
-  .btn-open-chat:hover {
-    background-color: #1ebe57;
-  }
-  
-  .icon {
-    position: relative;
-    width: 24px;
-    height: 24px;
-  }
-  
-  .btn-open-chat svg {
-    width: 100%;
-    height: 100%;
-    stroke: white;
-    fill: none;
-    stroke-width: 2;
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: drawErase 4s linear infinite;
-    position: absolute;
-  }
-  
-  #iconChat {
-    animation-delay: 2s;
-  }
-  
-  @keyframes drawErase {
-    0% { stroke-dashoffset: 100; opacity: 1; }
-    25% { stroke-dashoffset: 0; opacity: 1; }  
-    50% { stroke-dashoffset: 100; opacity: 1; } 
-    75% { opacity: 0; } 
-    100% { opacity: 0; }
-  }
-  
-
 .slider {
     position: relative;
     width: 100%;
@@ -211,76 +81,86 @@ body, html{
     transform: scale(1.05);
 }
 
-.palabraEducacion{
-    color: rgb(19, 19, 138);
-    font-size: 150%;
-    font-weight:100;
-    font-weight: 700;
-    margin-left: 0.7%;
+.palabraEducacion {
+  color: rgb(19, 19, 138);
+  font-size: 150%;
+  font-weight: 700;
+  margin-left: 0.7%;
 }
 
-.educacion{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0px;
+.educacion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
 }
 
-.hrEducacion{
-    border: none;
-    height: 3px;
-    background: rgba(117, 117, 117, 0.295);
-    margin: 1%;
+.hrEducacion {
+  border: none;
+  height: 3px;
+  background: rgba(117, 117, 117, 0.295);
+  margin: 1%;
 }
 
-
-.columna.imagenes img{
-    height: 45%;
-    width: 95%;
+.columna.imagenes img {
+  height: 45%;
+  width: 95%;
 }
 
 .columna.admisiones .iconUAnorte {
-    width: 50px;
-    height: auto;
-    display: block;
+  width: 50px;
+  height: auto;
+  display: block;
 }
 
 .filaAdmisiones {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.palabraAdmisiones{
-    margin: 0;
-    color: rgb(19, 19, 138);
-    font-size: 120%;
-    font-weight: 605;
-    display: inline-block;
-    margin-top: 15%;
-    padding-bottom: 4px;
-    margin-left: 4%;
+.filaAdmisiones .columna2 {
+  padding: 0;
+  margin: 0;
 }
 
-.hrAdmisiones{
-    border: none;
-    width: 100%;
-    height: 2px;
-    background: rgba(117, 117, 117, 0.295);
+.tituloAdmisiones {
+  display: flex;
+  flex-direction: column;
+  flex: 1; 
 }
 
-.textoAdmisiones{
-    font-size: 115%;
-    font-weight: 500;
-    margin-left: 7%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+.palabraAdmisiones {
+  margin: 0;
+  color: rgb(19, 19, 138);
+  font-size: 120%;
+  font-weight: 700;
 }
 
-.tituloFormularioContacto{
-    margin-left: 3%;
-    text-align: center;
-    font-size: 120%;
-    background-color:  rgb(51, 225, 255);
+.hrAdmisiones {
+  border: none;
+  height: 2px;
+  background: rgba(117, 117, 117, 0.4);
+  margin: 2px 0 0 0;
+  width: 100%;        
+  align-self: stretch;
 }
+
+.textoAdmisiones {
+  font-size: 115%;
+  font-weight: 500;
+  margin-left: 0%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.tituloFormularioContacto {
+  margin-left: 0%;
+  margin-right: 5%;
+  text-align: center;
+  font-size: 120%;
+  background-color: rgb(51, 225, 255);
+}
+
 
 .formularioContacto {
   max-width: 980px;
@@ -376,32 +256,32 @@ select {
 }
 
 .columna.admisiones label{
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .checkbox{
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .textoFormulario{
-    color: #6b6b6b;
-    font-size: 80%;
-    font-weight: 200;
-    gap: 1%;
-    cursor: default;
+  color: #6b6b6b;
+  font-size: 80%;
+  font-weight: 200;
+  gap: 1%;
+  cursor: default;
 }
 
 .botonEnviar{
-    margin-left: 40%;
-    margin-left: 50;
-    border: none;
-    color: #6b6b6b;
-    background-color:  #f0f0f0;
-    height: 6%;
-    width: 23%;
-    font-size: 115%;
-    font-weight: 250;
-    transition: all 0.3s ease;
+  margin-left: 40%;
+  margin-left: 50;
+  border: none;
+  color: #6b6b6b;
+  background-color:  #f0f0f0;
+  height: 6%;
+  width: 23%;
+  font-size: 115%;
+  font-weight: 250;
+  transition: all 0.3s ease;
 }
 
 .botonEnviar:hover{
@@ -420,4 +300,120 @@ select {
     background-color: rgb(79, 79, 218);
     color: white;
     cursor: pointer;
+}
+
+.pVentajasUAnorte{
+  font-size: 120%;
+  font-weight: 500;
+}
+
+.palabraAdmisionesEnd{
+  color: rgb(99, 99, 99);
+  font-weight: 700;
+}
+
+.campus{
+  width: 125%;
+}
+
+#colomnaFinal{
+  padding-left: 1%;
+}
+
+.filaAdmisiones {
+  display: flex;
+  align-items: flex-start;  
+  margin-bottom: 20px;  
+}
+
+.columna2 {
+  margin-right: 10px;  
+}
+
+.iconUAnorte {
+  width: 40px;   
+  height: auto;
+}
+
+.tituloAdmisiones {
+  text-align: left;  
+}
+
+.palabraAdmisiones {
+  font-size: 18px;  
+  font-weight: bold;  
+  color: #1a3d72;  
+  margin: 0; 
+}
+
+.hrAdmisiones {
+  margin: 8px 0;  
+  border: 0;
+  border-top: 1px solid #ccc;  
+  width: 100%; 
+}
+
+a {
+  display: block;
+  font-size: 16px;
+  color: #1a3d72; 
+  margin-bottom: 5px; 
+  text-decoration: none; 
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.ventajas {
+  margin-top: 10px;
+}
+
+.pVentajasUAnorte {
+  margin: 3px 0;  
+  font-size: 16px; 
+  font-weight: normal;  
+  color: black; 
+}
+
+
+
+.contenedorEnlaces {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  flex-wrap: wrap;         
+  gap: 30px;               
+}
+
+.imgEnlaces {
+  width: 250px;  
+  margin: 0 20px;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.imgEnlaces:hover {
+  transform: scale(1.05); 
+}
+
+.imgEnlacesCiencia{
+  width: 210px;
+  margin: 0 20px;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.imgEnlacesCiencia:hover{
+  transform: scale(1.05); 
+}
+
+.map-responsive{
+  position: relative;
+  margin-top: 5%;
+  margin-left: 28%;
+  width: 140%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
 }

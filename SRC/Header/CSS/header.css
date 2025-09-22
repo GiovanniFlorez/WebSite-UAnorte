@@ -1,9 +1,9 @@
 .imgRedireccion{
     display: flex;
     align-content: center;
-    margin-left: 10%;
+    margin-left: 20%;
     margin-right: 5%;
-    width: 35%;
+    width: 55%;
     transition: 0.3s;
 }
 
@@ -29,12 +29,12 @@ body{
     letter-spacing: 1px;
 }
 
-.links{
+.linksHeader{
     color: rgb(114, 114, 114);
     text-decoration: none;
 }
 
-.links:hover{
+.linksHeader:hover{
     color: rgb(87, 167, 231);
 }
 
