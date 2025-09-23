@@ -1,11 +1,12 @@
 /**----------------------------------------------------Llamado del preloader-------------------------------------------------*/
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('SRC/Preloader/preloader.html')
-    .then(response => response.text())
-    .then(data => {
-      document.body.insertAdjacentHTML('afterbegin', data);
-    });
-});
+(function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', '/SRC/Preloader/preloader.html', false);
+  xhr.send(null);
+  if (xhr.status === 200) {
+    document.write(xhr.responseText); 
+  }
+})();
 
 /**--------------------------------------------Agregar botón flotante de whatsapp------------------------------------*/
 fetch("SRC/WhatsappButtom/whatsappButtom.html")
@@ -20,7 +21,7 @@ fetch("SRC/WhatsappButtom/whatsappButtom.html")
     .catch(error => console.error("Error cargando WhatsApp:", error));
 
 /**-----------------------------------------------------Agregar el header--------------------------------------------------*/
-fetch('SRC/Header/header.html')
+fetch('header.html')
       .then(response => response.text())
       .then(data => document.getElementById('header').innerHTML = data);
 
