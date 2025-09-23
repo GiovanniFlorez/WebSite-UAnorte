@@ -1,0 +1,284 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.palabraEducacion {
+    color: rgb(19, 19, 138);
+    font-size: 150%;
+    font-weight: 700;
+    margin-left: 0.7%;
+}
+
+.imgVinculos{
+    width: 334px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.imgVinculos:hover{
+    transform: scale(0.9);
+}
+
+.educacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
+}
+  
+.hrEducacion {
+    border: none;
+    height: 3px;
+    background: rgba(117, 117, 117, 0.295);
+    margin: 1%;
+}
+  
+.columna.imagenes img {
+    height: 45%;
+    width: 95%;
+}
+  
+.columna.admisiones .iconUAnorte {
+    width: 50px;
+    height: auto;
+    display: block;
+}
+  
+.filaAdmisiones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+  
+.filaAdmisiones .columna2 {
+    padding: 0;
+    margin: 0;
+}
+  
+.tituloAdmisiones {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+}
+  
+.palabraAdmisiones {
+    margin: 0;
+    color: rgb(19, 19, 138);
+    font-size: 120%;
+    font-weight: 700;
+}
+  
+.hrAdmisiones {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.4);
+    margin: 2px 0 0 0;
+    width: 100%;        
+    align-self: stretch;
+}
+  
+.textoAdmisiones {
+    font-size: 115%;
+    font-weight: 500;
+    margin-left: 0%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+  
+.tituloFormularioContacto {
+    margin-left: 0%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 120%;
+    background-color: rgb(51, 225, 255);
+}
+  
+  
+.formularioContacto {
+    max-width: 980px;
+    margin-right: 3%;
+    display: flex;
+    gap: 3%;
+    align-items: stretch;
+    position: relative;
+    box-sizing: border-box;
+}
+  
+.columna3 {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+  
+.pFormularioContacto {
+    margin:  0 6px 0;
+    color: #6b6b6b;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.columna3 input[type="text" ],
+.columna3 input[type="number"],
+.columna3 select,
+.columna3 textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow .15s, border-color .15s;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 3%;
+}
+  
+.columna3 p{
+    cursor: default;
+    margin-left: 6.3%;
+}
+  
+.columna3 input::placeholder,
+.columna3 textarea::placeholder {
+    color: #bdbdbd;
+}
+  
+.columna3 input:focus,
+.columna3 select:focus,
+.columna3 textarea:focus {
+    border-color: #cfcfcf;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
+}
+  
+select {
+    height: 42px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #999 50%),
+                      linear-gradient(135deg, #999 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+}
+  
+.columna3 textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+  
+.hrFormularioContacto {
+    width: 100%;
+    background: rgba(117, 117, 117, 0.295);
+    height: 0.1%;
+    align-self: stretch;
+    border: none;
+}
+  
+@media (max-width: 720px) {
+    .formularioContacto {
+      flex-direction: column;
+    }
+    .hrFormularioContacto {
+      display: none;
+    }
+}
+  
+.columna.admisiones label{
+    cursor: pointer;
+}
+  
+.checkbox{
+    cursor: pointer;
+}
+  
+.textoFormulario{
+    color: #6b6b6b;
+    font-size: 80%;
+    font-weight: 200;
+    gap: 1%;
+cursor: default;
+}
+  
+.botonEnviar{
+margin-left: 40%;
+margin-left: 50;
+border: none;
+color: #6b6b6b;
+background-color:  #f0f0f0;
+height: 6%;
+width: 23%;
+font-size: 115%;
+font-weight: 250;
+transition: all 0.3s ease;
+}
+  
+.botonEnviar:hover{
+    background-color: rgb(79, 79, 218);
+    color: white;
+    cursor: pointer;
+}
+  
+.botonEnviar:disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+    
+.botonEnviar.enabled:hover {
+    background-color: rgb(79, 79, 218);
+    color: white;
+    cursor: pointer;
+}
+
+.contenedorEnlaces {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    flex-wrap: wrap;         
+    gap: 30px;               
+}
+  
+.imgEnlaces1 {
+    width: 250px;  
+    margin: 0 20px;
+    vertical-align: middle;
+    margin-left: 40px;
+}
+
+.imgEnlaces {
+    width: 250px;  
+    margin: 0 20px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+  
+.imgEnlaces:hover {
+    transform: scale(1.05); 
+}
+  
+.imgEnlacesCiencia{
+    width: 210px;
+    margin: 0 20px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+  
+.imgEnlacesCiencia:hover{
+    transform: scale(1.05); 
+}
+
+.ventajas {
+    margin-top: 10px;
+  }
+  
+  .pVentajasUAnorte {
+    margin: 3px 0;  
+    font-size: 16px; 
+    font-weight: normal;  
+    color: black; 
+  }

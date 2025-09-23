@@ -161,7 +161,6 @@ body, html{
   background-color: rgb(51, 225, 255);
 }
 
-
 .formularioContacto {
   max-width: 980px;
   margin-right: 3%;
@@ -376,7 +375,59 @@ a:hover {
   color: black; 
 }
 
+.noticias{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  margin: 10px;
+  width: 310px;
+  gap: 8px;
+}
 
+.column{
+  border: 1px solid #cecece;
+  text-align: justify;
+}
+
+.column p{
+  color: #838383;
+  font-weight: 100;
+  font-size: 18px;
+  margin: 4px;
+}
+
+.noticiasTitulo{
+  color: black !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+}
+
+.noticiasImg{
+  width: 310px;
+}
+
+.botonVerMas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  width: 200px;
+  height: 50px;
+  margin-left: 340% !important;
+  transition: 0.3s;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 5px;
+  background-color: #e9e9e9;
+}
+
+.botonVerMas:hover{
+  background-color: rgb(79, 79, 218);
+  color: white;
+  text-decoration: none;
+}
 
 .contenedorEnlaces {
   display: flex;
