@@ -30,10 +30,12 @@
   color: white;
   font-weight: 500;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .primeracolumnaLinks:hover{
   color: #34b4db;
+  text-decoration: none;
 }
 
 .footer-logo {
@@ -69,10 +71,12 @@
   color: white;
   font-weight: 500;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .linkFooter:hover{
   color: #3498db;
+  text-decoration: none;
 }
 
 .footer-bottom {
@@ -99,10 +103,12 @@
   color: white;
   font-weight: 500;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .links:hover{
   color: #34b4db;
+  text-decoration: none;
 }
 
 .footer-icons a {
@@ -117,4 +123,5 @@
 .footer-icons a:hover {
   color: #fff;
   background: #3498db;
+  text-decoration: none;
 }
