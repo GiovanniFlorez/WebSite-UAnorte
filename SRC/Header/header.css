@@ -1,23 +1,22 @@
-.imgRedireccion{
+body {
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+  }
+  
+  .imgRedireccion {
     display: flex;
     align-content: center;
     margin-left: 20%;
     margin-right: 5%;
     width: 55%;
-    transition: 0.3s;
-}
-
-.imgRedireccion:hover{
-    filter:grayscale(0.6);
-}
-
-body{
-    background-color: #ffff;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-}
-
-.div1{
+  }
+  
+  .imgRedireccion:hover {
+    filter: grayscale(0.6);
+  }
+  
+  .div1 {
     font-size: 85%;
     display: flex;
     align-items: center;
@@ -27,18 +26,18 @@ body{
     transition: 0.3s;
     font-weight: 600;
     letter-spacing: 1px;
-}
-
-.linksHeader{
+  }
+  
+  .linksHeader {
     color: rgb(114, 114, 114);
     text-decoration: none;
-}
-
-.linksHeader:hover{
+  }
+  
+  .linksHeader:hover {
     color: rgb(87, 167, 231);
-}
-
-.navbar {
+  }
+  
+  .navbar {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -49,75 +48,109 @@ body{
     position: relative;
     z-index: 1000;
     font-weight: 200;
-}
-
-.navbar ul {
+  }
+  
+  .navbar ul {
     list-style: none;
     margin: 0;
     padding: 0;
     position: relative;
-}
-
-.navbar > ul {
+  }
+  
+  .navbar > ul {
     display: flex;
     gap: 40px;
-}
-
-.navbar ul li {
+  }
+  
+  .navbar ul li {
     position: relative;
-}
-
-.navbar a {
+  }
+  
+  .navbar a {
     text-decoration: none;
     color: rgb(255, 255, 255);
     font-size: 16px;
     padding: 8px 12px;
     display: block;
     transition: background 0.3s;
-}
-
-.navbar a:hover {
+  }
+  
+  .navbar a:hover {
     background: rgba(23, 22, 102);
     border-radius: 6px;
-}
-
-.navbar ul ul {
-    display: none;
+  }
+  
+  .fondoAzul {
+    background-color: rgb(88, 123, 228);
+  }
+  
+  /* Submenús con animación */
+  .navbar ul ul {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     position: absolute;
     top: 100%;
     left: 0;
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-    min-width: 200px;
+    min-width: 220px;
     padding-top: 5px;
     z-index: 1001;
-}
-
-.navbar ul ul li a {
+  }
+  
+  .navbar ul li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .navbar ul ul li a {
     padding: 10px;
-}
-
-.navbar ul li:hover > ul {
-    display: block;
-}
-
-.fondoAzul{
+  }
+  
+  .submenu {
+    position: relative;
+  }
+  
+  .submenu .submenu-nivel3 {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 100%;
     background-color: rgb(88, 123, 228);
-}
-
-a{
-    color: rgb(73, 69, 69);
-}
-
-.palabra {
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    min-width: 200px;
+    z-index: 1002;
+  }
+  
+  .submenu:hover .submenu-nivel3 {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  
+  .flecha-derecha {
+    float: right;
+    font-size: 18px;
+    margin-right: 10px;
+    color: white;
+  }
+  
+  .palabra {
     position: relative;
     display: inline-block;
     cursor: pointer;
-}
-
-.palabra::before,
-.palabra::after {
-    content:"";
+  }
+  
+  .palabra::before,
+  .palabra::after {
+    content: "";
     position: absolute;
     left: 0;
     width: 100%;
@@ -125,24 +158,24 @@ a{
     background: rgb(1, 238, 255);
     transform: scaleY(0);
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.palabra::before {
+  }
+  
+  .palabra::before {
     top: 0;
     transform-origin: top;
-}
-
-.palabra::after {
+  }
+  
+  .palabra::after {
     bottom: 0;
     transform-origin: bottom;
-}
-
-.palabra:hover::before,
-.palabra:hover::after {
+  }
+  
+  .palabra:hover::before,
+  .palabra:hover::after {
     transform: scaleY(1);
-}
-
-.chevron{
+  }
+  
+  .chevron {
     display: inline-block;
     width: 5px;
     height: 5px;
@@ -150,5 +183,5 @@ a{
     border-bottom: 3px solid white;
     transform: rotate(45deg);
     margin-left: 5px;
-}
-
+  }
+  
