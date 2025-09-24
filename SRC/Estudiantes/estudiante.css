@@ -4,6 +4,11 @@ body, html{
     overflow: auto;
 }
 
+.imagen{
+    display: flex;
+    height: 510px;
+}
+
 .palabraEducacion {
     color: rgb(19, 19, 138);
     font-size: 150%;
@@ -21,10 +26,13 @@ body, html{
     transform: scale(0.9);
 }
 
-.educacion {
+.columnas,
+.columnaOne {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0px;
+    gap: 0;
+    margin: 0;
+    padding: 0;
 }
   
 .hrEducacion {
@@ -201,7 +209,7 @@ select {
     font-size: 80%;
     font-weight: 200;
     gap: 1%;
-cursor: default;
+    cursor: default;
 }
   
 .botonEnviar{
@@ -274,11 +282,142 @@ transition: all 0.3s ease;
 
 .ventajas {
     margin-top: 10px;
-  }
+}
   
-  .pVentajasUAnorte {
+.pVentajasUAnorte {
     margin: 3px 0;  
     font-size: 16px; 
     font-weight: normal;  
     color: black; 
-  }
+}
+
+.imgColumnaOne{
+    width: 250px;
+}
+
+.textOne,
+.textOne2,
+.textOne3{
+  font-size: 20px;  
+}
+
+.textOne2,
+.textOne3{
+    font-weight: 100;
+}
+
+.textOne3{
+    color: rgb(49, 49, 255) ;
+}
+
+.imgColumnaOneW{
+    width: 320px;
+    margin-top: 10px;
+}
+
+.imgColumnaTwo{
+    width:675px;
+}
+
+.imgColumna2{
+    margin-top: 4px;
+    width: 120px;
+}
+
+.imgColumna22{
+    width: 250px;
+}
+
+.div2Columna2{
+    margin-top: 20px;
+    margin-right: 200px;
+}
+
+.textTwo,
+.textTwo2,
+.textTwo3,
+.textTwo4,
+.textTwo5{
+    font-size: 20px;
+}
+
+.textTwo{
+    margin: 0;
+}
+
+.textTwo3,
+.textTwo5{
+    font-weight: 100;
+}
+
+.textTwo2,
+.textTwo3{
+    margin: 0;
+}
+
+.textTwo4,
+.textTwo5{
+    margin: 0;
+}
+
+.columna1Becas{
+    margin-left: 40px;
+}
+
+.textBecas{
+    font-size: 15px;
+}
+
+.textBecas3,
+.textBecas2,
+.textBecas4,
+.textBecas5,
+.textConvenios1,
+.textConvenios2,
+.textConvenios3{
+    font-size: 20px;
+}
+
+.textBecas3,
+.textBecas4{
+    margin: 0;
+}
+
+.textBecas,
+.textBecas2{
+    margin: 0;
+}
+
+.textBecas4,
+.textBecas5,
+.textConvenios2{
+    font-weight: 100;
+}
+
+.textBecas5,
+.textConvenios3{
+    color: rgb(49, 49, 255);
+}
+
+.imgColumnaTwoBecas{
+    display: flex;
+    width: 100px;
+    height: 50px;
+}
+
+.imgUa{
+    margin-left: 40px;
+}
+
+.imgISER{
+    width: 300px;
+}
+
+.textConvenios{
+    margin-left: 17.6px;
+}
+
+.textConvenios1,
+.textConvenios2{
+    margin: 0;
+}

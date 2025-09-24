@@ -4,6 +4,22 @@ body, html{
     overflow: auto;
 }
 
+/*----------------------------------BORRAR----------------------------------*/
+.nose{
+  font-size: 50px;
+  color: purple;
+  text-align: center;
+  position: relative;
+  animation: x 2s infinite;
+}
+
+@keyframes x {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+/*--------------------------------------------------------------------------*/
+
 .slider {
     position: relative;
     width: 100%;
