@@ -73,6 +73,7 @@ body {
     padding: 8px 12px;
     display: block;
     transition: background 0.3s;
+    font-weight: 400;
   }
   
   .navbar a:hover {
