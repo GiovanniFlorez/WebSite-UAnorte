@@ -3,3 +3,70 @@ body, html{
     padding: 0;
     overflow: auto;
 }
+
+.titulo {
+    color: rgb(19, 19, 138);
+    font-size: 150%;
+    font-weight: 700;
+    margin-left: 0.7%;
+    margin-bottom: 0;
+}
+
+.subtitulo{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 650;
+    margin-left: 0.7%;
+    margin-bottom: 0;
+}
+  
+.hrTitulo {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.295);
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.columnas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.columnasText{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.iconUAnorte{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 60px;   
+    height: auto;
+}
+
+.textNoticias{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.imgNoticias{
+    width: 570px;
+    height: 320px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
