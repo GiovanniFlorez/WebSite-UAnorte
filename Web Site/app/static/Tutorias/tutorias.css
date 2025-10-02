@@ -17,9 +17,13 @@ body, html{
     height: 2px;
     background: rgba(117, 117, 117, 0.295);
     margin-top: 0;
-    margin-bottom: 30px;
     margin-left: 8px;
     margin-right: 8px;
+}
+
+.divColumnas{
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .columnasTutorias{
@@ -31,6 +35,7 @@ body, html{
 }
 
 .columaDerecha{
+    margin-top: 0;
     margin-left: 20px;
 }
 
@@ -39,11 +44,11 @@ body, html{
     font-weight: 500;
 }
 
-
 .imgTutorias{
     display: flex;
     align-items: flex-start;
     gap: 10px;
+    margin-bottom: 40px;
 }
 
 .imgTutoriasClumna1{
@@ -51,16 +56,79 @@ body, html{
 }
 
 .tituloColumna2{
+    margin-bottom: 0;
     font-size: 25px;
     font-weight: 700;
     color: #00CFFF;
 }
 
 .subColumnas{
+    margin-top: 0;
     display: flex;
     align-items: flex-start;
 }
 
 .iconUAnorte{
     width: 65px;
+}
+
+.subColumnas2{
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+#subColumnas2{
+    gap: 4px;
+}
+
+.textColumnaDerecha2{
+    margin-top: 28px;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.textColumaDerecha3{
+    margin-top: 0;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.tituloColumna3{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #00CFFF;
+}
+
+.subColumnas2 a{
+    display: block;
+    transition: transform 0.2s ease;
+}
+  
+.subColumnas2 a:hover {
+    transform: scale(1.02);
+}
+
+.imgBotonFormulario{
+    width: 120px;
+}
+
+#textColumaDerecha3{
+    max-width: 500px;
+}
+
+.textColumna3{
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 26px;
+}
+
+#ultimoBoton{
+    margin-top: 25px;
+    margin-left: 30px;
+    margin-bottom: 20px;
 }
