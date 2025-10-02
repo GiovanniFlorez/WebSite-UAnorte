@@ -1,0 +1,47 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.titulo {
+    color: #ff4a58;
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 0.7%;
+    margin-bottom: 0;
+}
+  
+.hrTitulo {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.295);
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.columnas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.imgAcompañamientoPermanente{
+    width: 625px;
+}
+
+.columnas ul{
+    color: #444444;
+    max-width: 520px;
+}
+
+.textAbajo{
+    font-size: 20px;
+    text-align: center;
+}
+
+.imgAcompañamientoPermanente2{
+    margin: 10px;
+    width: 1320px;
+}
