@@ -1,84 +1,84 @@
 body, html{
-    margin: 0;
-    padding: 0;
-    overflow: auto;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
 }
 
 .slider {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    overflow: hidden;
-    border-radius: 0;
-    margin: 0;
-    z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 0;
+  margin: 0;
+  z-index: 1;
 }
 
 .slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
 }
 
 .slider img.active {
-    display: block;
-    animation: fade 1s;
+  display: block;
+  animation: fade 1s;
 }
 
 @keyframes fade {
-    from {opacity: 0.4;}
-    to {opacity: 1;}
+  from {opacity: 0.4;}
+  to {opacity: 1;}
 }
 
 .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;            
-    background: transparent;  
-    border: none;             
-    font-size: 3rem;         
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.2s ease, color 0.2s ease;
-    padding: 0;             
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;            
+  background: transparent;  
+  border: none;             
+  font-size: 3rem;         
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease, color 0.2s ease;
+  padding: 0;             
 }
 
 .slider-btn.prev {
-    left: 20px;
+  left: 20px;
 }
 
 .slider-btn.next {
-    right: 20px;
+  right: 20px;
 }
 
 .slider-btn:hover {
-    color: rgb(131, 131, 131);
-    transform: translateY(-50%) scale(1.2);
+  color: rgb(131, 131, 131);
+  transform: translateY(-50%) scale(1.2);
 }
 
 .slider-btn:active {
-    transform: translateY(-50%) scale(1);
+  transform: translateY(-50%) scale(1);
 }
 
 .imagenes{
-    display: flex;
-    justify-content: center;
-    margin-top: 0.5%;
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-    gap: 0.4%;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+  gap: 0.4%;
 }
 
 .imagenes a img{
-    width: 99%;
-    height: 100%;
-    transition: transform 0.3s;
+  width: 99%;
+  height: 100%;
+  transition: transform 0.3s;
 }
 
 .imagenes a img:hover{
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .palabraEducacion {
