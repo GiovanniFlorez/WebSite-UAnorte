@@ -1,0 +1,66 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.titulo {
+    color: rgb(19, 19, 138);
+    font-size: 150%;
+    font-weight: 700;
+    margin-left: 0.7%;
+    margin-bottom: 0;
+}
+  
+.hrTitulo {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.295);
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.columnasTutorias{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.columaDerecha{
+    margin-left: 20px;
+}
+
+.textColumaDerecha{
+    font-size: 19px;
+    font-weight: 500;
+}
+
+
+.imgTutorias{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.imgTutoriasClumna1{
+    width: 180px;
+}
+
+.tituloColumna2{
+    font-size: 25px;
+    font-weight: 700;
+    color: #00CFFF;
+}
+
+.subColumnas{
+    display: flex;
+    align-items: flex-start;
+}
+
+.iconUAnorte{
+    width: 65px;
+}
