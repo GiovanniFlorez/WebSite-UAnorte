@@ -51,3 +51,36 @@ body, html{
     padding: 1px;
     margin: 15px;
 }
+
+.imgConsultoriaJuridica{
+    width: 645px;
+}
+
+.textConsultorioJuridico2 p {
+    margin: 20px;
+    font-weight: 600;
+}
+
+.textGrisOscuro{
+    color: #4A4A4A;
+}
+
+.textGrisClaro{
+    color: #6D6D6D;
+}
+
+#line{
+    line-height: 1.6;
+}
+
+#line1{
+    margin-top: 10px;
+}
+
+#line0{
+    line-height: 0.5;
+}
+
+#line2{
+    margin-top: 80px;
+}
