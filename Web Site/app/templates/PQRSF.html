@@ -7,7 +7,7 @@
         <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../static/PQESF/PQRSF.css">
+        <link rel="stylesheet" href="../static/PQRSF/PQRSF.css">
         <link rel="stylesheet" href="../static/Header/header.css">
         <link rel="stylesheet" href="../static/Footer/CSS/footer.css">
         <link rel="stylesheet" href="../static/WhatsappButtom/CSS/whatsappButtom.css">
@@ -28,33 +28,51 @@
               <div>
                     <div class="formularioContacto">
                       <div class="columna3">
-                        <p class="pFormularioContacto">Nombres y Apellidos</p>
-                        <input type="text" name="" id="" placeholder="Nombres y Apellidos" required>
+                        <p class="pFormularioContacto">Nombre</p>
+                        <input type="text" name="" id="" placeholder="Nombre" required>
+
+                        <select name="selectCarreraInteres" id="">
+                          <option value="">Cédula de Ciudadanía</option>
+                          <option value="">Tarjeta de Identidad</option>
+                          <option value="">Registro Civil de Nacimiento</option>
+                          <option value="">Cédula de Extrangería</option>
+                          <option value="">Pasaporte</option>
+                          <option value="">Otro</option>
+                        </select>
+
                         <p class="pFormularioContacto">Correo Electrónico</p>
                         <input type="text" name="" id="" placeholder="Correo Electrónico" required>
-                        <p class="pFormularioContacto">Asunto</p>
-                        <input type="text" name="" id="" placeholder="Asunto" required>
-                        <p class="pFormularioContacto">Carrera de Interés</p>
+
+                        <p class="pFormularioContacto">Cargo</p>
                         <select name="selectCarreraInteres" id="">
-                          <option value="">Seleccione una opción</option>
-                          <option value="">Pregrado en Derecho</option>
-                          <option value="">Pregrado en Trabajo Social</option>
-                          <option value="">Pregrado en Psicología</option>
-                          <option value="">Pregrado en Comunicación</option>
-                          <option value="">Posgrado en Intervención Comunitaria</option>
-                          <option value="">Posgrado en  Derecho Administrativo</option>
-                          <option value="">Cursos y Diplomados</option>
+                          <option value="">Estudiante</option>
+                          <option value="">Docente</option>
+                          <option value="">Administrativo</option>
+                          <option value="">Otro</option>
                         </select>
                       </div>
             
                       <div class="columna3">
+                        <p class="pFormularioContacto">Apellido</p>
+                        <input type="text" name="" id="" placeholder="Apellido" required>
+
                         <p class="pFormularioContacto">Número de Documento de Identidad:</p>
                         <input type="number" min="0" id="" placeholder="Número de identidad" required>
+
                         <p class="pFormularioContacto">Teléfono:</p>
                         <input type="number" min="0" name="" id="" placeholder="Número de teléfono" required>
-                        <p class="pFormularioContacto">Descripción:</p>
-                        <textarea name="" id="" placeholder="Descripción" required></textarea>
+                        
+                        <p class="pFormularioContacto">Tipo de PQRSF</p>
+                        <select name="selectCarreraInteres" id="">
+                          <option value="">Peticiones</option>
+                          <option value="">Quejas</option>
+                          <option value="">Reclamos</option>
+                          <option value="">Sugerencias</option>
+                          <option value="">Felicitaciones</option>
+                        </select>
                       </div>
+
+                      
                     </div>
             
                     <hr class="hrFormularioContacto">
