@@ -12,7 +12,7 @@
   fetch('header.html')
         .then(response => response.text())
         .then(data => document.getElementById('header').innerHTML = data);
-  
+        
   /**--------------------------------------------Agregar botón flotante de whatsapp------------------------------------*/
   fetch("../static/WhatsappButtom/whatsappButtom.html")
       .then(response => response.text())
