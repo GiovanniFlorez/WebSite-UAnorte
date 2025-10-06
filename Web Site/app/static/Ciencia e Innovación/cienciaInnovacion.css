@@ -75,7 +75,7 @@ body, html{
     font-size: 20px;
     font-weight: 400;
     text-align: justify;
-    max-width: 650px;
+    max-width: 600px;
 }
 
 #textColumna1{
@@ -122,4 +122,37 @@ body, html{
   
 .imgEnlacesCiencia:hover{
     transform: scale(1.05); 
+}
+
+.imgFases{
+    width: 130px;
+}
+
+.textSubColumnaOscuro{
+    font-size: 22px;
+    margin-left: 2px;
+}
+
+.textSubColumnaClaro {
+    list-style: none;
+    padding-left: 0; 
+}
+
+.textSubColumnaClaro li {
+    position: relative;
+    padding-left: 1em; 
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(56, 56, 56);
+    line-height: 2;
+}
+
+.textSubColumnaClaro li::before {
+    content: "●";
+    color: rgb(0, 0, 0);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0.2em; 
+    line-height: 1.2;
 }
