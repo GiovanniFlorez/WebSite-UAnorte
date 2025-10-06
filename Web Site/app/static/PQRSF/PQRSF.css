@@ -1,0 +1,158 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.imagen {
+    margin-top: 10px;
+    width: 1360px;
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+}
+  
+.imagen img {
+    position: absolute;
+    top: -160px;
+    transform: scale(0.7);
+}
+  
+.formularioDeInscripcion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 0;
+    max-width: 980px;   
+    width: 100%;       
+}
+
+.formularioContacto {
+    max-width: 980px;
+    margin-right: 3%;
+    display: flex;
+    gap: 3%;
+    align-items: stretch;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.columna3 {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+
+.pFormularioContacto {
+    margin: 0 6px 0;
+    color: #6b6b6b;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.columna3 input[type="text"],
+.columna3 input[type="number"],
+.columna3 select,
+.columna3 textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow .15s, border-color .15s;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 3%;
+}
+
+.columna3 p {
+    cursor: default;
+    margin-left: 6.3%;
+}
+
+.columna3 input::placeholder,
+.columna3 textarea::placeholder {
+    color: #bdbdbd;
+}
+
+.columna3 input:focus,
+.columna3 select:focus,
+.columna3 textarea:focus {
+    border-color: #cfcfcf;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.03);
+}
+
+select {
+    height: 42px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #999 50%),
+                      linear-gradient(135deg, #999 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+}
+
+.columna3 textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.hrFormularioContacto {
+    width: 100%;
+    background: rgba(117, 117, 117, 0.295);
+    height: 0.1%;
+    align-self: stretch;
+    border: none;
+}
+
+@media (max-width: 720px) {
+    .formularioContacto {
+        flex-direction: column;
+    }
+    .hrFormularioContacto {
+        display: none;
+    }
+}
+
+.textoFormulario {
+    color: #6b6b6b;
+    font-size: 80%;
+    font-weight: 200;
+    gap: 1%;
+    cursor: default;
+}
+
+.botonEnviar {
+    margin-left: 40%;
+    border: none;
+    color: #6b6b6b;
+    background-color: #f0f0f0;
+    height: 10%;
+    width: 30%;
+    font-size: 115%;
+    font-weight: 250;
+    transition: all 0.3s ease;
+}
+
+.botonEnviar:hover {
+    background-color: rgb(79, 79, 218);
+    color: white;
+    cursor: pointer;
+}
+
+.botonEnviar:disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+#footer {
+    margin-top: 100px;
+}
