@@ -71,9 +71,6 @@ body, html{
     margin-bottom: 50px;
 }
 
-/* 🌐 Ajustes responsive para Noticias */
-
-/* Pantallas medianas (tablets) */
 @media (max-width: 1024px) {
     .columnas {
       flex-direction: column;
@@ -101,8 +98,7 @@ body, html{
       font-size: 19px;
     }
   }
-  
-  /* Pantallas pequeñas (celulares) */
+
   @media (max-width: 720px) {
     .titulo {
       font-size: 130%;
@@ -149,4 +145,5 @@ body, html{
       margin: 5px auto;
     }
   }
+
   
