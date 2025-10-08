@@ -10,8 +10,20 @@
   
   /**-----------------------------------------------------Agregar el header--------------------------------------------------*/
   fetch('header.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('header').innerHTML = data);
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+
+    // Ahora que el header está en el DOM, conectamos el evento
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    if (toggleBtn && menu) {
+      toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('active');
+      });
+    }
+  });
   
   /**--------------------------------------------Agregar botón flotante de whatsapp------------------------------------*/
   fetch("../static/WhatsappButtom/whatsappButtom.html")
