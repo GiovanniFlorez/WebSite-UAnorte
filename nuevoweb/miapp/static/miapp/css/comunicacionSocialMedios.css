@@ -9,38 +9,32 @@ body, html{
     height: 510px;
 }
 
-.ComunicaciónSocial,
+.ComunicacionSocial,
 .formularioDeInscripcion{
-    .formularioDeInscripcion {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    
-    margin: 40px auto; /* centra horizontalmente */
-    padding: 0;
-    max-width: 980px;   /* ancho máximo del formulario */
-    width: 100%;        /* se adapta a pantallas pequeñas */
+    margin: 0;
+    padding: 0;        
 }
 
-}
-
-.imgComunicaciónSocialPequeña{
+.imgComunicacionSocialPequeña{
     display: flex;
     height: 250px;
 }
 
-.imgComunicaciónSocial,
-.imgComunicaciónSocialAbajo,
-.imgComunicaciónSocialAbajo2{
+.imgComunicacionSocial,
+.imgComunicacionSocialAbajo,
+.imgComunicacionSocialAbajo2{
     display: flex;
     height: 320px;
 }
 
-.imgComunicaciónSocialAbajo{
+.imgComunicacionSocialAbajo{
     margin-top: 20px;
 }
 
-.imgComunicaciónSocialAbajo2{
+.imgComunicacionSocialAbajo2{
     margin-top: 90px;
 }
 
