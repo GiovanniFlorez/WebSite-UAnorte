@@ -422,6 +422,8 @@ select {
     }
 }
 
+/*-----------RESPONSIVE-----------*/
+
 @media (max-width: 720px) {
     .formularioContacto {
       flex-direction: column;

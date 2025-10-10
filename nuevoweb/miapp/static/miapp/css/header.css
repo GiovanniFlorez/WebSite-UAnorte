@@ -186,22 +186,22 @@ body {
   margin-left: 5px;
 }
 
-/* BOTÓN HAMBURGUESA (por defecto oculto) */
+/*------BOTÓN HAMBURGUESA------*/
 .menu-toggle {
+  margin-right: 3%;
   display: none;
 }
 
-/* 🔁 RESPONSIVE STYLES PARA MÓVILES */
+/*------RESPONSIVE------*/
 @media screen and (max-width: 768px) {
   .div1 {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
     font-size: 75%;
-    white-space: nowrap; /* Evita que se partan las barras y textos */
+    white-space: nowrap; 
   }
 
-  /* Opcional: separa enlaces y barras para mejor lectura */
   .div1 a {
     margin-right: 5px;
   }
