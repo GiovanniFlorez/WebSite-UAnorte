@@ -17,7 +17,7 @@ body, html{
 .slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
   display: none;
 }
 
@@ -35,14 +35,14 @@ body, html{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: white;            
-  background: transparent;  
-  border: none;             
-  font-size: 3rem;         
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 3rem;
   cursor: pointer;
   z-index: 10;
   transition: transform 0.2s ease, color 0.2s ease;
-  padding: 0;             
+  padding: 0;
 }
 
 .slider-btn.prev {
@@ -60,6 +60,46 @@ body, html{
 
 .slider-btn:active {
   transform: translateY(-50%) scale(1);
+}
+
+/*  RESPONSIVE Slider */
+
+@media (max-width: 992px) {
+  .slider {
+    height: 400px; 
+  }
+
+  .slider-btn {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 300px; 
+  }
+
+  .slider-btn {
+    font-size: 2rem;
+  }
+
+  .slider-btn.prev {
+    left: 10px;
+  }
+
+  .slider-btn.next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 220px;
+  }
+
+  .slider-btn {
+    font-size: 1.6rem;
+  }
 }
 
 .imagenes{
