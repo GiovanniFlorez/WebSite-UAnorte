@@ -12,19 +12,18 @@ body, html {
     overflow: hidden;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .imagen img {
+.imagen img {
     width: 100%;
     height: 100%;
     object-fit: cover;        
     object-position: center;  
     display: block;
-  }
+}
   
   
-  /* Versión de la imagen para celulares */
-  @media (max-width: 720px) {
+@media (max-width: 720px) {
     .imagen {
       height: 300px;
     }
@@ -33,7 +32,7 @@ body, html {
       object-position: center top;
     }
   
-  }
+}
   
 .palabraEducacion {
     color: rgb(19, 19, 138);
@@ -43,13 +42,19 @@ body, html {
     margin-bottom: 0;
 }
 
+.contenedorVinculos {
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 0;            
+}
+
 .imgVinculos {
     width: 334px;
     transition: 0.3s;
-    text-decoration: none;
+    text-decoration: none;            
 }
 
-.imgVinculos:hover {
+.imgVinculos:hover{
     transform: scale(0.9);
 }
 
@@ -433,6 +438,7 @@ select {
     }
     .botonEnviar{
         width: 70%;
+        margin-bottom: 6%;
     }
     .imagen{
         height: auto;
@@ -464,8 +470,14 @@ select {
     .textConvenios{
         font-size: 14px;
     }
-    .imgVinculos{
-        width: 150px;
+    .contenedorVinculos {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .imgVinculos {
+        width: 95%;
     }
     .imgColumnaOne,
     .imgColumna22,
