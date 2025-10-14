@@ -288,6 +288,115 @@ select {
     cursor: pointer;
 }
   
+.tituloFormularioContacto {
+    margin-left: 0%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 120%;
+    background-color: rgb(51, 225, 255);
+}
+  
+.formularioContacto {
+    max-width: 980px;
+    margin-right: 3%;
+    display: flex;
+    gap: 3%;
+    align-items: stretch;
+    position: relative;
+    box-sizing: border-box;
+}
+  
+.columna3 {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+  
+.pFormularioContacto {
+    margin:  0 6px 0;
+    color: #6b6b6b;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.columna3 input[type="text" ],
+.columna3 input[type="number"],
+.columna3 select,
+.columna3 textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow .15s, border-color .15s;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 3%;
+}
+  
+.columna3 p{
+    cursor: default;
+    margin-left: 6.3%;
+}
+  
+.columna3 input::placeholder,
+.columna3 textarea::placeholder {
+    color: #bdbdbd;
+}
+  
+.columna3 input:focus,
+.columna3 select:focus,
+.columna3 textarea:focus {
+    border-color: #cfcfcf;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
+}
+  
+select {
+    height: 42px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #999 50%),
+                      linear-gradient(135deg, #999 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+}
+  
+.columna3 textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+  
+.hrFormularioContacto {
+    width: 100%;
+    background: rgba(117, 117, 117, 0.295);
+    height: 0.1%;
+    align-self: stretch;
+    border: none;
+}
+  
+@media (max-width: 720px) {
+    .formularioContacto {
+      flex-direction: column;
+    }
+    .hrFormularioContacto {
+      display: none;
+    }
+}
+  
+.columna.admisiones label{
+    cursor: pointer;
+}
+  
+.checkbox{
+    cursor: pointer;
+}
+  
 .textoFormulario{
     color: #6b6b6b;
     font-size: 80%;

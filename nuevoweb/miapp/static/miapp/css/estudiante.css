@@ -259,6 +259,7 @@ select {
     gap: 30px;               
 }
 
+.imgEnlacesCiencia,
 .imgEnlaces1,
 .imgEnlaces {
     width: 250px;  
@@ -268,7 +269,8 @@ select {
 }
 
 .imgEnlaces:hover,
-.imgEnlaces1:hover {
+.imgEnlaces1:hover,
+.imgEnlacesCiencia:hover {
     transform: scale(1.05); 
 }
 

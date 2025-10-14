@@ -329,3 +329,152 @@ select {
 .formularioDeInscripcion{
     margin-top: 40px;
 }
+
+/*========= RESPONSIVE =========*/
+@media (max-width: 1200px) {
+    .imagen {
+      height: 400px;
+    }
+  
+    .imgComunicacionSocial,
+    .imgComunicacionSocialAbajo,
+    .imgComunicacionSocialAbajo2,
+    .imgComunicacionSocialPequeña {
+      height: auto;
+      width: 100%;
+    }
+  
+    .imgFormularioDeInscripcion {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .ComunicacionSocial,
+    .columnasInscripcion,
+    .formularioDeInscripcion {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .columna1 {
+      margin-left: 0;
+    }
+  
+    .imgBotones,
+    .imgBotones2 {
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      gap: 20px;
+    }
+  
+    .imgOneInscripcion,
+    .imgTwoInscripcion {
+      width: 90%;
+      height: auto;
+      margin: 20px auto;
+    }
+  
+    .procesoInscripcion2 {
+      margin-left: 0;
+      justify-self: center;
+    }
+  
+    .imgFormularioDeInscripcion {
+      margin: 0 auto;
+    }
+  
+    .botonEnviar {
+      width: 50%;
+      margin-left: 25%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .imagen {
+      height: 300px;
+    }
+  
+    .imgBotones,
+    .imgBotones2 {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .titulo {
+      text-align: center;
+      font-size: 130%;
+    }
+  
+    .imgOneInscripcion,
+    .imgTwoInscripcion {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .textOneInscripcion {
+      margin-left: 10px;
+    }
+  
+    .formularioContacto {
+      flex-direction: column;
+    }
+  
+    .imgFormularioDeInscripcion {
+      width: 100%;
+      margin: 0;
+    }
+  
+    .botonEnviar {
+      width: 80%;
+      margin-left: 10%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body, html {
+      overflow-x: hidden;
+    }
+  
+    .imagen {
+      height: 230px;
+    }
+  
+    .titulo {
+      font-size: 120%;
+    }
+  
+    .tituloFormularioContacto {
+      font-size: 100%;
+      padding: 10px;
+    }
+  
+    .formularioContacto {
+      width: 95%;
+      margin: 0 auto;
+    }
+  
+    .pFormularioContacto {
+      font-size: 12px;
+    }
+  
+    input, select, textarea {
+      font-size: 13px;
+    }
+  
+    .botonEnviar {
+      width: 90%;
+      font-size: 100%;
+    }
+  
+    .imgBotones img,
+    .imgBotones2 img {
+      width: 80%;
+      margin: 0 auto;
+    }
+  
+    .footer {
+      margin-top: 60px;
+    }
+  }  
