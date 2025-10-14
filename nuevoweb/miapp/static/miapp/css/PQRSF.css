@@ -5,7 +5,6 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* -------------------- IMAGEN -------------------- */
 .imagen {
     position: relative;
     width: 100%;
@@ -36,7 +35,6 @@ body, html {
     letter-spacing: 1px;
 }
 
-/* -------------------- FORMULARIO -------------------- */
 .divFormulario {
     max-width: 1000px;
     width: 90%;
@@ -109,7 +107,6 @@ textarea {
     border: none;
 }
 
-/* -------------------- TEXTO Y BOTÓN DEL FORMULARIO -------------------- */
 .textoFormulario {
     color: #6b6b6b;
     font-size: 80%;
@@ -152,14 +149,12 @@ textarea {
     cursor: not-allowed;
 }
 
-/* -------------------- FOOTER -------------------- */
 #footer {
     margin-top: 100px;
 }
 
 /* -------------------- RESPONSIVE -------------------- */
 
-/* Tablets */
 @media (max-width: 992px) {
     .formularioDeInscripcion {
         grid-template-columns: 1fr;
@@ -172,7 +167,6 @@ textarea {
     }
 }
 
-/* Celulares */
 @media (max-width: 600px) {
     .imagen {
         height: 250px;

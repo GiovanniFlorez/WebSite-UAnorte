@@ -83,3 +83,89 @@ body, html{
     width: 600px;
     margin-top: 40px;
 }
+
+/*======= RESPONSIVE =======*/
+@media (max-width: 1024px) {
+    .columnasEducacionContinua {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin-top: 10px;
+    }
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua,
+    .img4EducacionContinua1 {
+        width: 90%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    .imgLinkEducacionContinua {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-left: 0;
+        justify-items: center;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 40px;
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .columnasEducacionContinua {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua,
+    .img4EducacionContinua1 {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .imgLinkEducacionContinua {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 20px auto;
+        justify-items: center;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 45px;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .imgLinkEducacionContinua {
+        gap: 10px;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 40px;
+        width: 90%;
+    }
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua,
+    .img4EducacionContinua1 {
+        width: 100%;
+    }
+}

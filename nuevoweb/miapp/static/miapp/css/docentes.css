@@ -1,14 +1,39 @@
-body, html{
+body, html {
     margin: 0;
     padding: 0;
     overflow: auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.imagen{
-    display: flex;
+.imagen {
+    position: relative;       
+    width: 100%;
     height: 510px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
-
+  
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        
+    object-position: center;  
+    display: block;
+}
+  
+  
+@media (max-width: 720px) {
+    .imagen {
+      height: 300px;
+    }
+  
+    .imagen img {
+      object-position: center top;
+    }
+  
+}
+  
 .palabraEducacion {
     color: rgb(19, 19, 138);
     font-size: 150%;
@@ -17,10 +42,16 @@ body, html{
     margin-bottom: 0;
 }
 
-.imgVinculos{
+.contenedorVinculos {
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 0;            
+}
+
+.imgVinculos {
     width: 334px;
     transition: 0.3s;
-    text-decoration: none;
+    text-decoration: none;            
 }
 
 .imgVinculos:hover{
@@ -35,7 +66,7 @@ body, html{
     margin: 0;
     padding: 0;
 }
-  
+
 .hrEducacion {
     border: none;
     height: 3px;
@@ -43,42 +74,42 @@ body, html{
     margin-top: 0;
     margin-bottom: 30px;
 }
-  
+
 .columna.imagenes img {
     height: 45%;
     width: 95%;
 }
-  
+
 .columna.admisiones .iconUAnorte {
     width: 50px;
     height: auto;
     display: block;
 }
-  
+
 .filaAdmisiones {
     display: flex;
     align-items: center;
     gap: 8px;
 }
-  
+
 .filaAdmisiones .columna2 {
     padding: 0;
     margin: 0;
 }
-  
+
 .tituloAdmisiones {
     display: flex;
     flex-direction: column;
     flex: 1; 
 }
-  
+
 .palabraAdmisiones {
     margin: 0;
     color: rgb(19, 19, 138);
     font-size: 120%;
     font-weight: 700;
 }
-  
+
 .hrAdmisiones {
     border: none;
     height: 2px;
@@ -87,15 +118,13 @@ body, html{
     width: 100%;        
     align-self: stretch;
 }
-  
+
 .textoAdmisiones {
     font-size: 115%;
     font-weight: 500;
-    margin-left: 0%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin: 0;
 }
-  
+
 .tituloFormularioContacto {
     margin-left: 0%;
     margin-right: 5%;
@@ -103,8 +132,7 @@ body, html{
     font-size: 120%;
     background-color: rgb(51, 225, 255);
 }
-  
-  
+
 .formularioContacto {
     max-width: 980px;
     margin-right: 3%;
@@ -114,22 +142,21 @@ body, html{
     position: relative;
     box-sizing: border-box;
 }
-  
+
 .columna3 {
     flex: 1 1 0;
     display: flex;
     flex-direction: column;
     gap: 3%;
 }
-  
+
 .pFormularioContacto {
-    margin:  0 6px 0;
+    margin: 0 6px 0;
     color: #6b6b6b;
     font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
 }
-  
-.columna3 input[type="text" ],
+
+.columna3 input[type="text"],
 .columna3 input[type="number"],
 .columna3 select,
 .columna3 textarea {
@@ -142,27 +169,21 @@ body, html{
     font-size: 14px;
     outline: none;
     transition: box-shadow .15s, border-color .15s;
-    font-family: 'Montserrat', sans-serif;
     margin-left: 3%;
 }
-  
-.columna3 p{
-    cursor: default;
-    margin-left: 6.3%;
-}
-  
+
 .columna3 input::placeholder,
 .columna3 textarea::placeholder {
     color: #bdbdbd;
 }
-  
+
 .columna3 input:focus,
 .columna3 select:focus,
 .columna3 textarea:focus {
     border-color: #cfcfcf;
     box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
 }
-  
+
 select {
     height: 42px;
     -webkit-appearance: none;
@@ -175,12 +196,12 @@ select {
     background-repeat: no-repeat;
     padding-right: 36px;
 }
-  
+
 .columna3 textarea {
     min-height: 160px;
     resize: vertical;
 }
-  
+
 .hrFormularioContacto {
     width: 100%;
     background: rgba(117, 117, 117, 0.295);
@@ -188,57 +209,42 @@ select {
     align-self: stretch;
     border: none;
 }
-  
-@media (max-width: 720px) {
-    .formularioContacto {
-      flex-direction: column;
-    }
-    .hrFormularioContacto {
-      display: none;
-    }
-}
-  
-.columna.admisiones label{
+
+.checkbox-container label{
     cursor: pointer;
 }
-  
-.checkbox{
-    cursor: pointer;
-}
-  
+
 .textoFormulario{
     color: #6b6b6b;
     font-size: 80%;
     font-weight: 200;
-    gap: 1%;
-    cursor: default;
 }
-  
+
 .botonEnviar{
-margin-left: 40%;
-margin-left: 50;
-border: none;
-color: #6b6b6b;
-background-color:  #f0f0f0;
-height: 6%;
-width: 23%;
-font-size: 115%;
-font-weight: 250;
-transition: all 0.3s ease;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    color: #6b6b6b;
+    background-color:  #f0f0f0;
+    height: 6%;
+    width: 23%;
+    font-size: 115%;
+    font-weight: 250;
+    transition: all 0.3s ease;
 }
-  
+
 .botonEnviar:hover{
     background-color: rgb(79, 79, 218);
     color: white;
     cursor: pointer;
 }
-  
+
 .botonEnviar:disabled {
     background-color: #e0e0e0;
     color: #a0a0a0;
     cursor: not-allowed;
 }
-    
+
 .botonEnviar.enabled:hover {
     background-color: rgb(79, 79, 218);
     color: white;
@@ -252,44 +258,33 @@ transition: all 0.3s ease;
     flex-wrap: wrap;         
     gap: 30px;               
 }
-  
-.imgEnlaces1 {
-    width: 250px;  
-    margin: 0 20px;
-    vertical-align: middle;
-    margin-left: 40px;
-}
 
+.imgEnlacesCiencia,
+.imgEnlaces1,
 .imgEnlaces {
     width: 250px;  
     margin: 0 20px;
     vertical-align: middle;
     transition: transform 0.3s;
 }
-  
-.imgEnlaces:hover {
+
+.imgEnlaces:hover,
+.imgEnlaces1:hover,
+.imgEnlacesCiencia:hover {
     transform: scale(1.05); 
 }
-  
+
 .imgEnlacesCiencia{
     width: 210px;
-    margin: 0 20px;
-    vertical-align: middle;
-    transition: transform 0.3s;
-}
-  
-.imgEnlacesCiencia:hover{
-    transform: scale(1.05); 
 }
 
 .ventajas {
     margin-top: 10px;
 }
-  
+
 .pVentajasUAnorte {
     margin: 3px 0;  
     font-size: 16px; 
-    font-weight: normal;  
     color: black; 
 }
 
@@ -318,7 +313,7 @@ transition: all 0.3s ease;
 }
 
 .imgColumnaTwo{
-    width:675px;
+    width: 675px;
 }
 
 .imgColumna2{
@@ -343,23 +338,17 @@ transition: all 0.3s ease;
     font-size: 20px;
 }
 
-.textTwo{
+.textTwo,
+.textTwo2,
+.textTwo3,
+.textTwo4,
+.textTwo5{
     margin: 0;
 }
 
 .textTwo3,
 .textTwo5{
     font-weight: 100;
-}
-
-.textTwo2,
-.textTwo3{
-    margin: 0;
-}
-
-.textTwo4,
-.textTwo5{
-    margin: 0;
 }
 
 .columna1Becas{
@@ -422,4 +411,88 @@ transition: all 0.3s ease;
 .textConvenios1,
 .textConvenios2{
     margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .columnas,
+    .columnaOne {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .imgColumnaTwo,
+    .imgColumnaOneW {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .div2Columna2 {
+        margin-right: 0;
+    }
+}
+
+/*-----------RESPONSIVE-----------*/
+
+@media (max-width: 720px) {
+    .formularioContacto {
+      flex-direction: column;
+    }
+    .hrFormularioContacto {
+      display: none;
+    }
+    .botonEnviar{
+        width: 70%;
+        margin-bottom: 6%;
+    }
+    .imagen{
+        height: auto;
+    }
+    .imgVinculos{
+        width: 200px;
+    }
+    .imgColumnaTwo,
+    .imgColumnaOneW{
+        width: 100%;
+    }
+    .div2Columna2{
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .palabraEducacion{
+        font-size: 18px;
+    }
+    .palabraAdmisiones{
+        font-size: 16px;
+    }
+    .textoAdmisiones,
+    .textOne,
+    .textTwo,
+    .textBecas,
+    .textConvenios{
+        font-size: 14px;
+    }
+    .contenedorVinculos {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .imgVinculos {
+        width: 95%;
+    }
+    .imgColumnaOne,
+    .imgColumna22,
+    .imgColumna2,
+    .imgEnlaces,
+    .imgEnlaces1,
+    .imgEnlacesCiencia{
+        width: 100%;
+    }
+    .botonEnviar{
+        width: 90%;
+    }
+    .div2Columna2{
+        margin: 0;
+    }
 }
