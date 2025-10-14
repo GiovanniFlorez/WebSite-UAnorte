@@ -1,77 +1,138 @@
-body, html{
+body, html {
     margin: 0;
     padding: 0;
-    overflow: auto;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.columnasEducacionContinua{
-
+.columnasEducacionContinua {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
     margin-top: 20px;
-    padding: 0;
+    padding: 0 20px;
+    align-items: start;
 }
 
-.imgEducacionContinua{
-    display: flex;
-    height: 370px;
-    width: 645px;
-    margin-left: 20px
+.imgEducacionContinua {
+    width: 100%;
+    max-width: 645px;
+    height: auto;
+    display: block;
+    margin-bottom: 30px;
 }
 
-.img2EducacionContinua{
-    display: flex;
-    height: 150px;
-    width: 650px;
-    margin-left: 20px;
-    margin-top: 40px;
+.img2EducacionContinua {
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
 }
 
-.imgLinkEducacionContinua{
+.imgLinkEducacionContinua {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
-    margin-top: 30px;
-    margin-left: 30px;
+    justify-items: center;
+    align-items: center;
 }
 
 .btnMayorInformacion,
 .btnRrealizarInscripcion,
-.btnVolver{
-    display: flex;
-    height: 30px;
+.btnVolver {
+    height: 35px;
+    width: auto;
+    transition: transform 0.3s ease;
 }
-  
-.btnMayorInformacion,
-.btnRrealizarInscripcion,
-.btnVolver{ 
-    margin-bottom: 20px;
-}
-  
-.imgLinkEducacionContinua a{
+
+.imgLinkEducacionContinua a {
     display: block;
     transition: transform 0.2s ease;
 }
-  
+
 .imgLinkEducacionContinua a:hover {
-    transform: scale(1.02);
-}
-
-.img3EducacionContinua{
-    display: flex;
-    height: 380px;
-    width: 630px;
-}
-
-.img4EducacionContinua{
-    display: flex;
-    height: 350px;
-    width: 635px;
-    margin-top: 40px;
+    transform: scale(1.05);
 }
 
 .img3EducacionContinua,
-.img4EducacionContinua{
-    margin-left: 20px;
+.img4EducacionContinua {
+    width: 100%;
+    max-width: 630px;
+    height: auto;
+    display: block;
+    margin-bottom: 40px;
+}
+
+/* ======== RSPONSIVE ======== */
+
+@media (max-width: 1024px) {
+    .columnasEducacionContinua {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua {
+        margin: 0 auto 30px auto;
+        max-width: 90%;
+    }
+
+    .imgLinkEducacionContinua {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .columnasEducacionContinua {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .imgLinkEducacionContinua {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 28px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .columnasEducacionContinua {
+        padding: 0 5px;
+    }
+
+    .imgLinkEducacionContinua {
+        gap: 12px;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 25px;
+    }
 }

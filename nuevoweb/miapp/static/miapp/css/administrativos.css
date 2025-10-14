@@ -17,10 +17,16 @@ body, html{
     margin-bottom: 0;
 }
 
-.imgVinculos{
+.contenedorVinculos {
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 0;            
+}
+
+.imgVinculos {
     width: 334px;
     transition: 0.3s;
-    text-decoration: none;
+    text-decoration: none;            
 }
 
 .imgVinculos:hover{
@@ -103,7 +109,6 @@ body, html{
     font-size: 120%;
     background-color: rgb(51, 225, 255);
 }
-  
   
 .formularioContacto {
     max-width: 980px;
@@ -215,16 +220,16 @@ select {
 }
   
 .botonEnviar{
-margin-left: 40%;
-margin-left: 50;
-border: none;
-color: #6b6b6b;
-background-color:  #f0f0f0;
-height: 6%;
-width: 23%;
-font-size: 115%;
-font-weight: 250;
-transition: all 0.3s ease;
+    margin-left: 40%;
+    margin-left: 50;
+    border: none;
+    color: #6b6b6b;
+    background-color:  #f0f0f0;
+    height: 6%;
+    width: 23%;
+    font-size: 115%;
+    font-weight: 250;
+    transition: all 0.3s ease;
 }
   
 .botonEnviar:hover{
@@ -422,4 +427,179 @@ transition: all 0.3s ease;
 .textConvenios1,
 .textConvenios2{
     margin: 0;
+}
+
+
+@media (max-width: 1024px) {
+    .columnas,
+    .columnaOne {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .imagen {
+        height: auto;
+    }
+
+    .imgColumnaTwo,
+    .imgColumnaOne,
+    .imgColumna2,
+    .imgColumna22 {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .formularioContacto {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .botonEnviar {
+        width: 50%;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .palabraEducacion {
+        font-size: 130%;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 720px) {
+    .imagen {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .columnas,
+    .columnaOne {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .imgVinculos {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .imgEnlaces,
+    .imgEnlacesCiencia {
+        width: 80%;
+        margin: 10px auto;
+    }
+
+    .palabraEducacion {
+        font-size: 120%;
+    }
+
+    .formularioContacto {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .columna3 input,
+    .columna3 select,
+    .columna3 textarea {
+        font-size: 13px;
+    }
+
+    .botonEnviar {
+        width: 80%;
+        font-size: 100%;
+    }
+
+    .pVentajasUAnorte {
+        font-size: 14px;
+    }
+
+    .textOne,
+    .textTwo,
+    .textBecas3,
+    .textConvenios2 {
+        font-size: 16px;
+    }
+}
+
+@media (orientation: portrait) {
+    .imagen {
+        height: auto;
+    }
+}
+
+
+@media (max-width: 480px) {
+    body, html {
+        overflow-x: hidden;
+    }
+
+    .palabraEducacion {
+        font-size: 110%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .contenedorVinculos {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .imgVinculos {
+        width: 95%;
+    }
+
+    .formularioContacto {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .columna3 input,
+    .columna3 select,
+    .columna3 textarea {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .botonEnviar {
+        width: 90%;
+        font-size: 95%;
+        margin: 15px auto;
+    }
+
+    .imgEnlaces,
+    .imgEnlacesCiencia,
+    .imgEnlaces1 {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .textOne,
+    .textTwo,
+    .textBecas3,
+    .textConvenios2 {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .columna1Becas {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .div2Columna2 {
+        margin-right: 0;
+    }
+
+    .imgISER, .imgUa {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
 }
