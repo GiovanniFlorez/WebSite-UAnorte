@@ -137,3 +137,94 @@ body, html{
 .imgEnlacesCiencia:hover{
     transform: scale(1.05); 
 }
+
+/* ============== RESPONSIVE ============== */
+
+@media (max-width: 1024px) {
+    .columnas {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imgExtensión,
+    .imgDireccionamientoEstrategico {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .textDireccionamientoEstrategico,
+    .textDireccionamientoEstrategico2,
+    .textDireccionamientoEstrategico3 {
+        font-size: 18px;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .subColumnas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .divImgDireccionamientoEstrategico {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .imagen {
+        height: auto;
+    }
+
+    .imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    .titulo,
+    .titulo2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .hrTitulo,
+    .hrSubTitulo {
+        width: 60%;
+        margin: 10px auto;
+    }
+
+    .columnas {
+        flex-direction: column;
+    }
+
+    .textDireccionamientoEstrategico,
+    .textDireccionamientoEstrategico2,
+    .textDireccionamientoEstrategico3 {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    .subColumnas {
+        align-items: center;
+        text-align: center;
+    }
+
+    .divImgExtensión,
+    .divImgDireccionamientoEstrategico {
+        margin: 15px 0;
+    }
+
+    .contenedorEnlaces {
+        gap: 20px;
+    }
+
+    .imgEnlaces,
+    .imgEnlacesCiencia {
+        width: 45%;
+        margin: 0;
+    }
+}

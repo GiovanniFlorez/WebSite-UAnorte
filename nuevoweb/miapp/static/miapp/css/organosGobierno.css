@@ -1,14 +1,21 @@
-body, html{
+body, html {
     margin: 0;
     padding: 0;
     overflow: auto;
 }
 
-.imagen{
+.imagen {
     display: flex;
-    height: 510px;
+    justify-content: center; 
+    width: 100%; 
 }
-  
+
+.imagen img {
+    width: 100%; 
+    max-width: 100%; 
+    height: auto; 
+}
+
 .titulo {
     color: rgb(19, 19, 138);
     font-size: 150%;
@@ -16,7 +23,7 @@ body, html{
     margin-left: 0.7%;
     margin-bottom: 0;
 }
-  
+
 .hrTitulo {
     border: none;
     height: 2px;
@@ -34,7 +41,7 @@ body, html{
     margin-bottom: 0;
 }
 
-.hrTitulo2{
+.hrTitulo2 {
     border: none;
     height: 2px;
     background: rgba(117, 117, 117, 0.295);
@@ -42,22 +49,66 @@ body, html{
     margin-bottom: 30px;
 }
 
-.ColumnasOrganosGobierno{
+.ColumnasOrganosGobierno {
     display: flex;
     align-items: flex-start;
-    gap: 0;
+    gap: 40px;
     margin: 0;
     padding: 0;
 }
 
-.textColumnas{
+.textColumnas {
     margin-left: 20px;
     font-weight: 500;
     font-size: 20px;
 }
 
-.imgColumnas{
+.imgColumnas {
     height: 300px;
     width: 380px;
     margin-left: 20px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media screen and (max-width: 768px) {
+
+    .ColumnasOrganosGobierno {
+        flex-direction: column; 
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .imgColumnas {
+        width: 100%; 
+        height: auto; 
+        margin-left: 0; 
+    }
+
+    .titulo {
+        font-size: 130%; 
+        margin-left: 0;
+    }
+
+    .textColumnas {
+        font-size: 18px; 
+        margin-left: 0; 
+        text-align: center; 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titulo {
+        font-size: 120%; 
+    }
+  
+    .imgColumnas {
+        width: 100%; 
+        height: auto;
+    }
+
+    .textColumnas {
+        font-size: 16px;
+    }
 }
