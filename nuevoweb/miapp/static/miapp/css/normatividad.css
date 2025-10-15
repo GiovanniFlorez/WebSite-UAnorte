@@ -1,12 +1,19 @@
-body, html{
+body, html {
     margin: 0;
     padding: 0;
     overflow: auto;
 }
 
-.imagen{
+.imagen {
     display: flex;
-    height: 510px;
+    justify-content: center;
+    width: 100%;
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 100%; 
+    height: auto; 
 }
 
 .titulo {
@@ -16,7 +23,7 @@ body, html{
     margin-left: 0.7%;
     margin-bottom: 0;
 }
-  
+
 .hrTitulo {
     border: none;
     height: 2px;
@@ -34,7 +41,7 @@ body, html{
     margin-bottom: 0;
 }
 
-.columnasNormativas{
+.columnasNormativas {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
@@ -42,7 +49,7 @@ body, html{
     padding: 0;
 }
 
-.subColumaNormativa{
+.subColumaNormativa {
     display: flex;
     align-items: flex-start;
     gap: 0;
@@ -50,14 +57,14 @@ body, html{
     padding: 0;
 }
 
-.iconUAnorte{
+.iconUAnorte {
     margin-left: 20px;
     margin-top: 20px;
-    width: 60px;   
+    width: 60px;
     height: auto;
 }
 
-.PDF{
+.PDF {
     color: rgb(78, 78, 78);
     text-decoration: none;
     font-weight: 500;
@@ -70,4 +77,61 @@ ul {
 
 li {
     margin-bottom: 10px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media screen and (max-width: 768px) {
+
+    .columnasNormativas {
+        grid-template-columns: 1fr; 
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 130%;
+        margin-left: 10px;
+    }
+
+    .subTitulo {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .imagen {
+        height: auto;
+        width: 100%;
+    }
+
+    .iconUAnorte {
+        width: 50px; 
+    }
+
+    .PDF {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .titulo {
+        font-size: 120%;
+    }
+
+    .subTitulo {
+        font-size: 18px;
+    }
+
+    .imagen {
+        width: 100%;
+        height: auto;
+    }
+
+    .iconUAnorte {
+        width: 40px;
+    }
+
+    .PDF {
+        font-size: 14px;
+    }
 }

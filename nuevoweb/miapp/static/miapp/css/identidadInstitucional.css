@@ -9,6 +9,11 @@ body, html{
     height: 510px;
 }
 
+.imagen img {
+    width: 100%; 
+    height: auto; 
+}
+
 .titulo {
     color: rgb(19, 19, 138);
     font-size: 150%;
@@ -84,7 +89,6 @@ body, html{
 .divValores{
     font-size: 20px;
     font-weight: 500;
-    
 }
 
 .p{
@@ -119,4 +123,102 @@ body, html{
     width:2px;
     height:50px;
     background:gray;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 768px) {
+
+    .imagen {
+        height: auto;
+        width: 100%;
+    }
+
+    .imagen img {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .titulo {
+        font-size: 120%;
+        margin-left: 3%;
+    }
+
+    .columnas {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .iconUAnorte {
+        width: 50px;
+    }
+
+    .subTitulo {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .imagenesValores {
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+    }
+
+    .divValores {
+        font-size: 18px;
+    }
+
+    .textIdentidad {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
+    .imgValores {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hrTitulo2, .hrTitulo {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .titulo {
+        font-size: 110%;
+    }
+
+    .subColumnas {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .iconUAnorte {
+        width: 40px;
+    }
+
+    .subTitulo {
+        font-size: 20px;
+    }
+
+    .textIdentidad {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .imagenesValores {
+        width: 90%;
+        max-width: 120px;
+    }
+
+    .divValores {
+        font-size: 16px;
+    }
+
+    .imgValores {
+        gap: 20px;
+    }
 }

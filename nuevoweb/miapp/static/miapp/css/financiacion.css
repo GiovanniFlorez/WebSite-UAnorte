@@ -4,9 +4,19 @@ body, html{
     overflow: auto;
 }
 
-.imagen{
+.imagen {
     display: flex;
-    height: 510px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: auto; 
+}
+
+.imagen img {
+    width: 100%;   
+    height: auto;     
+    object-fit: cover; 
+    max-height: 510px;
 }
 
 .palabraEducacion {
@@ -390,4 +400,141 @@ transition: all 0.3s ease;
 .textConvenios1,
 .textConvenios2{
     margin: 0;
+}
+
+/* =============== RESPONSIVE  =============== */
+
+@media (max-width: 1024px) {
+    .columnas,
+    .columnaOne {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imgColumnaOne,
+    .imgColumnaOneW,
+    .imgColumnaTwo,
+    .imgColumna2,
+    .imgColumna22,
+    .imgColumna222,
+    .imgUa,
+    .imgISER {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .div2Columna2 {
+        margin-right: 0;
+        margin-top: 15px;
+    }
+
+    .textOne,
+    .textOne2,
+    .textOne3,
+    .textTwo,
+    .textTwo2,
+    .textTwo3,
+    .textTwo4,
+    .textTwo5,
+    .textBecas,
+    .textBecas2,
+    .textBecas3,
+    .textBecas4,
+    .textBecas5,
+    .textConvenios1,
+    .textConvenios2,
+    .textConvenios3 {
+        font-size: 16px;
+    }
+
+    .contenedorEnlaces {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .imgEnlaces1 {
+        width: 45%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    .palabraEducacion {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .hrEducacion {
+        margin: 10px 5%;
+    }
+
+    .columnas,
+    .columnaOne {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .textOne,
+    .textOne2,
+    .textOne3,
+    .textTwo,
+    .textTwo2,
+    .textTwo3,
+    .textTwo4,
+    .textTwo5,
+    .textBecas,
+    .textBecas2,
+    .textBecas3,
+    .textBecas4,
+    .textBecas5,
+    .textConvenios1,
+    .textConvenios2,
+    .textConvenios3 {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .imgColumnaOne,
+    .imgColumnaOneW,
+    .imgColumnaTwo,
+    .imgColumna2,
+    .imgColumna22,
+    .imgColumna222,
+    .imgUa,
+    .imgISER {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 5px 0;
+    }
+
+    .div2Columna2 {
+        margin: 10px 0 0 0;
+    }
+
+    .contenedorEnlaces {
+        gap: 10px;
+    }
+
+    .imgEnlaces1 {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .botonEnviar {
+        width: 60%;
+        margin-left: 20%;
+        font-size: 100%;
+    }
 }

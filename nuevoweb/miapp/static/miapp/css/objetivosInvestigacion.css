@@ -1,11 +1,10 @@
-body, html{
+body, html {
     margin: 0;
     padding: 0;
     overflow: auto;
 }
 
-.columnasEducacionContinua{
-
+.columnasEducacionContinua {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
@@ -13,14 +12,14 @@ body, html{
     padding: 0;
 }
 
-.imgEducacionContinua{
+.imgEducacionContinua {
     display: flex;
     height: 370px;
     width: 645px;
-    margin-left: 20px
+    margin-left: 20px;
 }
 
-.img2EducacionContinua{
+.img2EducacionContinua {
     display: flex;
     height: 150px;
     width: 650px;
@@ -28,7 +27,7 @@ body, html{
     margin-top: 40px;
 }
 
-.imgLinkEducacionContinua{
+.imgLinkEducacionContinua {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
@@ -38,33 +37,33 @@ body, html{
 
 .btnMayorInformacion,
 .btnRrealizarInscripcion,
-.btnVolver{
+.btnVolver {
     display: flex;
     height: 30px;
 }
-  
+
 .btnMayorInformacion,
 .btnRrealizarInscripcion,
-.btnVolver{ 
+.btnVolver {
     margin-bottom: 20px;
 }
-  
-.imgLinkEducacionContinua a{
+
+.imgLinkEducacionContinua a {
     display: block;
     transition: transform 0.2s ease;
 }
-  
+
 .imgLinkEducacionContinua a:hover {
     transform: scale(1.02);
 }
 
-.img3EducacionContinua{
+.img3EducacionContinua {
     display: flex;
     height: 380px;
     width: 630px;
 }
 
-.img4EducacionContinua{
+.img4EducacionContinua {
     display: flex;
     height: 350px;
     width: 635px;
@@ -72,6 +71,64 @@ body, html{
 }
 
 .img3EducacionContinua,
-.img4EducacionContinua{
+.img4EducacionContinua {
     margin-left: 20px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media screen and (max-width: 768px) {
+
+    .columnasEducacionContinua {
+        grid-template-columns: 1fr; 
+        padding: 10px;
+    }
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua {
+        width: 100%; 
+        height: auto; 
+        margin-left: 0; 
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        width: 80%; 
+        height: auto; 
+        margin-left: 10%; 
+    }
+
+    .imgLinkEducacionContinua {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        width: 90%; 
+        height: 45px; 
+        margin-left: 5%; 
+    }
+
+    .imgLinkEducacionContinua {
+        margin-left: 0;
+        margin-top: 15px;
+    }
 }
