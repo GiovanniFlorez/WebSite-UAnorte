@@ -9,7 +9,7 @@
     <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'miapp/css/especializacionDerechoAdministrativo.css' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/especializacionDerechoAdministrativo.css' %}.">
     <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
     <link rel="stylesheet" href="{% static 'miapp/css/header.css' %}">
     <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
@@ -22,20 +22,20 @@
     
     {% include 'header.html' %}
 
-    <div class="Especialización en Derech0 Administrativo">
+    <div class="Especialización en Derecho Administrativo">
         <div class="imagen">
             <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/EDA-2.png" alt="Especialización en Intervención Comunitaria">
         </div>
 
-        <div class="especializaciónDerechoAdministrativo">
-            <div class="columna1especializaciónIntervenciónComunitaria">
-                <img class="imgEspecializaciónDerechoAdministrativo" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/33-1-e1726606897357-768x265.png" alt="">
-                <img class="imgEspecializaciónDerechoAdministrativo2" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/35-e1726528992194-768x198.png" alt="">
+        <div class="especializacionDerechoAdministrativo">
+            <div class="columna1especializacionDerechoAdministrativo">
+                <img class="imgEspecializacionDerechoAdministrativo1" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/33-1-e1726606897357-768x265.png" alt="">
+                <img class="imgEspecializacionDerechoAdministrativo2" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/35-e1726528992194-768x198.png" alt="">
             </div>
 
             <div>
-                <img class="imgEspecializaciónDerechoAdministrativo3" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/34-1-e1726591916878-768x317.png" alt="">
-                <img class="imgEspecializaciónDerechoAdministrativo4" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/36-e1726529045691-768x141.png" alt="">
+                <img class="imgEspecializacionDerechoAdministrativo3" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/34-1-e1726591916878-768x317.png" alt="">
+                <img class="imgEspecializacionDerechoAdministrativo4" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/36-e1726529045691-768x141.png" alt="">
             </div>
         </div>
 
@@ -94,80 +94,74 @@
                 <img class="imgFormularioDeInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/44.png" alt="">
             </div>
 
-            <form method="post">
+            <div>
                 <div class="tituloFormularioContacto">
                     Contáctanos para más información
-                </div>
+                  </div>
           
-                <div class="formularioContacto">
+                  <div class="formularioContacto">
                     <div class="columna3">
-                        <p class="pFormularioContacto">Nombres y Apellidos</p>
-                        <input type="text" name="" id="" placeholder="Nombres y Apellidos" required>
-
-                        <p class="pFormularioContacto">Correo Electrónico</p>
-                        <input type="text" name="" id="" placeholder="Correo Electrónico" required>
-
-                        <p class="pFormularioContacto">Asunto</p>
-                        <input type="text" name="" id="" placeholder="Asunto" required>
-
-                        <p class="pFormularioContacto">Carrera de Interés</p>
-                        <select name="selectCarreraInteres" id="">
-                            <option value="">Seleccione una opción</option>
-                            <option value="">Pregrado en Derecho</option>
-                            <option value="">Pregrado en Trabajo Social</option>
-                            <option value="">Pregrado en Psicología</option>
-                            <option value="">Pregrado en Comunicación</option>
-                            <option value="">Posgrado en Intervención Comunitaria</option>
-                            <option value="">Posgrado en  Derecho Administrativo</option>
-                            <option value="">Cursos y Diplomados</option>
-                        </select>
+                      <p class="pFormularioContacto">Nombres y Apellidos</p>
+                      <input type="text" name="" id="" placeholder="Nombres y Apellidos" required>
+                      <p class="pFormularioContacto">Correo Electrónico</p>
+                      <input type="text" name="" id="" placeholder="Correo Electrónico" required>
+                      <p class="pFormularioContacto">Asunto</p>
+                      <input type="text" name="" id="" placeholder="Asunto" required>
+                      <p class="pFormularioContacto">Carrera de Interés</p>
+                      <select name="selectCarreraInteres" id="">
+                        <option value="">Seleccione una opción</option>
+                        <option value="">Pregrado en Derecho</option>
+                        <option value="">Pregrado en Trabajo Social</option>
+                        <option value="">Pregrado en Psicología</option>
+                        <option value="">Pregrado en Comunicación</option>
+                        <option value="">Posgrado en Intervención Comunitaria</option>
+                        <option value="">Posgrado en  Derecho Administrativo</option>
+                        <option value="">Cursos y Diplomados</option>
+                      </select>
                     </div>
           
                     <div class="columna3">
-                        <p class="pFormularioContacto">Número de Documento de Identidad:</p>
-                        <input type="number" min="0" id="" placeholder="Número de identidad" required>
-
-                        <p class="pFormularioContacto">Teléfono:</p>
-                        <input type="number" min="0" name="" id="" placeholder="Número de teléfono" required>
-
-                        <p class="pFormularioContacto">Descripción:</p>
-                        <textarea name="" id="" placeholder="Descripción" required></textarea>
+                      <p class="pFormularioContacto">Número de Documento de Identidad:</p>
+                      <input type="number" min="0" id="" placeholder="Número de identidad" required>
+                      <p class="pFormularioContacto">Teléfono:</p>
+                      <input type="number" min="0" name="" id="" placeholder="Número de teléfono" required>
+                      <p class="pFormularioContacto">Descripción:</p>
+                      <textarea name="" id="" placeholder="Descripción" required></textarea>
                     </div>
-                  
+                  </div>
           
-                    <hr class="hrFormularioContacto">
+                  <hr class="hrFormularioContacto">
           
-                    <div class="checkbox-container">
-                        <label class="textoFormulario">
-                            <input type="checkbox" id="checkboxAcepto"> Acepto
-                        </label>
-                    </div>
+                  <div class="checkbox-container">
+                    <label class="textoFormulario">
+                      <input type="checkbox" id="checkboxAcepto"> Acepto
+                    </label>
+                  </div>
           
-                    <p class="textoFormulario">
-                        En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
-                        en calidad de titular(es) de la información de manera libre, expresa e 
-                        informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE 
-                        y/o a la persona natural o jurídica a quien este encargue a recolectar, 
-                        almacenar, utilizar, circular, suprimir y en general, a usar mis datos 
-                        personales. Declaro que he conocido la Política de tratamiento de datos 
-                        personales.
-                    </p>
+                  <p class="textoFormulario">
+                    En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
+                    en calidad de titular(es) de la información de manera libre, expresa e 
+                    informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE 
+                    y/o a la persona natural o jurídica a quien este encargue a recolectar, 
+                    almacenar, utilizar, circular, suprimir y en general, a usar mis datos 
+                    personales. Declaro que he conocido la Política de tratamiento de datos 
+                    personales.
+                  </p>
           
-                    <p class="textoFormulario">Gracias por tu opinión.</p>
-            
-                    <hr class="hrFormularioContacto">
-            
-                    <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
-                    <hr class="hrFormularioContacto">
-                </div>
-            </form>
+                  <p class="textoFormulario">Gracias por tu opinión.</p>
+          
+                  <hr class="hrFormularioContacto">
+          
+                  <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
+                  <hr class="hrFormularioContacto">
+            </div>
         </div>
     </div>
 
     <div class="footer">
         {% include 'footer.html' %}
     </div>
-
+    
     <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
     <script src="{% static 'miapp/js/preloader.js' %}"></script>
     <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
