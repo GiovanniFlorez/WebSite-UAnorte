@@ -23,6 +23,7 @@
         
         {% include 'header.html' %}
 
+        
         <div class="inscripcion">
             <div class="imgInscripcion">
                 <img class="img1Inscripción" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/60.png" alt="">
@@ -32,11 +33,12 @@
             </div>
 
             
-            <div>
+            <form method="POST">
                 <div class="tituloFormularioContacto">
                     Contáctanos para más información
                 </div>
               
+                <form method="POST">
                 <div class="formularioContacto">
                     <div class="columna3">
                         <p class="pFormularioContacto">Nombres y Apellidos</p>
@@ -92,10 +94,13 @@
           
                 <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
                 <hr class="hrFormularioContacto">
-            </div>
+            </form>
         </div>
+    </form>
 
-        {% include 'footer.html' %}
+        <div class="footer">
+            {% include 'footer.html' %}
+        </div>
 
         <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>

@@ -1,11 +1,16 @@
-body, html{
+body, html {
     margin: 0;
     padding: 0;
     overflow: auto;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .inscripcion,
-.formularioDeInscripcion{
+.formularioDeInscripcion {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -13,18 +18,18 @@ body, html{
     padding: 0;
 }
 
-.inscripcion{
+.inscripcion {
     margin-top: 20px;
 }
 
-.img1Inscripción{
+.img1Inscripcion {
     display: flex;
     margin-left: 20px;
     height: 400px;
     width: 660px;
 }
 
-.imgInscripcion a{
+.imgInscripcion a {
     display: block;
     transition: transform 0.2s ease;
 }
@@ -33,7 +38,7 @@ body, html{
     transform: scale(1.02);
 }
 
-.imgLinkInscripcion{
+.imgLinkInscripcion {
     display: flex;
     height: 50px;
     width: 640px;
@@ -46,7 +51,6 @@ body, html{
     font-weight: 700;
     margin: 0;
     padding: 0;
-
 }
 
 .hrTitulo {
@@ -57,7 +61,7 @@ body, html{
     margin-bottom: 0;
 }
 
-.columnasInscripcion{
+.columnasInscripcion {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
@@ -65,7 +69,7 @@ body, html{
     padding: 0;
 }
 
-.imgOneInscripcion{
+.imgOneInscripcion {
     display: flex;
     height: 301px;
     width: 550px;
@@ -73,23 +77,21 @@ body, html{
     margin-left: 63px;
 }
 
-
-
-.textProcesoInscripcion{
+.textProcesoInscripcion {
     color: rgb(90, 90, 90);
     font-weight: 100;
 }
 
-.textOneInscripcion{
+.textOneInscripcion {
     margin-top: 40px;
     margin-left: 20px;
 }
 
-.procesoInscripcion{ 
+.procesoInscripcion { 
     margin-bottom: 20px;
 }
 
-.imgTwoInscripcion{
+.imgTwoInscripcion {
     display: flex;
     height: 270px;
     width: 480px;
@@ -97,7 +99,7 @@ body, html{
     margin-top: 80px;
 }
 
-.imgFormularioDeInscripcion{
+.imgFormularioDeInscripcion {
     display: flex;
     width: 645px;
     height: 350px;
@@ -111,6 +113,7 @@ body, html{
     text-align: center;
     font-size: 120%;
     background-color: #0000FF;
+    padding: 12px;
 }
   
 .formularioContacto {
@@ -122,6 +125,7 @@ body, html{
     align-items: stretch;
     position: relative;
     box-sizing: border-box;
+    padding: 0 20px;
 }
   
 .columna3 {
@@ -132,13 +136,13 @@ body, html{
 }
   
 .pFormularioContacto {
-    margin:  0 6px 0;
+    margin: 0 6px 0;
     color: #6b6b6b;
     font-size: 13px;
     font-family: 'Montserrat', sans-serif;
 }
   
-.columna3 input[type="text" ],
+.columna3 input[type="text"],
 .columna3 input[type="number"],
 .columna3 select,
 .columna3 textarea {
@@ -155,7 +159,7 @@ body, html{
     margin-left: 3%;
 }
   
-.columna3 p{
+.columna3 p {
     cursor: default;
     margin-left: 6.3%;
 }
@@ -189,7 +193,7 @@ select {
     min-height: 160px;
     resize: vertical;
 }
-  
+
 .hrFormularioContacto {
     width: 100%;
     background: rgba(117, 117, 117, 0.295);
@@ -198,45 +202,41 @@ select {
     border: none;
 }
   
-@media (max-width: 720px) {
-    .formularioContacto {
-      flex-direction: column;
-    }
-    .hrFormularioContacto {
-      display: none;
-    }
+.checkbox-container {
+    padding: 10px 20px;
 }
-  
-.columna.admisiones label{
+
+.columna.admisiones label {
     cursor: pointer;
 }
   
-.checkbox{
+.checkbox {
     cursor: pointer;
 }
   
-.textoFormulario{
+.textoFormulario {
     color: #6b6b6b;
     font-size: 80%;
     font-weight: 200;
     gap: 1%;
     cursor: default;
+    padding: 0 20px;
 }
-  
-.botonEnviar{
-    margin-left: 40%;
-    margin-left: 50;
+
+.botonEnviar {
+    display: block;
+    margin: 30px auto;
     border: none;
     color: #6b6b6b;
-    background-color:  #f0f0f0;
-    height: 10%;
+    background-color: #f0f0f0;
+    height: 40px;
     width: 30%;
     font-size: 115%;
     font-weight: 250;
     transition: all 0.3s ease;
 }
   
-.botonEnviar:hover{
+.botonEnviar:hover {
     background-color: rgb(79, 79, 218);
     color: white;
     cursor: pointer;
@@ -254,6 +254,77 @@ select {
     cursor: pointer;
 }
 
-#footer{
+.footer {
     margin-top: 70px;
+}
+
+/* =============== RESPONSIVE =============== */
+
+@media (max-width: 1024px) {
+    .inscripcion {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .img1Inscripcion,
+    .imgLinkInscripcion,
+    .imgFormularioDeInscripcion {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .formularioContacto {
+        flex-direction: column;
+    }
+
+    .botonEnviar {
+        width: 60%;
+    }
+}
+
+@media (max-width: 720px) {
+    .inscripcion {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    .imgInscripcion img,
+    .imgLinkInscripcion {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .tituloFormularioContacto {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .columna3 input[type="text"],
+    .columna3 input[type="number"],
+    .columna3 select,
+    .columna3 textarea {
+        margin-left: 0;
+    }
+
+    .columna3 p {
+        margin-left: 0;
+    }
+
+    .formularioContacto {
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    .botonEnviar {
+        width: 80%;
+        font-size: 16px;
+    }
+
+    .hrFormularioContacto {
+        display: none;
+    }
 }
