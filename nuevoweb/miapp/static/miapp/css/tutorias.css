@@ -131,7 +131,6 @@ body, html {
     height: auto;
 }
 
-/* ---------- DOCENTES ---------- */
 .textColumna3 {
     font-size: 1.1rem;
     font-weight: 500;
@@ -143,9 +142,8 @@ body, html {
     width: 130px;
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+/* ============= RESPONSIVE ============= */
 
-/* TABLETS */
 @media (max-width: 1024px) {
     .columnasTutorias {
         grid-template-columns: 1fr;
@@ -175,7 +173,6 @@ body, html {
     }
 }
 
-/* CELULARES GRANDES */
 @media (max-width: 768px) {
     .columnasTutorias {
         grid-template-columns: 1fr;
@@ -214,7 +211,6 @@ body, html {
     }
 }
 
-/* CELULARES PEQUEÑOS */
 @media (max-width: 480px) {
     .titulo {
         font-size: 1.4rem;

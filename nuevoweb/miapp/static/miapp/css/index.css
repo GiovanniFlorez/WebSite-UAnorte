@@ -62,7 +62,7 @@ body, html{
   transform: translateY(-50%) scale(1);
 }
 
-/*  RESPONSIVE Slider */
+/*  RESPONSIVE SLIDER */
 
 @media (max-width: 992px) {
   .slider {
