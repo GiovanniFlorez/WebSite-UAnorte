@@ -24,19 +24,19 @@
     {% include 'header.html' %}
       
 
-      <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn prev">&#10094;</button>
 
-      <div class="slider">
-        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho.png" class="active">
-        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-2.png">
-        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-1-2.png">
-        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho-1-1.png">
-        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-3-3.png">
-        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-2.png">
-        <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/PAGINA-WEB-PRINCIPAL.png">
-      </div>
+    <div class="slider">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho.png" class="active">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-2.png">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-1-2.png">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho-1-1.png">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-3-3.png">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-2.png">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/PAGINA-WEB-PRINCIPAL.png">
+    </div>
       
-      <button class="slider-btn next">&#10095;</button>
+    <button class="slider-btn next">&#10095;</button>
 
     <div class="imagenes">
       <a href="https://site2.q10.com/login?ReturnUrl=%2FPreinscripcion&aplentId=ccfdab40-6d54-4719-a89c-e85a6c812a14" target="_blank" rel="noopener noreferrer">
@@ -60,7 +60,6 @@
     <hr class="hrEducacion">
 
     <div class="educacion">
-
       <div class="columna imagenes" >
         <p>
           <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Estudiantes-3-scaled-e1728182108600-1024x643.jpg" alt="">
@@ -90,67 +89,73 @@
           Contáctanos para más información
         </div>
 
-        <div class="formularioContacto">
-          <div class="columna3">
-            <p class="pFormularioContacto">Nombres y Apellidos</p>
-            <input type="text" name="" id="" placeholder="Nombres y Apellidos" required>
-            <p class="pFormularioContacto">Correo Electrónico</p>
-            <input type="text" name="" id="" placeholder="Correo Electrónico" required>
-            <p class="pFormularioContacto">Asunto</p>
-            <input type="text" name="" id="" placeholder="Asunto" required>
-            <p class="pFormularioContacto">Carrera de Interés</p>
-            <select name="selectCarreraInteres" id="">
-              <option value="">Seleccione una opción</option>
-              <option value="">Pregrado en Derecho</option>
-              <option value="">Pregrado en Trabajo Social</option>
-              <option value="">Pregrado en Psicología</option>
-              <option value="">Pregrado en Comunicación</option>
-              <option value="">Posgrado en Intervención Comunitaria</option>
-              <option value="">Posgrado en  Derecho Administrativo</option>
-              <option value="">Cursos y Diplomados</option>
-            </select>
+        <form method="post">
+          <div class="formularioContacto">
+            <div class="columna3">
+              <p class="pFormularioContacto">Nombres y Apellidos</p>
+              <input type="text" name="" id="" placeholder="Nombres y Apellidos" required>
+
+              <p class="pFormularioContacto">Correo Electrónico</p>
+              <input type="text" name="" id="" placeholder="Correo Electrónico" required>
+
+              <p class="pFormularioContacto">Asunto</p>
+              <input type="text" name="" id="" placeholder="Asunto" required>
+
+              <p class="pFormularioContacto">Carrera de Interés</p>
+              <select name="selectCarreraInteres" id="">
+                <option value="">Seleccione una opción</option>
+                <option value="">Pregrado en Derecho</option>
+                <option value="">Pregrado en Trabajo Social</option>
+                <option value="">Pregrado en Psicología</option>
+                <option value="">Pregrado en Comunicación</option>
+                <option value="">Posgrado en Intervención Comunitaria</option>
+                <option value="">Posgrado en  Derecho Administrativo</option>
+                <option value="">Cursos y Diplomados</option>
+              </select>
+            </div>
+
+            <div class="columna3">
+              <p class="pFormularioContacto">Número de Documento de Identidad:</p>
+              <input type="number" min="0" id="" placeholder="Número de identidad" required>
+
+              <p class="pFormularioContacto">Teléfono:</p>
+              <input type="number" min="0" name="" id="" placeholder="Número de teléfono" required>
+              
+              <p class="pFormularioContacto">Descripción:</p>
+              <textarea name="" id="" placeholder="Descripción" required></textarea>
+            </div>
           </div>
 
-          <div class="columna3">
-            <p class="pFormularioContacto">Número de Documento de Identidad:</p>
-            <input type="number" min="0" id="" placeholder="Número de identidad" required>
-            <p class="pFormularioContacto">Teléfono:</p>
-            <input type="number" min="0" name="" id="" placeholder="Número de teléfono" required>
-            <p class="pFormularioContacto">Descripción:</p>
-            <textarea name="" id="" placeholder="Descripción" required></textarea>
+          <hr class="hrFormularioContacto">
+
+          <div class="checkbox-container">
+            <label class="textoFormulario">
+              <input type="checkbox" id="checkboxAcepto"> Acepto
+            </label>
           </div>
-        </div>
 
-        <hr class="hrFormularioContacto">
+          <p class="textoFormulario">
+            En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
+            en calidad de titular(es) de la información de manera libre, expresa e 
+            informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE 
+            y/o a la persona natural o jurídica a quien este encargue a recolectar, 
+            almacenar, utilizar, circular, suprimir y en general, a usar mis datos 
+            personales. Declaro que he conocido la Política de tratamiento de datos 
+            personales.
+          </p>
 
-        <div class="checkbox-container">
-          <label class="textoFormulario">
-            <input type="checkbox" id="checkboxAcepto"> Acepto
-          </label>
-        </div>
+          <p class="textoFormulario">Gracias por tu opinión.</p>
 
-        <p class="textoFormulario">
-          En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
-          en calidad de titular(es) de la información de manera libre, expresa e 
-          informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE 
-          y/o a la persona natural o jurídica a quien este encargue a recolectar, 
-          almacenar, utilizar, circular, suprimir y en general, a usar mis datos 
-          personales. Declaro que he conocido la Política de tratamiento de datos 
-          personales.
-        </p>
+          <hr class="hrFormularioContacto">
 
-        <p class="textoFormulario">Gracias por tu opinión.</p>
+          <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
 
-        <hr class="hrFormularioContacto">
-
-        <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
-
-        <hr class="hrFormularioContacto">
+          <hr class="hrFormularioContacto">
+        </form>
       </div>
     </div>
 
     <div class="educacion">
-
       <div class="columna imagenes">
         <p>
           <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Estudiantes-4-scaled-e1728181656426-1024x486.jpg" alt="">
@@ -159,11 +164,11 @@
       </div>
     
       <div class="columna admisiones">
-    
         <div class="filaAdmisiones">
           <div class="columna2">
             <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
           </div>
+
           <div class="columna2 tituloAdmisiones">
             <p class="palabraAdmisiones">Programas Académicos</p>
             <hr class="hrAdmisiones">
@@ -178,6 +183,7 @@
           <div class="columna2">
             <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
           </div>
+
           <div class="columna2 tituloAdmisiones">
             <a href="{% url 'pagina_estatica' 'modeloFormacion' %}"><p class="palabraAdmisiones">Modelos de Formación</p></a>
             <hr class="hrAdmisiones">
@@ -192,6 +198,7 @@
           <div class="columna2">
             <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
           </div>
+
           <div class="columna2 tituloAdmisiones">
             <p class="palabraAdmisiones">Calendario Académico</p>
             <hr class="hrAdmisiones">
@@ -206,6 +213,7 @@
           <div class="columna2">
             <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
           </div>
+
           <div class="columna2 tituloAdmisiones">
             <a href="{% url 'pagina_estatica' 'ventajasUAnorte' %}"><p class="palabraAdmisiones">Ventajas UAnorte</p></a>
             <hr class="hrAdmisiones">
@@ -217,7 +225,6 @@
             </div>
           </div>
         </div>
-    
       </div>
     </div>
 
@@ -276,10 +283,9 @@
         <hr class="hrFormularioContacto">
       </div>
      
-        <div class="map-responsive">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.0547380764033!2d-72.50188125294363!3d7.883613558572656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66457d96f194a5%3A0x423003d68d040b48!2sCorporaci%C3%B3n%20Universitaria%20Aut%C3%B3noma%20del%20Norte%20(UANORTE)!5e0!3m2!1ses-419!2sco!4v1758557943388!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      
+      <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.0547380764033!2d-72.50188125294363!3d7.883613558572656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66457d96f194a5%3A0x423003d68d040b48!2sCorporaci%C3%B3n%20Universitaria%20Aut%C3%B3noma%20del%20Norte%20(UANORTE)!5e0!3m2!1ses-419!2sco!4v1758557943388!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
 
     <p class="palabraEducacion">Enlaces de interés</p>
