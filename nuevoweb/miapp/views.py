@@ -65,7 +65,7 @@ Este correo es automático, por favor no responder directamente.
             asunto,
             texto_plano,
             settings.DEFAULT_FROM_EMAIL,
-            ["giovanniflorez22@gmail.com"], #Aquí debe ir el correo al que llega el mensaje
+            [""], #Aquí debe ir el correo al que llega el mensaje
             reply_to=[email]
         )
         email_msg.attach_alternative(html, "text/html")
@@ -75,3 +75,4 @@ Este correo es automático, por favor no responder directamente.
         return redirect("inicio")
     
     return render(request, "index.html")
+
