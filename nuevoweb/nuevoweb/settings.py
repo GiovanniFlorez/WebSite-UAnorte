@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-y1qh#76^di&k70zz41h%chowi7k!1pd(u8hf%s2=+j3jb3p2#f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['website-uanorte-1.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -136,4 +136,5 @@ SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")  # Cargado desde variable de en
 SENDGRID_SANDBOX_MODE_IN_DEBUG = DEBUG  # Evita envío real en modo debug
 SENDGRID_ECHO_TO_STDOUT = DEBUG  # Muestra el email en consola si estás en modo debug
 DEFAULT_FROM_EMAIL = 'giovanniflorez22@gmail.com'  # Cambia por el correo verificado en SendGrid
+
 
