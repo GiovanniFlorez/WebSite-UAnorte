@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-y1qh#76^di&k70zz41h%chowi7k!1pd(u8hf%s2=+j3jb3p2#f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['website-uanorte-1.onrender.com']
 
 
 # Application definition
@@ -134,4 +134,3 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = ''  # Cambia aquí a tu correo real
 EMAIL_HOST_PASSWORD = ''  # Cambia aquí la contraseña de aplicación de Gmail
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
