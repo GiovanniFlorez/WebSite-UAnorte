@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,11 +127,13 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configuración para enviar correo vía Gmail SMTP
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ''  # Cambia aquí a tu correo real
-EMAIL_HOST_PASSWORD = ''  # Cambia aquí la contraseña de aplicación de Gmail
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+#SendGrid
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")  # Cargado desde variable de entorno
+
+# Opcional pero útil
+SENDGRID_SANDBOX_MODE_IN_DEBUG = DEBUG  # Evita envío real en modo debug
+SENDGRID_ECHO_TO_STDOUT = DEBUG  # Muestra el email en consola si estás en modo debug
+DEFAULT_FROM_EMAIL = 'giovanniflorez22@gmail.com'  # Cambia por el correo verificado en SendGrid
+
