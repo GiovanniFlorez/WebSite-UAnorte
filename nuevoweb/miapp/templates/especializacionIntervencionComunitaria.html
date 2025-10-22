@@ -99,8 +99,17 @@
                     <div class="tituloFormularioContacto">
                         Contáctanos para más información
                     </div>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
             
-                    <form method="POST" action="{ url '' }">
+                    <form method="POST" action="{% url 'enviar_contacto' %}">
+                        {% csrf_token %}
                         <div class="formularioContacto">
                             <div class="columna3">
                             <p class="pFormularioContacto">Nombres y Apellidos</p>
