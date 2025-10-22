@@ -1,0 +1,540 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: auto; 
+}
+
+.imagen img {
+    width: 100%;   
+    height: auto;     
+    object-fit: cover; 
+    max-height: 510px;
+}
+
+.palabraEducacion {
+    color: rgb(19, 19, 138);
+    font-size: 150%;
+    font-weight: 700;
+    margin-left: 0.7%;
+}
+
+.imgVinculos{
+    width: 334px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.imgVinculos:hover{
+    transform: scale(0.9);
+}
+
+.columnas,
+.columnaOne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+  
+.hrEducacion {
+    border: none;
+    height: 3px;
+    background: rgba(117, 117, 117, 0.295);
+    margin: 1%;
+}
+  
+.columna.imagenes img {
+    height: 45%;
+    width: 95%;
+}
+  
+.columna.admisiones .iconUAnorte {
+    width: 50px;
+    height: auto;
+    display: block;
+}
+  
+.filaAdmisiones {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+  
+.filaAdmisiones .columna2 {
+    padding: 0;
+    margin: 0;
+}
+  
+.tituloAdmisiones {
+    display: flex;
+    flex-direction: column;
+    flex: 1; 
+}
+  
+.palabraAdmisiones {
+    margin: 0;
+    color: rgb(19, 19, 138);
+    font-size: 120%;
+    font-weight: 700;
+}
+  
+.hrAdmisiones {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.4);
+    margin: 2px 0 0 0;
+    width: 100%;        
+    align-self: stretch;
+}
+  
+.textoAdmisiones {
+    font-size: 115%;
+    font-weight: 500;
+    margin-left: 0%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+  
+.tituloFormularioContacto {
+    margin-left: 0%;
+    margin-right: 5%;
+    text-align: center;
+    font-size: 120%;
+    background-color: rgb(51, 225, 255);
+}
+  
+  
+.formularioContacto {
+    max-width: 980px;
+    margin-right: 3%;
+    display: flex;
+    gap: 3%;
+    align-items: stretch;
+    position: relative;
+    box-sizing: border-box;
+}
+  
+.columna3 {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+}
+  
+.pFormularioContacto {
+    margin:  0 6px 0;
+    color: #6b6b6b;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.columna3 input[type="text" ],
+.columna3 input[type="number"],
+.columna3 select,
+.columna3 textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow .15s, border-color .15s;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 3%;
+}
+  
+.columna3 p{
+    cursor: default;
+    margin-left: 6.3%;
+}
+  
+.columna3 input::placeholder,
+.columna3 textarea::placeholder {
+    color: #bdbdbd;
+}
+  
+.columna3 input:focus,
+.columna3 select:focus,
+.columna3 textarea:focus {
+    border-color: #cfcfcf;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
+}
+  
+select {
+    height: 42px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #999 50%),
+                      linear-gradient(135deg, #999 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 36px;
+}
+  
+.columna3 textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+  
+.hrFormularioContacto {
+    width: 100%;
+    background: rgba(117, 117, 117, 0.295);
+    height: 0.1%;
+    align-self: stretch;
+    border: none;
+}
+  
+@media (max-width: 720px) {
+    .formularioContacto {
+      flex-direction: column;
+    }
+    .hrFormularioContacto {
+      display: none;
+    }
+}
+  
+.columna.admisiones label{
+    cursor: pointer;
+}
+  
+.checkbox{
+    cursor: pointer;
+}
+  
+.textoFormulario{
+    color: #6b6b6b;
+    font-size: 80%;
+    font-weight: 200;
+    gap: 1%;
+    cursor: default;
+}
+  
+.botonEnviar{
+margin-left: 40%;
+margin-left: 50;
+border: none;
+color: #6b6b6b;
+background-color:  #f0f0f0;
+height: 6%;
+width: 23%;
+font-size: 115%;
+font-weight: 250;
+transition: all 0.3s ease;
+}
+  
+.botonEnviar:hover{
+    background-color: rgb(79, 79, 218);
+    color: white;
+    cursor: pointer;
+}
+  
+.botonEnviar:disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+    cursor: not-allowed;
+}
+    
+.botonEnviar.enabled:hover {
+    background-color: rgb(79, 79, 218);
+    color: white;
+    cursor: pointer;
+}
+
+.imgEnlaces1 {
+    width: 250px;  
+    margin: 0 20px;
+    vertical-align: middle;
+    margin-left: 40px;
+}
+
+.ventajas {
+    margin-top: 10px;
+}
+  
+.pVentajasUAnorte {
+    margin: 3px 0;  
+    font-size: 16px; 
+    font-weight: normal;  
+    color: black; 
+}
+
+.imgColumnaOne{
+    width: 250px;
+}
+
+.textOne,
+.textOne2,
+.textOne3{
+  font-size: 20px;  
+}
+
+.textOne2,
+.textOne3{
+    font-weight: 100;
+}
+
+.textOne3{
+    color: rgb(49, 49, 255) ;
+}
+
+.imgColumnaOneW{
+    width: 320px;
+    margin-top: 10px;
+}
+
+.imgColumnaTwo{
+    width:675px;
+}
+
+.imgColumna2{
+    margin-top: 4px;
+    width: 120px;
+}
+
+.imgColumna22{
+    width: 250px;
+}
+
+.div2Columna2{
+    margin-top: 20px;
+    margin-right: 200px;
+}
+
+.textTwo,
+.textTwo2,
+.textTwo3,
+.textTwo4,
+.textTwo5{
+    font-size: 20px;
+}
+
+.textTwo{
+    margin: 0;
+}
+
+.textTwo3,
+.textTwo5{
+    font-weight: 100;
+}
+
+.textTwo2,
+.textTwo3{
+    margin: 0;
+}
+
+.textTwo4,
+.textTwo5{
+    margin: 0;
+}
+
+.columna1Becas{
+    margin-left: 40px;
+}
+
+.textBecas{
+    font-size: 15px;
+}
+
+.textBecas3,
+.textBecas2,
+.textBecas4,
+.textBecas5,
+.textConvenios1,
+.textConvenios2,
+.textConvenios3{
+    font-size: 20px;
+}
+
+.textBecas3,
+.textBecas4{
+    margin: 0;
+}
+
+.textBecas,
+.textBecas2{
+    margin: 0;
+}
+
+.textBecas4,
+.textBecas5,
+.textConvenios2{
+    font-weight: 100;
+}
+
+.textBecas5,
+.textConvenios3{
+    color: rgb(49, 49, 255);
+}
+
+.imgColumnaTwoBecas{
+    display: flex;
+    width: 100px;
+    height: 50px;
+}
+
+.imgUa{
+    margin-left: 40px;
+}
+
+.imgISER{
+    width: 300px;
+}
+
+.textConvenios{
+    margin-left: 17.6px;
+}
+
+.textConvenios1,
+.textConvenios2{
+    margin: 0;
+}
+
+/* =============== RESPONSIVE  =============== */
+
+@media (max-width: 1024px) {
+    .columnas,
+    .columnaOne {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imgColumnaOne,
+    .imgColumnaOneW,
+    .imgColumnaTwo,
+    .imgColumna2,
+    .imgColumna22,
+    .imgColumna222,
+    .imgUa,
+    .imgISER {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .div2Columna2 {
+        margin-right: 0;
+        margin-top: 15px;
+    }
+
+    .textOne,
+    .textOne2,
+    .textOne3,
+    .textTwo,
+    .textTwo2,
+    .textTwo3,
+    .textTwo4,
+    .textTwo5,
+    .textBecas,
+    .textBecas2,
+    .textBecas3,
+    .textBecas4,
+    .textBecas5,
+    .textConvenios1,
+    .textConvenios2,
+    .textConvenios3 {
+        font-size: 16px;
+    }
+
+    .contenedorEnlaces {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .imgEnlaces1 {
+        width: 45%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    .palabraEducacion {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .hrEducacion {
+        margin: 10px 5%;
+    }
+
+    .columnas,
+    .columnaOne {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .textOne,
+    .textOne2,
+    .textOne3,
+    .textTwo,
+    .textTwo2,
+    .textTwo3,
+    .textTwo4,
+    .textTwo5,
+    .textBecas,
+    .textBecas2,
+    .textBecas3,
+    .textBecas4,
+    .textBecas5,
+    .textConvenios1,
+    .textConvenios2,
+    .textConvenios3 {
+        font-size: 14px;
+        text-align: justify;
+    }
+
+    .imgColumnaOne,
+    .imgColumnaOneW,
+    .imgColumnaTwo,
+    .imgColumna2,
+    .imgColumna22,
+    .imgColumna222,
+    .imgUa,
+    .imgISER {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 5px 0;
+    }
+
+    .div2Columna2 {
+        margin: 10px 0 0 0;
+    }
+
+    .contenedorEnlaces {
+        gap: 10px;
+    }
+
+    .imgEnlaces1 {
+        width: 80%;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .botonEnviar {
+        width: 60%;
+        margin-left: 20%;
+        font-size: 100%;
+    }
+}
