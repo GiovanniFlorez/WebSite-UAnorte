@@ -1,0 +1,106 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.imagen img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.titulo {
+    color: rgb(19, 19, 138);
+    font-size: 1.8em;
+    font-weight: 700;
+    margin: 20px 16px 0;
+}
+
+.hrTitulo {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.295);
+    margin: 8px 16px 30px;
+}
+
+.ColumnasQuienesSomos {
+    display: flex;
+    gap: 40px;
+    padding: 0 16px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+}
+
+.imgQuienesSomos {
+    width: 100%;
+    max-width: 376px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.textQuienesSomos {
+    color: rgb(90, 90, 90);
+    font-size: 1.1em;
+    font-weight: 500;
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.imgDevenirHistorico {
+    text-align: center;
+    padding: 40px 16px;
+}
+
+.imgDevenirHistorico img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========== RESPONSIVE =========== */
+@media (max-width: 992px) {
+    .ColumnasQuienesSomos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .imgQuienesSomos {
+        max-width: 90%;
+    }
+
+    .textQuienesSomos {
+        font-size: 1em;
+    }
+
+    .titulo {
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 600px) {
+    .titulo {
+        font-size: 1.4em;
+        text-align: center;
+    }
+
+    .hrTitulo {
+        margin: 0 auto 20px;
+        width: 90%;
+    }
+
+    .textQuienesSomos {
+        font-size: 1em;
+        padding: 0 8px;
+    }
+}
