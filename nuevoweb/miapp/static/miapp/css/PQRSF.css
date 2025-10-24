@@ -64,6 +64,8 @@ body, html {
 }
 
 .columna3 input[type="text"],
+.columna3 input[type="email"],
+.columna3 input[type="tel"],
 .columna3 input[type="number"],
 .columna3 select {
     width: 100%;
