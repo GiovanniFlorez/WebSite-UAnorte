@@ -82,6 +82,6 @@ Este correo es automático, por favor no responder directamente.
             logger.error(f"Error enviando correo: {e}")
             messages.error(request, "Hubo un error al enviar el mensaje. Intenta más tarde.")
 
-        return redirect("inicio")
+        
 
     return render(request, "index.html")
