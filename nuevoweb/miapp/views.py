@@ -85,3 +85,9 @@ Este correo es automático, por favor no responder directamente.
         
 
     return render(request, "index.html")
+
+
+def otra_vista(request):
+    if request.method == "POST":
+        return enviar_contacto(request) 
+    return render(request, "index.html") 
