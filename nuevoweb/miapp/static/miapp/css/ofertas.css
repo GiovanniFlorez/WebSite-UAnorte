@@ -1,26 +1,38 @@
+/* ============ ESTILOS BASE ============ */
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   margin: 0;
   padding: 0;
-  overflow: auto;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============ CONTENEDOR DE IMAGEN PRINCIPAL ============ */
 .imagen {
   display: flex;
-  justify-content: center; 
-  width: 100%; 
+  justify-content: center;
+  width: 100%;
 }
 
 .imagen img {
-  width: 100%; 
-  max-width: 100%; 
-  height: auto; 
+  max-width: 100%;
 }
 
+/* ============ GRID DE OFERTAS ============ */
 .ofertas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding: 40px;
+  padding: 40px 20px;
   max-width: 1200px;
   margin: auto;
 }
@@ -31,33 +43,30 @@ body, html {
 }
 
 .ofertas-grid a:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .ofertas-grid img {
-  width: 100%;
-  height: auto;
-  display: block;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* ============ TÍTULOS ============ */
 .titulo {
   color: rgb(19, 19, 138);
-  font-size: 150%;
+  font-size: 1.6rem;
   font-weight: 700;
-  margin-left: 0.7%;
-  margin-bottom: 0;
+  margin: 10px 20px;
 }
 
 .hrTitulo {
   border: none;
   height: 3px;
-  background: rgba(117, 117, 117, 0.295);
-  margin-top: 0;
-  margin-bottom: 30px;
+  background: rgba(117, 117, 117, 0.3);
+  margin: 0 20px 30px;
 }
 
+/* ============ SECCIONES DE CARRERAS ============ */
 .trabajoSocial,
 .ComunicaciónSocial,
 .Derecho,
@@ -67,55 +76,42 @@ body, html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin: 0;
-  padding: 0;
+  padding: 0 20px;
 }
 
-.imgTrabajoSocial {
-  display: flex;
-  height: 170px;
-}
-
+.imgTrabajoSocial,
 .imgTrabajoSocialGrande,
-.imgEspecializaciónIntervenciónComunitaria2 {
+.img2TrabajoSocial,
+.img2TrabajoSocialPequeña,
+.imgComunicaciónSocial,
+.imgComunicaciónSocialAbajo,
+.imgComunicaciónSocialAbajo2,
+.imgComunicaciónSocialPequeña,
+.imgDerecho,
+.imgDerecho2,
+.imgDerecho3,
+.imgDerecho4,
+.imgPsicología,
+.imgPsicología2,
+.imgPsicología3,
+.imgPsicología4,
+.imgEspecializaciónIntervenciónComunitaria,
+.imgEspecializaciónIntervenciónComunitaria2,
+.imgEspecializaciónIntervenciónComunitaria3,
+.imgEspecializaciónDerechoAdministrativo,
+.imgEspecializaciónDerechoAdministrativo2,
+.imgEspecializaciónDerechoAdministrativo3,
+.imgEspecializaciónDerechoAdministrativo4 {
   display: flex;
-  height: 250px;
-}
-
-.img2TrabajoSocial {
-  display: flex;
-  height: 270px;
-  margin-top: 30px;
-}
-
-.img2TrabajoSocialPequeña {
-  display: flex;
-  height: 180px;
-  margin-top: 25px;
+  width: 100%;
+  height: auto;
 }
 
 .imgBotones {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  margin-top: 20px;
-}
-
-.imgPlanEstudio {
-  display: flex;
-  height: 48px;
-}
-
-.becasFinanciacion,
-.procesoInscripcion {
-  display: flex;
-  height: 55px;
-}
-
-.becasFinanciacion,
-.procesoInscripcion,
-.imgPlanEstudio {
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .imgBotones a {
@@ -124,127 +120,39 @@ body, html {
 }
 
 .imgBotones a:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
+}
+
+.imgPlanEstudio,
+.becasFinanciacion,
+.procesoInscripcion {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .columna1 {
-  margin-left: 40px;
-}
-
-.imgComunicaciónSocialPequeña {
-  display: flex;
-  height: 250px;
-}
-
-.imgComunicaciónSocial,
-.imgComunicaciónSocialAbajo,
-.imgComunicaciónSocialAbajo2 {
-  display: flex;
-  height: 320px;
-}
-
-.imgComunicaciónSocialAbajo {
-  margin-top: 20px;
-}
-
-.imgComunicaciónSocialAbajo2 {
-  margin-top: 90px;
-}
-
-.imgDerecho {
-  display: flex;
-  height: 190px;
-}
-
-.imgDerecho2 {
-  display: flex;
-  height: 330px;
-}
-
-.imgDerecho3 {
-  display: flex;
-  height: 300px;
-}
-
-.imgDerecho4 {
-  display: flex;
-  height: 210px;
-}
-
-.imgPsicología {
-  display: flex;
-  height: 320px;
-}
-
-.imgPsicología2 {
-  display: flex;
-  height: 220px;
-  margin-top: 30px;
-}
-
-.imgPsicología3 {
-  display: flex;
-  height: 260px;
-}
-
-.imgPsicología4 {
-  display: flex;
-  height: 220px;
-  margin-top: 90px;
-}
-
-.imgEspecializaciónIntervenciónComunitaria {
-  display: flex;
-  height: 355px;
-}
-
-.imgEspecializaciónIntervenciónComunitaria3 {
-  display: flex;
-  height: 350px;
+  margin-left: 30px;
 }
 
 .columna1especializaciónIntervenciónComunitaria,
-.columna1especializaciónIntervenciónComunitaria {
+.columna1especializaciónDerechoAdministrativo {
   margin-left: 20px;
 }
 
-.imgEspecializaciónDerechoAdministrativo {
-  display: flex;
-  height: 220px;
-}
-
-.imgEspecializaciónDerechoAdministrativo2 {
-  display: flex;
-  height: 160px;
-}
-
-.imgEspecializaciónDerechoAdministrativo3 {
-  display: flex;
-  height: 240px;
-}
-
-.imgEspecializaciónDerechoAdministrativo4 {
-  display: flex;
-  height: 115px;
-}
-
-/* ===================== RESPONSIVE ===================== */
+/* ===================== RESPONSIVE ========================= */
 
 @media screen and (max-width: 768px) {
 
-  .columnasEducacionContinua {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
-
   .titulo {
-    font-size: 130%;
-    margin-left: 10px;
+    font-size: 1.4rem;
+    margin-left: 15px;
   }
 
-  .ofertas-grid img {
-    width: 100%;
-    height: auto;
+  .ofertas-grid {
+    padding: 20px;
+    gap: 15px;
   }
 
   .trabajoSocial,
@@ -258,58 +166,61 @@ body, html {
 
   .imgBotones {
     grid-template-columns: 1fr;
-    gap: 15px; 
-    margin-top: 20px;
-    margin-left: 0;
-  }
-
-  .imgTrabajoSocial,
-  .img2TrabajoSocial,
-  .img2TrabajoSocialPequeña,
-  .imgComunicaciónSocial,
-  .imgComunicaciónSocialAbajo,
-  .imgDerecho,
-  .imgPsicología,
-  .imgEspecializaciónIntervenciónComunitaria,
-  .imgEspecializaciónDerechoAdministrativo {
-    width: 100%;
-    height: auto;
-  }
-
-  .imgPlanEstudio,
-  .becasFinanciacion,
-  .procesoInscripcion {
-    width: 90%; 
-    height: auto; 
-    margin-left: 5%; 
-  }
-}
-
-@media screen and (max-width: 480px) {
-
-  .imgTrabajoSocial,
-  .img2TrabajoSocial,
-  .img2TrabajoSocialPequeña,
-  .imgComunicaciónSocial,
-  .imgComunicaciónSocialAbajo,
-  .imgDerecho,
-  .imgPsicología,
-  .imgEspecializaciónIntervenciónComunitaria,
-  .imgEspecializaciónDerechoAdministrativo {
-    width: 100%;
-    height: auto;
+    gap: 15px;
+    margin: 20px 10px;
   }
 
   .imgPlanEstudio,
   .becasFinanciacion,
   .procesoInscripcion {
     width: 90%;
-    height: 45px; 
-    margin-left: 5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .columna1 {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .titulo {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  .card {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .ofertas-grid {
+    padding: 10px;
+    gap: 10px;
   }
 
   .imgBotones {
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 0;
+    gap: 10px;
+  }
+
+  .imgPlanEstudio,
+  .becasFinanciacion,
+  .procesoInscripcion {
+    width: 90%;
+    height: auto;
+  }
+
+  img {
+    border-radius: 5px;
   }
 }
