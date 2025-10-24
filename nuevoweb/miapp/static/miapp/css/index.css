@@ -536,12 +536,11 @@ a:hover {
   position: relative;
   margin-top: 5%;
   margin-left: 28%;
-  width: 140%;
+  width: 70%;
   height: 100%;
   overflow: hidden;
   border-radius: 8px;
 }
-
 
 /* ============== RESPONSIVE ============== */
 @media (max-width: 1024px) {
@@ -565,9 +564,8 @@ a:hover {
     display: block;
   }
   .map-responsive {
-    width: 100%;
-    margin: 20px auto;
-    margin-left: 0;
+    width: 90%;
+    margin: 5%;
   }
 }
 
@@ -612,9 +610,8 @@ a:hover {
     margin: 0 auto;
   }
   .map-responsive {
-    width: 100%;
-    margin: 20px auto;
-    margin-left: 0;
+    width: 90%;
+    margin: 5%
   }
   .tituloFormularioContacto {
     font-size: 100%;
@@ -631,4 +628,5 @@ a:hover {
   .palabraEducacion {
     font-size: 120%;
   }
+
 }
