@@ -89,79 +89,16 @@
           Contáctanos para más información
         </div>
 
+        {% include 'formulario_contacto.html' %}
+        
         {% if messages %}
-          {% for message in messages %}
-            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
-              {{ message }}
-            </div>
-          {% endfor %}
+            {% for message in messages %}
+                <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
         {% endif %}
 
-        
-        <form method="POST" action="{% url 'enviar_contacto' %}">
-          {% csrf_token %}
-          <div class="formularioContacto">
-            <div class="columna3">
-              <p class="pFormularioContacto">Nombres y Apellidos</p>
-              <input type="text" name="nombre" placeholder="Nombres y Apellidos" required>
-        
-              <p class="pFormularioContacto">Correo Electrónico</p>
-              <input type="email" name="email" placeholder="Correo Electrónico" required>
-        
-              <p class="pFormularioContacto">Asunto</p>
-              <input type="text" name="asunto" placeholder="Asunto" required>
-        
-              <p class="pFormularioContacto">Carrera de Interés</p>
-              <select name="carrera" required>
-                <option value="">Seleccione una opción</option>
-                <option value="Pregrado en Derecho">Pregrado en Derecho</option>
-                <option value="Pregrado en Trabajo Social">Pregrado en Trabajo Social</option>
-                <option value="Pregrado en Psicología">Pregrado en Psicología</option>
-                <option value="Pregrado en Comunicación">Pregrado en Comunicación</option>
-                <option value="Posgrado en Intervención Comunitaria">Posgrado en Intervención Comunitaria</option>
-                <option value="Posgrado en Derecho Administrativo">Posgrado en Derecho Administrativo</option>
-                <option value="Cursos y Diplomados">Cursos y Diplomados</option>
-              </select>
-            </div>
-        
-            <div class="columna3">
-              <p class="pFormularioContacto">Número de Documento de Identidad:</p>
-              <input type="tel" min="0" name="documento" placeholder="Número de identidad" required>
-        
-              <p class="pFormularioContacto">Teléfono:</p>
-              <input type="tel" name="telefono" placeholder="Número de teléfono" required>
-              
-              <p class="pFormularioContacto">Descripción:</p>
-              <textarea name="descripcion" placeholder="Descripción" required></textarea>
-            </div>
-          </div>
-        
-          <hr class="hrFormularioContacto">
-        
-          <div class="checkbox-container">
-            <label class="textoFormulario">
-              <input type="checkbox" id="checkboxAcepto" name="acepto" required> Acepto
-            </label>
-          </div>
-        
-          <p class="textoFormulario">
-            En cumplimiento de la Ley 1581 de 2012 y sus decretos reglamentarios, 
-            en calidad de titular(es) de la información de manera libre, expresa e 
-            informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE 
-            y/o a la persona natural o jurídica a quien este encargue a recolectar, 
-            almacenar, utilizar, circular, suprimir y en general, a usar mis datos 
-            personales. Declaro que he conocido la Política de tratamiento de datos 
-            personales.
-          </p>
-        
-          <p class="textoFormulario">Gracias por tu opinión.</p>
-        
-          <hr class="hrFormularioContacto">
-        
-          <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
-        
-          <hr class="hrFormularioContacto">
-        </form>        
       </div>
     </div>
 
@@ -294,7 +231,7 @@
       </div>
      
       <div class="map-responsive">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.0547380764033!2d-72.50188125294363!3d7.883613558572656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66457d96f194a5%3A0x423003d68d040b48!2sCorporaci%C3%B3n%20Universitaria%20Aut%C3%B3noma%20del%20Norte%20(UANORTE)!5e0!3m2!1ses-419!2sco!4v1758557943388!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2794.561294537112!2d-72.50119093003472!3d7.8839268646302365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66457d96f194a5%3A0x423003d68d040b48!2sCorporaci%C3%B3n%20Universitaria%20Aut%C3%B3noma%20del%20Norte%20(UANORTE)!5e0!3m2!1ses-419!2sco!4v1761323591186!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
 
