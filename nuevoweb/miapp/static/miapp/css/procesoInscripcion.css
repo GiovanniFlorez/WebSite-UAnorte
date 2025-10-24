@@ -304,7 +304,8 @@ select {
     }
 
     .columna3 input[type="text"],
-    .columna3 input[type="number"],
+    .columna3 input[type="tel"],
+    .columna3 input[type="email"],
     .columna3 select,
     .columna3 textarea {
         margin-left: 0;
@@ -327,5 +328,13 @@ select {
 
     .hrFormularioContacto {
         display: none;
+    }
+
+    .columna3 input[type="text"],
+    .columna3 input[type="tel"],
+    .columna3 input[type="email"],
+    .columna3 select,
+    .columna3 textarea {
+        margin-left: 0;
     }
 }

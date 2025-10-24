@@ -387,6 +387,14 @@ select {
         font-size: 1em;
     }
 
+    .columna3 input[type="text"],
+    .columna3 input[type="tel"],
+    .columna3 input[type="email"],
+    .columna3 select,
+    .columna3 textarea {
+        margin-left: 0;
+    }
+
     .botonEnviar {
         width: 100%;
         margin: 20px 0;

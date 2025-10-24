@@ -436,25 +436,39 @@ select {
     .formularioContacto {
       flex-direction: column;
     }
+
     .hrFormularioContacto {
       display: none;
     }
+
     .botonEnviar{
         width: 70%;
         margin-bottom: 6%;
     }
+
     .imagen{
         height: auto;
     }
+
     .imgVinculos{
         width: 200px;
     }
+
     .imgColumnaTwo,
     .imgColumnaOneW{
         width: 100%;
     }
+
     .div2Columna2{
         margin-right: 0;
+        margin-left: 0;
+    }
+
+    .columna3 input[type="text"],
+    .columna3 input[type="tel"],
+    .columna3 input[type="email"],
+    .columna3 select,
+    .columna3 textarea {
         margin-left: 0;
     }
 }

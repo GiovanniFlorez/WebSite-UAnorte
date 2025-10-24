@@ -619,6 +619,15 @@ a:hover {
   .tituloFormularioContacto {
     font-size: 100%;
   }
+
+  .columna3 input[type="text"],
+  .columna3 input[type="tel"],
+  .columna3 input[type="email"],
+  .columna3 select,
+  .columna3 textarea {
+    margin-left: 0;
+  }
+
   .palabraEducacion {
     font-size: 120%;
   }
