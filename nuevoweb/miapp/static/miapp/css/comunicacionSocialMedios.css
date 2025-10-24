@@ -421,6 +421,14 @@ select {
     .formularioContacto {
       flex-direction: column;
     }
+
+    .columna3 input[type="text"],
+    .columna3 input[type="tel"],
+    .columna3 input[type="email"],
+    .columna3 select,
+    .columna3 textarea {
+      margin-left: 0;
+    }
   
     .imgFormularioDeInscripcion {
       width: 100%;
