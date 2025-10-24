@@ -4,22 +4,20 @@ body, html{
   overflow: auto;
 }
 
-/* ======== SLIDER PRINCIPAL ======== */
 .slider {
   position: relative;
   width: 100%;
-  height: 500px;           /* Altura base en escritorio */
+  height: 500px;           
   overflow: hidden;
   margin: 0 auto;
   z-index: 1;
   border-radius: 0;
 }
 
-/* ======== IMÁGENES ======== */
 .slider img {
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* Llenar el contenedor en pantallas grandes */
+  object-fit: cover;       
   display: none;
   transition: opacity 0.8s ease-in-out;
 }
@@ -30,13 +28,11 @@ body, html{
   animation: fade 1s ease-in-out;
 }
 
-/* ======== ANIMACIÓN DE TRANSICIÓN ======== */
 @keyframes fade {
   from { opacity: 0.4; }
   to { opacity: 1; }
 }
 
-/* ======== BOTONES DE NAVEGACIÓN ======== */
 .slider-btn {
   position: absolute;
   top: 50%;
@@ -100,6 +96,12 @@ body, html{
 
   .slider-btn.next {
     right: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-btn {
+    display: none;
   }
 }
 
@@ -249,7 +251,8 @@ body, html{
 }
 
 .columna3 input[type="text" ],
-.columna3 input[type="number"],
+.columna3 input[type="email"],
+.columna3 input[type="tel"],
 .columna3 select,
 .columna3 textarea {
   width: 100%;

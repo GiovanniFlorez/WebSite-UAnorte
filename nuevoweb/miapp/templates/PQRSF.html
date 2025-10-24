@@ -43,47 +43,50 @@
         <div class="formularioDeInscripcion">
           <div class="columna3">
             <p class="pFormularioContacto">Nombre:</p>
-            <input type="text" name="name" id="" placeholder="Nombre" required>
+            <input type="text" name="nombre" placeholder="Nombre" required>
 
             <p class="pFormularioContacto">Tipo de Identidad:</p>
-            <select name="selectTypeID" id="">
-              <option value="">Cédula de Ciudadanía</option>
-              <option value="">Tarjeta de Identidad</option>
-              <option value="">Registro Civil de Nacimiento</option>
-              <option value="">Cédula de Extrangería</option>
-              <option value="">Pasaporte</option>
-              <option value="">Otro</option>
+            <select name="tipoDocumento" required>
+              <option value="">Seleccione un Tipo de Documento</option>
+              <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+              <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+              <option value="Registro Civil de Nacimiento">Registro Civil de Nacimiento</option>
+              <option value="Cédula de Extrangería">Cédula de Extrangería</option>
+              <option value="Pasaporte">Pasaporte</option>
+              <option value="Otro">Otro</option>
             </select>
 
             <p class="pFormularioContacto">Correo Electrónico:</p>
-            <input type="text" name="email" id="" placeholder="Correo Electrónico" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
 
             <p class="pFormularioContacto">Cargo:</p>
-            <select name="selectCarreraInteres" id="">
-              <option value="">Estudiante</option>
-              <option value="">Docente</option>
-              <option value="">Administrativo</option>
-              <option value="">Otro</option>
+            <select name="cargo" required>
+              <option value="">Seleccione un Cargo</option>
+              <option value="Estudiante">Estudiante</option>
+              <option value="Docente">Docente</option>
+              <option value="Administrativo">Administrativo</option>
+              <option value="Otro">Otro</option>
             </select>
           </div>
 
           <div class="columna3">
             <p class="pFormularioContacto">Apellido:</p>
-            <input type="text" name="lastName" id="" placeholder="Apellido" required>
+            <input type="text" name="apellido" placeholder="Apellido" required>
 
             <p class="pFormularioContacto">Número de Documento de Identidad:</p>
-            <input type="number" name="id" min="0" id="" placeholder="Número de identidad" required>
+            <input type="tel" name="documento" min="0" placeholder="Número de identidad" required>
 
             <p class="pFormularioContacto">Teléfono:</p>
-            <input type="number" min="0" name="phone" id="" placeholder="Número de teléfono" required>
+            <input type="tel" min="0" name="telefono" placeholder="Número de teléfono" required>
                     
             <p class="pFormularioContacto">Tipo de PQRSF:</p>
-            <select name="selectCarreraInteres" id="">
-              <option value="">Peticiones</option>
-              <option value="">Quejas</option>
-              <option value="">Reclamos</option>
-              <option value="">Sugerencias</option>
-              <option value="">Felicitaciones</option>
+            <select name="selectCarreraInteres" required>
+              <option value="">Seleccione un Tipo de PQRSF</option>
+              <option value="Peticiones">Peticiones</option>
+              <option value="Quejas">Quejas</option>
+              <option value="Reclamos">Reclamos</option>
+              <option value="Sugerencias">Sugerencias</option>
+              <option value="Felicitaciones">Felicitaciones</option>
             </select>
           </div>
         </div>
@@ -92,12 +95,12 @@
           <hr class="">
             
           <p class="pFormularioContacto">Descripción:</p>
-          <textarea name="issue" id="" placeholder="Descripción" required></textarea>
+          <textarea name="descripcion" placeholder="Descripción" required></textarea>
           
           <hr class="">
           <div class="subirArchivos">     
             <p class="pFormularioContacto">Subir Archivos:</p>
-            <input type="file" min="0" name="file" id="" placeholder="Número de teléfono" required>
+            <input type="file" min="0" name="archivo" placeholder="Número de teléfono" required>
           </div>
 
           <hr>
