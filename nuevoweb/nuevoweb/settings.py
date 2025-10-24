@@ -7,11 +7,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y1qh#76^di&k70zz41h%chowi7k!1pd(u8hf%s2=+j3jb3p2#f'
 
 #////////////////////////////////////////////////////////////////////////////////////
+#Cuando se vaya a entregar la pagina cambiar True por False por si hay algun error
+#solo muestre una pagina de error y no el erro en si
 
-# Cuando se despliegue del todo cabiarlo: DEBUG = False
+DEBUG = True  
 
 #////////////////////////////////////////////////////////////////////////////////////
-DEBUG = True
 
 # Dominios permitidos
 ALLOWED_HOSTS = ['website-uanorte-5.onrender.com', '127.0.0.1', 'localhost']
