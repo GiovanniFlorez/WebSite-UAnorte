@@ -85,3 +85,54 @@ Este correo es automático, por favor no responder directamente.
         
 
     return render(request, "index.html")
+
+def enviar_pqrsf(request):
+    if request.method == "POST":
+        nombre = request.POST.get("nombre")
+        apellido = request.POST.get("apellido")
+        tipo_doc = request.POST.get("tipoDocumento")
+        documento = request.POST.get("documento")
+        telefono = request.POST.get("telefono")
+        email = request.POST.get("email")
+        cargo = request.POST.get("cargo")
+        tipo_pqrsf = request.POST.get("selectCarreraInteres")
+        descripcion = request.POST.get("descripcion")
+        archivo = request.FILES.get("archivo")
+
+        asunto = f"PQRSF de {nombre} {apellido} - {tipo_pqrsf}"
+
+        texto = f"""
+Nuevo PQRSF recibido:
+
+Nombre: {nombre} {apellido}
+Tipo de documento: {tipo_doc}
+N° Documento: {documento}
+Teléfono: {telefono}
+Correo: {email}
+Cargo: {cargo}
+Tipo de PQRSF: {tipo_pqrsf}
+
+Descripción:
+{descripcion}
+"""
+
+        email_msg = EmailMultiAlternatives(
+            asunto, texto,
+            settings.DEFAULT_FROM_EMAIL,
+            ["giovanniflorez22@gmail.com"],
+            reply_to=[email]
+        )
+
+        if archivo:
+            email_msg.attach(archivo.name, archivo.read(), archivo.content_type)
+
+        try:
+            email_msg.send()
+            messages.success(request, "Tu PQRSF fue enviada con éxito.")
+        except Exception as e:
+            messages.error(request, f"Error al enviar: {e}")
+
+        return redirect("enviar_pqrsf") 
+
+    return render(request, "PQRSF.html") 
+
