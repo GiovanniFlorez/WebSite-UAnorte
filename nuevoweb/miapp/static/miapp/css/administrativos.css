@@ -414,54 +414,66 @@ select {
     margin: 0;
 }
 
+/* ============== RESPONSIVE ============== */
+
 @media (max-width: 1024px) {
-    .columnas,
-    .columnaOne {
-        grid-template-columns: 1fr;
+    .columnas {
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
+        justify-content: center;
     }
+
+    .columnaOne,
+    .columnaTwo {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
     .imgColumnaTwo,
     .imgColumnaOneW {
-        width: 100%;
+        width: 90%;
+        max-width: 450px;
         margin: 0 auto;
     }
+
     .div2Columna2 {
         margin-right: 0;
     }
 }
 
-/*-----------RESPONSIVE-----------*/
-
 @media (max-width: 720px) {
     .formularioContacto {
-      flex-direction: column;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hrFormularioContacto {
-      display: none;
+        display: none;
     }
 
-    .botonEnviar{
+    .botonEnviar {
         width: 70%;
         margin-bottom: 6%;
     }
 
-    .imagen{
+    .imagen {
         height: auto;
     }
 
-    .imgVinculos{
+    .imgVinculos {
         width: 200px;
+        max-width: 90%;
     }
 
     .imgColumnaTwo,
-    .imgColumnaOneW{
+    .imgColumnaOneW {
         width: 100%;
+        max-width: 350px;
     }
 
-    .div2Columna2{
-        margin-right: 0;
-        margin-left: 0;
+    .div2Columna2 {
+        margin: 0;
     }
 
     .columna3 input[type="text"],
@@ -470,44 +482,52 @@ select {
     .columna3 select,
     .columna3 textarea {
         margin-left: 0;
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .palabraEducacion{
+    .palabraEducacion {
         font-size: 18px;
     }
-    .palabraAdmisiones{
+    .palabraAdmisiones {
         font-size: 16px;
     }
     .textoAdmisiones,
     .textOne,
     .textTwo,
     .textBecas,
-    .textConvenios{
+    .textConvenios {
         font-size: 14px;
     }
+
     .contenedorVinculos {
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
     }
 
     .imgVinculos {
         width: 95%;
+        max-width: 300px;
     }
+
     .imgColumnaOne,
     .imgColumna22,
     .imgColumna2,
     .imgEnlaces,
     .imgEnlaces1,
-    .imgEnlacesCiencia{
+    .imgEnlacesCiencia {
         width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
-    .botonEnviar{
+
+    .botonEnviar {
         width: 90%;
     }
-    .div2Columna2{
+
+    .div2Columna2 {
         margin: 0;
     }
 }
