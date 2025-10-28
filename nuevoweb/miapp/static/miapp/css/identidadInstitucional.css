@@ -73,17 +73,9 @@ body, html{
 .imgValores{
     display: flex;
     align-items: flex-start;
-    gap: 0;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 40px;
-    margin: 4px;
     gap: 4px;
-}
-
-.imagenesValores{
-    width: 188px;
-    height: 188px;
+    margin: 4px;
+    margin-bottom: 40px;
 }
 
 .divValores{
@@ -91,32 +83,37 @@ body, html{
     font-weight: 500;
 }
 
-.p{
-    color: #3a3a3a;
+.imagenesValores{
+    width: 188px;
+    height: 188px;
 }
 
-.p2{
-    color: #6651A4;
+.p{ 
+    color: #3a3a3a; 
 }
 
-.p3{
+.p2{ 
+    color: #6651A4; 
+}
+
+.p3{ 
     color: #2EE4DF; 
 }
 
-.p4{
-    color: #0000FF;
+.p4{ 
+    color: #0000FF; 
 }
 
-.p5{
-    color: #FF4356;
+.p5{ 
+    color: #FF4356; 
 }
 
-.p6{
-    color: #29DBFF;
+.p6{ 
+    color: #29DBFF; 
 }
 
-.p7{
-    color: #F4BF2A;
+.p7{ 
+    color: #F4BF2A; 
 }
 
 .lineaVertical{
@@ -158,6 +155,11 @@ body, html{
         margin-top: 20px;
     }
 
+    .textIdentidad {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+
     .imagenesValores {
         width: 100%;
         max-width: 150px;
@@ -165,17 +167,19 @@ body, html{
     }
 
     .divValores {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
         font-size: 18px;
-    }
-
-    .textIdentidad {
-        font-size: 18px;
-        margin-top: 10px;
     }
 
     .imgValores {
         flex-direction: column;
-        align-items: center;
+        align-items: center;  
+        gap: 20px;           
     }
 
     .hrTitulo2, .hrTitulo {
@@ -210,7 +214,6 @@ body, html{
     }
 
     .imagenesValores {
-        width: 90%;
         max-width: 120px;
     }
 

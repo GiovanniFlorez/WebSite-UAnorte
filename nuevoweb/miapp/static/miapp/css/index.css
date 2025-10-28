@@ -65,7 +65,7 @@ body, html{
   right: 15px;
 }
 
-/* ======== RESPONSIVE ======== */
+/* ======== RESPONSIVE DEL SLIDER ======== */
 
 @media (max-width: 992px) {
   .slider {
@@ -584,6 +584,7 @@ a:hover {
     align-items: center;
   }
   .imagenes a img {
+    text-align: center;
     width: 90%;
   }
   .educacion {
