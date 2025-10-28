@@ -83,7 +83,7 @@ slider.addEventListener("touchend", (e) => {
 
 // Detectar dirección del deslizamiento
 function handleSwipe(diff) {
-  if (Math.abs(diff) > 50) { // sensibilidad
+  if (Math.abs(diff) > 10) { // sensibilidad
     if (diff > 0) {
       prevImage();
     } else {
