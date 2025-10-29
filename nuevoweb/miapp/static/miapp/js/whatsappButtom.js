@@ -10,14 +10,6 @@ let isHoveringBtn = false;
 let isHoveringPopup = false;
 let manualOpen = false;
 
-function mostrarAbrir() {
-  chatText.textContent = "Abrir chat";
-}
-
-function mostrarCerrar() {
-  chatText.textContent = "Cerrar chat";
-}
-
 whatsappBtn.addEventListener('mouseenter', () => {
   isHoveringBtn = true;
   if (!manualOpen) {
