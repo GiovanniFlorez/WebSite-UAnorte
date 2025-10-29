@@ -663,4 +663,8 @@ a:hover {
   .imagenes{
     text-align: center;
   }
+  
+  .contenedorEnlaces{
+    text-align: center;
+  }
 }
