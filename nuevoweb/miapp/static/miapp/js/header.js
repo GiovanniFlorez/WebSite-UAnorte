@@ -1,18 +1,24 @@
 const toggleBtn = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
+const linksContainer = document.querySelector('.links-container');
+const navbar = document.querySelector('.navbar');
+
+let nivel = 0;
 
 toggleBtn.addEventListener('click', () => {
-  menu.classList.toggle('active');
-  const expanded = menu.classList.contains('active');
-  toggleBtn.setAttribute('aria-expanded', expanded);
-});
+  nivel++;
 
-document.querySelectorAll('.submenu > a').forEach(link => {
-  link.addEventListener('click', e => {
-    if(window.innerWidth <= 768){
-      e.preventDefault();
-      const parent = link.parentElement;
-      parent.classList.toggle('open');
-    }
-  });
+  if (nivel === 1) {
+    linksContainer.classList.add('visible');
+    menu.classList.remove('active');
+  } 
+  else if (nivel === 2) {
+    linksContainer.classList.remove('visible');
+    menu.classList.add('active');
+  } 
+  else {
+    linksContainer.classList.remove('visible');
+    menu.classList.remove('active');
+    nivel = 0;
+  }
 });
