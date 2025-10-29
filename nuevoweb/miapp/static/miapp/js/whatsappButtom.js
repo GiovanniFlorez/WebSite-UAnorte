@@ -63,14 +63,12 @@ openChatBtn.addEventListener('click', () => {
   manualOpen = false;
   whatsappPopup.classList.remove('manual-open');
   whatsappPopup.classList.remove('visible');
-  mostrarAbrir();
 });
 
 closePopupBtn.addEventListener('click', () => {
   manualOpen = false;
   whatsappPopup.classList.remove('manual-open');
   whatsappPopup.classList.remove('visible');
-  mostrarAbrir();
 });
 
 document.addEventListener('click', (e) => {
