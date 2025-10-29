@@ -27,11 +27,11 @@ def enviar_contacto(request):
         telefono = request.POST.get("telefono")
         descripcion = request.POST.get("descripcion")
         acepto = request.POST.get("acepto")
-        
+
         if not acepto:
             messages.error(request, "Debes aceptar la política de tratamiento de datos.")
             return redirect("inicio")
-        
+
         asunto = f"Formulario de contacto: {asunto_form} - {nombre}"
 
         texto_plano = f"""
@@ -49,6 +49,9 @@ Mensaje:
 Este correo es automático, por favor no responder directamente.
 """
 
+    
+        descripcion_html = descripcion.replace('\n', '<br>')
+
         html = f"""
 <html>
     <body>
@@ -58,7 +61,7 @@ Este correo es automático, por favor no responder directamente.
         <p><strong>Carrera de interés:</strong> {carrera}</p>
         <p><strong>Número de documento:</strong> {documento}</p>
         <p><strong>Teléfono:</strong> {telefono}</p>
-        <p><strong>Mensaje:</strong> {descripcion.replace('\n', '<br>')}</p>
+        <p><strong>Mensaje:</strong> {descripcion_html}</p>
         <hr>
         <p style="font-size: small; color: gray;">Este correo es automático, por favor no responder directamente.</p>
     </body>
@@ -66,25 +69,22 @@ Este correo es automático, por favor no responder directamente.
 """
 
         try:
-            # Enviar el correo
             email_msg = EmailMultiAlternatives(
                 asunto,
                 texto_plano,
                 settings.DEFAULT_FROM_EMAIL,
-                ["giovanniflorez22@gmail.com"],  # Correo del destinatario 
+                ["giovanniflorez22@gmail.com"],  # destinatario
                 reply_to=[email]
             )
             email_msg.attach_alternative(html, "text/html")
             email_msg.send()
-
             messages.success(request, "Tu mensaje ha sido enviado con éxito")
         except Exception as e:
             logger.error(f"Error enviando correo: {e}")
             messages.error(request, "Hubo un error al enviar el mensaje. Intenta más tarde.")
 
-        
-
     return render(request, "index.html")
+
 
 def enviar_pqrsf(request):
     if request.method == "POST":
@@ -132,7 +132,7 @@ Descripción:
         except Exception as e:
             messages.error(request, f"Error al enviar: {e}")
 
-        return redirect("enviar_pqrsf") 
+        return redirect("enviar_pqrsf")
 
-    return render(request, "PQRSF.html") 
+    return render(request, "PQRSF.html")
 
