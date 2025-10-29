@@ -47,12 +47,10 @@ whatsappBtn.addEventListener('click', () => {
     manualOpen = false;
     whatsappPopup.classList.remove('manual-open');
     whatsappPopup.classList.remove('visible');
-    mostrarAbrir();
   } else {
     manualOpen = true;
     whatsappPopup.classList.add('manual-open');
     whatsappPopup.classList.remove('visible');
-    mostrarCerrar();
   }
 });
 
