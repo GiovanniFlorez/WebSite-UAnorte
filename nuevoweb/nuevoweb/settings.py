@@ -101,5 +101,5 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'giovanniflorez22@gmail.com'  
-EMAIL_HOST_PASSWORD = 'cpgq wvtq vvod knpi'  
+EMAIL_HOST_PASSWORD = 'zkzd fyad ktea yqps'  
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
