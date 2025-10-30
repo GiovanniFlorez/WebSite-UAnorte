@@ -9,7 +9,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 621px;
+    height: auto;
     overflow: hidden;
 }
 
@@ -56,7 +56,8 @@ div > img {
 
 @media (max-width: 480px) {
     .imagen {
-        height: 220px;
+        width: 100%;
+        height: auto;
     }
 
     .imagen img {
