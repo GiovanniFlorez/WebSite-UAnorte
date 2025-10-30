@@ -9,13 +9,11 @@ let interval;
 let startX = 0;
 let isDragging = false;
 
-// Mostrar imagen actual
 function showImage(i) {
   images.forEach(img => img.classList.remove("active"));
   images[i].classList.add("active");
 }
 
-// Cambiar imagen
 function nextImage() {
   index = (index + 1) % images.length;
   showImage(index);
@@ -26,7 +24,6 @@ function prevImage() {
   showImage(index);
 }
 
-// Botones
 nextBtn.addEventListener("click", () => {
   nextImage();
   resetInterval();
@@ -37,7 +34,6 @@ prevBtn.addEventListener("click", () => {
   resetInterval();
 });
 
-// Auto rotación
 function startInterval() {
   interval = setInterval(nextImage, 10000);
 }
@@ -47,11 +43,10 @@ function resetInterval() {
   startInterval();
 }
 
-// Movimiento con mouse
 slider.addEventListener("mousedown", (e) => {
   isDragging = true;
   startX = e.pageX;
-  clearInterval(interval); // pausa el auto-slide
+  clearInterval(interval); 
 });
 
 slider.addEventListener("mouseup", (e) => {
@@ -59,7 +54,7 @@ slider.addEventListener("mouseup", (e) => {
   let endX = e.pageX;
   handleSwipe(endX - startX);
   isDragging = false;
-  startInterval(); // reanuda auto-slide
+  startInterval();
 });
 
 slider.addEventListener("mouseleave", () => {
@@ -69,7 +64,6 @@ slider.addEventListener("mouseleave", () => {
   }
 });
 
-// Movimiento táctil (móvil)
 slider.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
   clearInterval(interval);
@@ -81,9 +75,8 @@ slider.addEventListener("touchend", (e) => {
   startInterval();
 });
 
-// Detectar dirección del deslizamiento
 function handleSwipe(diff) {
-  if (Math.abs(diff) > 10) { // sensibilidad
+  if (Math.abs(diff) > 30) { // sensibilidad
     if (diff > 0) {
       prevImage();
     } else {
@@ -92,6 +85,5 @@ function handleSwipe(diff) {
   }
 }
 
-// Inicialización
 showImage(index);
 startInterval();
