@@ -77,4 +77,3 @@ document.addEventListener('click', (e) => {
     whatsappPopup.classList.remove('visible');
   }
 });
-
