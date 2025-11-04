@@ -15,7 +15,7 @@ DEBUG = True
 #////////////////////////////////////////////////////////////////////////////////////
 
 # Dominios permitidos
-ALLOWED_HOSTS = ['website-uanorte-5.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://website-uanorte-5.onrender.com'
@@ -42,6 +42,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'nuevoweb.urls'
 
@@ -100,6 +101,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'giovanniflorez22@gmail.com'  
-EMAIL_HOST_PASSWORD = 'zkzd fyad ktea yqps'  
+EMAIL_HOST_USER = 'giovanniflorez22@gmail.com'  #Correo Emisor
+EMAIL_HOST_PASSWORD = 'zkzdfyadkteayqps'  #Contraseña de la aplicacion
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

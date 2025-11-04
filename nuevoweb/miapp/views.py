@@ -4,6 +4,8 @@ from django.template.exceptions import TemplateDoesNotExist
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth import logout
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -17,6 +19,14 @@ def pagina_estatica(request, pagina):
     except TemplateDoesNotExist:
         raise Http404("Página no encontrada")
 
+
+def cerrar_sesion(request):
+    logout(request)
+    return redirect('inicio')
+
+
+# FUNCIÓN PARA ENVIAR EL FORMULARIO DE CONTACTO
+    
 def enviar_contacto(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -63,7 +73,7 @@ Este correo es automático, por favor no responder directamente.
         <p><strong>Teléfono:</strong> {telefono}</p>
         <p><strong>Mensaje:</strong> {descripcion_html}</p>
         <hr>
-        <p style="font-size: small; color: gray;">Este correo es automático, por favor no responder directamente.</p>
+        <p style="font-size: small; color: gray;">Este correo proviene de la página web, por favor no responder directamente.</p>
     </body>
 </html>
 """
@@ -73,7 +83,7 @@ Este correo es automático, por favor no responder directamente.
                 asunto,
                 texto_plano,
                 settings.DEFAULT_FROM_EMAIL,
-                ["giovanniflorez22@gmail.com"],  # destinatario
+                ["giovanniflorez22@gmail.com"],  # Correo Destinatario
                 reply_to=[email]
             )
             email_msg.attach_alternative(html, "text/html")
@@ -86,6 +96,9 @@ Este correo es automático, por favor no responder directamente.
     return render(request, "index.html")
 
 
+
+
+# FUNCIÓN PARA ENVIAR EL FORMULARIO DE PQRSF
 def enviar_pqrsf(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -114,12 +127,14 @@ Tipo de PQRSF: {tipo_pqrsf}
 
 Descripción:
 {descripcion}
+
+Este correo proviene de la página web, por favor no responder directamente.
 """
 
         email_msg = EmailMultiAlternatives(
             asunto, texto,
             settings.DEFAULT_FROM_EMAIL,
-            ["giovanniflorez22@gmail.com"],
+            ["giovanniflorez22@gmail.com"], #Correo Destinatario
             reply_to=[email]
         )
 
@@ -135,4 +150,3 @@ Descripción:
         return redirect("enviar_pqrsf")
 
     return render(request, "PQRSF.html")
-
