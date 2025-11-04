@@ -1,21 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #4AD8F8, #001D9E);
+  background: linear-gradient(135deg, #4ad8f8, #001d9e);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container {
+.login-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -23,65 +21,90 @@ body {
 }
 
 .login-box {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  width: 380px;
-  padding: 35px;
+  background-color: rgba(255, 255, 255, 0.589);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-}
-
-.banner img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  opacity: 0.9;
+  max-width: 380px;
 }
 
-form {
+.logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #001d9e;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.form-group {
   display: flex;
   flex-direction: column;
   text-align: left;
+  margin-bottom: 18px;
 }
 
 label {
-  color: #fff;
-  font-weight: 500;
-  margin-bottom: 5px;
+  font-weight: 600;
+  color: #001d9e;
+  margin-bottom: 6px;
+  font-size: 14px;
 }
 
 input {
   padding: 10px;
-  margin-bottom: 20px;
-  border: none;
   border-radius: 8px;
-  outline: none;
+  border: 1px solid #ccc;
   font-size: 14px;
+  transition: border-color 0.3s ease;
 }
 
-#usuario {
-  margin-bottom: 15px;
-}
-
-#password {
-  margin-bottom: 30px;
+input:focus {
+  border-color: #001d9e;
+  outline: none;
 }
 
 button {
+  position: relative;
+  overflow: hidden;
   color: white;
   border: none;
-  padding: 12px;
-  border-radius: 8px;
+  padding: 12px 28px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  background: linear-gradient(135deg, #4AD8F8, #001D9E);
-  transition: background 0.3s ease;
+  background: linear-gradient(135deg, #4ad8f8, #001d9e);
+  transition: color 2s ease;
+  z-index: 1;
+  margin-top: 10px;
+  width: 100%;
 }
 
-button:hover {
-    background: linear-gradient(135deg, #001D9E, #4AD8F8);
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #001d9e, #4ad8f8);
+  opacity: 0;
+  transition: opacity 2s ease, transform 0.4s ease;
+  border-radius: inherit;
+  z-index: 0;
+  transform: scale(1.2);
+}
+
+button:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+button span {
+  position: relative;
+  z-index: 2;
 }
 
 .links {
@@ -90,9 +113,10 @@ button:hover {
 }
 
 .links a {
-  color: #ffffff;
+  color: #001d9e;
   font-size: 13px;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .links a:hover {
