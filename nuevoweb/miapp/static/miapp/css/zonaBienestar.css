@@ -5,7 +5,6 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* --- TITULO --- */
 .titulo {
     color: rgb(19, 19, 138);
     font-size: 30px;
@@ -24,7 +23,6 @@ body, html {
     margin-right: 8px;
 }
 
-/* --- CONTENEDORES --- */
 .columnas {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -49,7 +47,6 @@ body, html {
 
 /* --- RESPONSIVE --- */
 
-/* TABLETS */
 @media (max-width: 1024px) {
     .titulo {
         font-size: 26px;
@@ -73,7 +70,6 @@ body, html {
     }
 }
 
-/* CELULARES */
 @media (max-width: 768px) {
     .columnas {
         grid-template-columns: 1fr;
@@ -101,7 +97,6 @@ body, html {
     }
 }
 
-/* CELULARES PEQUEÑOS */
 @media (max-width: 480px) {
     .titulo {
         font-size: 20px;
