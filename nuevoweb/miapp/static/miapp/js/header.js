@@ -1,3 +1,4 @@
+/* ================== FUNCIONALIDAD DE BOTÓN HAMBURGUESA ================== */
 const toggleBtn = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
 const linksContainer = document.querySelector('.links-container');

@@ -5,7 +5,6 @@ html, body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* --- TITULOS --- */
 .titulo {
     color: rgb(19, 19, 138);
     font-size: 1.8rem;
@@ -35,7 +34,6 @@ html, body {
     text-align: left;
 }
 
-/* --- COLUMNAS --- */
 .columnas {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -86,7 +84,6 @@ html, body {
 
 /* --- RESPONSIVE --- */
 
-/* TABLETS */
 @media (max-width: 1024px) {
     .columnas {
         grid-template-columns: repeat(2, 1fr);
@@ -110,7 +107,6 @@ html, body {
     }
 }
 
-/* CELULARES */
 @media (max-width: 768px) {
     .columnas {
         grid-template-columns: 1fr;
@@ -145,7 +141,6 @@ html, body {
     }
 }
 
-/* CELULARES PEQUEÑOS */
 @media (max-width: 480px) {
     .titulo {
         font-size: 1.2rem;
