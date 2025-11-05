@@ -2,6 +2,7 @@ const inputNombre = document.getElementById('nombre');
 const inputEmail = document.getElementById('email');
 const inputUsuario = document.getElementById('usuario');
 const inputPassword = document.getElementById('password');
+const form = document.getElementById("registroFormulario");
 
 inputNombre.addEventListener('invalid', function() {
     this.setCustomValidity('Por favor, ingresa el nombre del usuario');
