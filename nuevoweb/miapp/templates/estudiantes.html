@@ -76,6 +76,21 @@
 
         {% include 'formulario_contacto.html' %}
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        {% if messages %}
+          <script>
+            {% for message in messages %}
+              Swal.fire({
+                icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+                title: "{{ message|escapejs }}",
+                showConfirmButton: false,
+                timer: 4000
+              });
+            {% endfor %}
+          </script>
+        {% endif %}
+
       </div>
     </div>
 
