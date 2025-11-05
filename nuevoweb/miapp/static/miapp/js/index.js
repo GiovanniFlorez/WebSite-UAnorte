@@ -35,7 +35,7 @@ prevBtn.addEventListener("click", () => {
 });
 
 function startInterval() {
-  interval = setInterval(nextImage, 10000);
+  interval = setInterval(nextImage, 10000); // Tiempo que tarda en cambiar la imagen (10 segundos)
 }
 
 function resetInterval() {

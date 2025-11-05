@@ -68,6 +68,14 @@ input:focus {
   outline: none;
 }
 
+.verPassword{
+  cursor: pointer;
+}
+
+#mostrarPassword{
+  cursor: pointer;
+}
+
 button {
   position: relative;
   overflow: hidden;
