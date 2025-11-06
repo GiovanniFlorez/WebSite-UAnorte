@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Swal.fire({
       icon: "success",
       title: "¡Correcto!",
-      text: "Formulario enviado con éxito.",
+      text: "La contraseña ha sido restablecida con éxito.",
     }).then(() => {
       form.submit();
     });

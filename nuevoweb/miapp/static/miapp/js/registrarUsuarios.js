@@ -1,16 +1,7 @@
-const nombre = document.getElementById('nombre');
-const email = document.getElementById('email');
 const usuario = document.getElementById('usuario');
+const email = document.getElementById('email');
 const password = document.getElementById('password');
 const form = document.getElementById("registroFormulario");
-
-nombre.addEventListener('invalid', function() {
-    this.setCustomValidity('Por favor, ingresa el nombre del usuario');
-});
-
-nombre.addEventListener('input', function() {
-    this.setCustomValidity('');
-});
 
 email.addEventListener('invalid', function() {
     this.setCustomValidity('Por favor, ingresa el email del usuario');
@@ -37,18 +28,31 @@ password.addEventListener('input', function() {
 });
 
 
-form.addEventListener("submit", function(e) {
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
+document.addEventListener("DOMContentLoaded", () => {
   
-  if (!regex.test(password.value)) {
-    e.preventDefault(); 
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+  
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
+  
+    if (!regex.test(password.value)) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Contraseña inválida',
+        text: 'Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial',
+        confirmButtonText: 'Entendido'
+      });
+      return;
+    }
+  
     Swal.fire({
-      icon: 'error',
-      title: 'Contraseña inválida',
-      text: 'Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial',
-      confirmButtonText: 'Entendido'
+      icon: "success",
+      title: "¡Exito!",
+      text: "El usuario ha sido registrado con éxito.",
+    }).then(() => {
+      form.submit();
     });
-  }
+  });
 });
 
 const passwordInput = document.getElementById('password');
