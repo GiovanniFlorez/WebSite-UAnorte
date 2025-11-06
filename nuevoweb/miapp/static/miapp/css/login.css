@@ -68,6 +68,10 @@ input:focus {
   outline: none;
 }
 
+input[type="checkbox"] {
+  display: none;
+}
+
 .verPassword{
   cursor: pointer;
 }
@@ -129,4 +133,15 @@ button span {
 
 .links a:hover {
   text-decoration: underline;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
