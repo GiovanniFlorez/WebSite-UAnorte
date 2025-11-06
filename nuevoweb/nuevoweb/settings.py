@@ -15,11 +15,7 @@ DEBUG = True
 #////////////////////////////////////////////////////////////////////////////////////
 
 # Dominios permitidos
-ALLOWED_HOSTS = ['127.0.0.1']
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://website-uanorte-5.onrender.com'
-]
+ALLOWED_HOSTS = ['*']
 
 # Aplicaciones instaladas
 INSTALLED_APPS = [
