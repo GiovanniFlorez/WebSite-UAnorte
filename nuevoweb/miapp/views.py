@@ -5,6 +5,9 @@ from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import logout
+from .decorators import admin_required, editor_required
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
 
 import logging
 
@@ -150,3 +153,36 @@ Este correo proviene de la página web, por favor no responder directamente.
         return redirect("enviar_pqrsf")
 
     return render(request, "PQRSF.html")
+
+
+
+@admin_required
+def crud_usuarios(request):
+    return render(request, "crudUsuarios.html")
+
+
+@editor_required
+def editar_contenido(request):
+    return render(request, "editarContenido.html")
+
+
+
+@login_required
+def login_redirigir(request):
+    usuario = request.user
+    if usuario.rol == 'admin':
+        return redirect('crud_usuarios')
+    elif usuario.rol == 'editor':
+        return redirect('editar_contenido')
+    else:
+        return redirect('inicio')
+
+
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
+    redirect_authenticated_user = True
+
+    def form_invalid(self, form):
+        messages.error(self.request, "Usuario o contraseña incorrectos.")
+        return super().form_invalid(form)
+
