@@ -190,3 +190,17 @@ button span {
   position: relative;
   z-index: 2;
 }
+
+html.swal2-shown,
+body.swal2-shown {
+  overflow: hidden !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding-right: 0 !important; 
+}
+
+body.swal2-shown > * {
+  transform: none !important;
+  filter: none !important;
+}
