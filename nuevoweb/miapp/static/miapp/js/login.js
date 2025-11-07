@@ -75,3 +75,22 @@ if (volverLogin) {
     }, 500);
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formLogin");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      Swal.fire({
+        title: "Iniciando sesión...",
+        text: "Por favor espera unos segundos",
+        allowOutsideClick: false,
+        didOpen: () => {
+          Swal.showLoading();
+        },
+      });
+    });
+  }
+});
+
+
+
