@@ -5,33 +5,33 @@
     font-family: "Montserrat", sans-serif;
 }
   
-body {
-    min-height: 100vh;
+html, body {
+    height: 100vh;
     background: linear-gradient(135deg, #4ad8f8, #001d9e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    margin: 0;
+    overflow: hidden;
 }
-    
-.registro-container {
+  
+.login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 380px;
+    z-index: 5;
 }
-    
-.registro-box {
+  
+.login-box {
     background-color: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 100%;
-    max-width: 400px;
-    transition: all 0.3s ease;
+    max-width: 380px;
 }
-    
+  
 .logo {
     width: 90px;
     margin-bottom: 15px;
@@ -42,44 +42,19 @@ h2 {
     font-weight: 700;
     margin-bottom: 25px;
 }
-    
-.form-group {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin-bottom: 18px;
-}
-    
-label {
-    font-weight: 600;
+
+h3 {
     color: #001d9e;
-    margin-bottom: 6px;
-    font-size: 14px;
-}
-    
-input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-}
-    
-input:focus {
-    border-color: #001d9e;
-    outline: none;
+    font-weight: 700;
+    margin-bottom: 25px;
 }
   
-input[type="checkbox"] {
-    display: none;
-}
-    
-button {
+.btn {
+    display: block; 
     position: relative;
     overflow: hidden;
     color: white;
-    border: none;
-    padding: 12px 28px;
+    text-decoration: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
@@ -88,10 +63,11 @@ button {
     transition: color 2s ease;
     z-index: 1;
     margin-top: 10px;
-    width: 100%;
+    padding: 12px 28px;
+    text-align: center;
 }
-    
-button::before {
+
+.btn::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -102,18 +78,17 @@ button::before {
     z-index: 0;
     transform: scale(1.2);
 }
-    
-button:hover::before {
+
+.btn:hover::before {
     opacity: 1;
     transform: scale(1);
 }
-    
-button span {
+
+.btn span {
     position: relative;
     z-index: 2;
 }
-    
-  
+
 .logout-global {
     position: absolute;
     top: 25px;

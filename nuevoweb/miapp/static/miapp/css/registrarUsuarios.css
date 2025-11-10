@@ -158,3 +158,9 @@ button span {
   position: relative;
   z-index: 2;
 }
+
+.logout-btn span {
+  margin-right: 8px;
+  position: relative;
+  z-index: 2;
+}
