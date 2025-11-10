@@ -15,8 +15,8 @@ urlpatterns = [
     path('crud-usuarios/', views.crud_usuarios, name='crud_usuarios'),
     path('editar-contenido/', views.editar_contenido, name='editar_contenido'),
     path('registrar-usuarios/', views.registrar_usuario, name='registrar_usuario'),
-    path('modificar-usuarios/', views.modificar_usuarios, name='modificar_usuario'),
-    path('eliminar-usuarios/', views.eliminar_usuarios, name='eliminar_usuario'),
+    path('modificar-usuarios/', views.modificar_usuarios, name='modificar_usuarios'),
+    path('eliminar-usuarios/', views.eliminar_usuarios, name='eliminar_usuarios'),
 
     # URL dinámica solo para páginas públicas
     path('<str:pagina>/', views.pagina_estatica, name='pagina_estatica'),
