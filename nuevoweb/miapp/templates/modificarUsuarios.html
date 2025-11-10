@@ -32,16 +32,52 @@
 
         <h2>Modificar Usuarios</h2>
 
-        <form id="registroFormulario" method="POST">
+        <form method="POST" action="{% url 'modificar_usuarios' %}">
           {% csrf_token %}
-
           <div class="form-group">
-            <label for="usuario">Usuario:</label>
-            <input type="text" id="usuario" placeholder="Ingresa el usuario" required>
+            <label for="usuario">Usuario o Correo:</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Ingresa el usuario o correo" required>
           </div>
-
-          <button type="submit"><span>Buscar</span></button>
+          <button type="submit" name="buscar">Buscar</button>
         </form>
+        
+        {% if usuario %}
+        <form method="POST" action="{% url 'modificar_usuarios' %}">
+          {% csrf_token %}
+          <input type="hidden" name="user_id" value="{{ usuario.id }}">
+          <div class="form-group">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" value="{{ usuario.username }}" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" value="{{ usuario.email }}" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="rol">Rol:</label>
+            <select id="rol" name="rol" required>
+              {% for key, value in roles_disponibles %}
+                <option value="{{ key }}" {% if usuario.rol == key %}selected{% endif %}>{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        
+          <button type="submit" name="guardar">Guardar cambios</button>
+        </form>
+        {% endif %}
+
+        {% for message in messages %}
+          <script>
+            Swal.fire({
+              icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+              title: "{{ message|escapejs }}",
+              confirmButtonColor: "#001d9e"
+            });
+          </script>
+        {% endfor %}
+        
       </div>
     </div>
 

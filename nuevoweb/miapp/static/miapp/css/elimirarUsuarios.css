@@ -15,7 +15,6 @@ body {
 }
     
 .registro-container {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,8 +26,8 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 100%;
-    max-width: 400px;
+    width: auto;
+    max-width: 1000px;
     transition: all 0.3s ease;
 }
     
@@ -163,4 +162,37 @@ button span {
     margin-right: 8px;
     position: relative;
     z-index: 2;
+} 
+
+.resultados table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 14px;
+}
+  
+.resultados th, .resultados td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+  
+.resultados th {
+    background: linear-gradient(135deg, #4ad8f8, #001d9e);
+    color: white;
+}
+  
+.btn-eliminar {
+    background: linear-gradient(135deg, #e63946, #b00000);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+  
+.btn-eliminar:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #b00000, #ff4d4d);
 }
