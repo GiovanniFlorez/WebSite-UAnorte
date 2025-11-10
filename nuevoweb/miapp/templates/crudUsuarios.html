@@ -17,7 +17,7 @@
         {% include 'preloader.html' %}
 
         <div class="logout-global">
-            <form method="POST" action="{% url 'cerrar_sesion' %}">
+            <form id="logoutForm" method="POST" action="{% url 'cerrar_sesion' %}">
                 {% csrf_token %}
                 <button type="submit" class="logout-btn">
                     <span><i class="fas fa-sign-out-alt"></i> Cerrar sesión</span>
@@ -30,22 +30,29 @@
                 <img src="{% static 'miapp/media/logoUAnorte.png' %}" alt="Campus UA Norte" class="logo">
             
                 <h2>CRUD Usuarios</h2>
+
+                {% if user.is_authenticated %}
+                    <h3 class="welcome-message">Bienvenido, {{user.rol}} {{ user.username }}!</h3>
+                {% endif%}
             
-                <a href="{% url 'pagina_estatica' 'registrarUsuarios' %}">
-                    <button type="submit"><span>Registrar Usuarios</span></button>
+                <a href="{% url 'pagina_estatica' 'registrarUsuarios' %}" class="btn">
+                    <span>Registrar Usuarios</span>
+                </a>
+                
+
+                <a href="{% url 'pagina_estatica' 'modificarUsuarios' %}" class="btn">
+                    <span>Modificar Usuarios</span>
                 </a>
 
-                <a href="{% url 'pagina_estatica' 'modificarUsuarios' %}">
-                    <button type="submit"><span>Modificar Usuarios</span></button>
-                </a>
-
-                <a href="{% url 'pagina_estatica' 'eliminarUsuarios' %}">
-                    <button type="submit"><span>Eliminar Usuarios</span></button>
+                <a href="{% url 'pagina_estatica' 'eliminarUsuarios' %}" class="btn">
+                    <span>Eliminar Usuarios</span>
                 </a>
             
             </div>
         </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{% static 'miapp/js/cerrarSesion.js' %}"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
     </body>
 </html>
