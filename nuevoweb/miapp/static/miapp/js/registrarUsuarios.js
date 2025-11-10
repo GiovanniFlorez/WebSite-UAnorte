@@ -46,11 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     Swal.fire({
-      icon: "success",
-      title: "¡Exito!",
-      text: "El usuario ha sido registrado con éxito.",
-    }).then(() => {
-      form.submit();
+      title: "Verificando datos...",
+      text: "Por favor espera unos segundos",
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+        setTimeout(() => {
+          form.submit();
+        }, 1000);
+      }
     });
   });
 });
