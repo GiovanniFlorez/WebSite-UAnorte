@@ -229,6 +229,8 @@ class CustomLoginView(LoginView):
 
 
 #Registro de usuarios
+@login_required
+@admin_required
 def registrar_usuario(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -263,3 +265,103 @@ def registrar_usuario(request):
     return render(request, 'registrarUsuarios.html')
 
 
+# Modificación de usuarios
+@login_required
+@admin_required
+def modificar_usuarios(request):
+    usuario = None
+
+    if request.method == 'POST':
+        if 'buscar' in request.POST: 
+            busqueda = request.POST.get('usuario', '').strip()
+
+            if busqueda:
+                try:
+                    usuario = Usuario.objects.get(username=busqueda)
+                except Usuario.DoesNotExist:
+                    try:
+                        usuario = Usuario.objects.get(email=busqueda)
+                    except Usuario.DoesNotExist:
+                        messages.error(request, "No se encontraron usuarios con los criterios proporcionados.")
+                        usuario = None
+
+                if usuario and usuario.id == request.user.id:
+                    messages.error(request, "No puedes modificar tu propio usuario desde esta sección.")
+                    usuario = None
+            else:
+                messages.error(request, "Por favor ingresa un nombre o correo para buscar.")
+
+        elif 'guardar' in request.POST:  
+            user_id = request.POST.get('user_id')
+
+            try:
+                usuario = Usuario.objects.get(id=user_id)
+            except Usuario.DoesNotExist:
+                messages.error(request, "El usuario seleccionado no existe.")
+                usuario = None
+
+            if usuario and usuario.id == request.user.id:
+                messages.error(request, "No puedes modificar tu propio usuario desde esta sección.")
+                usuario = None
+
+            if usuario:
+                username = request.POST.get('username').strip()
+                email = request.POST.get('email').strip()
+                rol = request.POST.get('rol').strip()
+
+                usuario.username = username
+                usuario.email = email
+                usuario.rol = rol
+                usuario.save()
+
+                messages.success(request, f"El usuario {username} ha sido modificado exitosamente.")
+                usuario = None
+
+    roles_disponibles = Usuario.ROLES
+
+    return render(request, 'modificarUsuarios.html', {
+        'usuario': usuario,
+        'roles_disponibles': roles_disponibles
+    })
+
+
+# Eliminar usuarios
+@login_required
+@admin_required
+def eliminar_usuarios(request):
+    usuarios = None
+
+    if request.method == 'POST':
+        if 'buscar' in request.POST:
+            busqueda = request.POST.get('usuario', '').strip()
+
+            if busqueda:
+                usuarios = (Usuario.objects.filter(username__icontains=busqueda) |
+                            Usuario.objects.filter(email__icontains=busqueda))
+                
+                usuarios = usuarios.exclude(id=request.user.id)
+
+                if not usuarios.exists():
+                    messages.info(request, "No se encontraron usuarios con los criterios proporcionados.")
+            else:
+                messages.error(request, "Por favor ingresa un nombre o correo para buscar.")
+
+        elif 'eliminar' in request.POST:
+            user_id = request.POST.get('user_id')
+
+            try:
+                usuario = Usuario.objects.get(id=user_id)
+
+                if usuario.id == request.user.id:
+                    messages.error(request, "No puedes eliminar tu propio usuario.")
+                else:
+                    nombre = usuario.username
+                    usuario.delete()
+                    messages.success(request, f"El usuario {nombre} ha sido eliminado exitosamente.")
+
+                    return redirect('eliminar_usuarios')
+
+            except Usuario.DoesNotExist:
+                messages.error(request, "El usuario seleccionado no existe.")
+
+    return render(request, 'eliminarUsuarios.html', {'usuarios': usuarios})
