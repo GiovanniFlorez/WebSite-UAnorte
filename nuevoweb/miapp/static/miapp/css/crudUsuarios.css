@@ -5,19 +5,21 @@
     font-family: "Montserrat", sans-serif;
 }
   
-body {
+html, body {
     height: 100vh;
     background: linear-gradient(135deg, #4ad8f8, #001d9e);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
+    overflow: hidden;
 }
   
 .login-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 380px;
+    z-index: 5;
 }
   
 .login-box {
@@ -40,13 +42,19 @@ h2 {
     font-weight: 700;
     margin-bottom: 25px;
 }
+
+h3 {
+    color: #001d9e;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
   
-button {
+.btn {
+    display: block; 
     position: relative;
     overflow: hidden;
     color: white;
-    border: none;
-    padding: 12px 28px;
+    text-decoration: none;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
@@ -55,10 +63,11 @@ button {
     transition: color 2s ease;
     z-index: 1;
     margin-top: 10px;
-    width: 100%;
+    padding: 12px 28px;
+    text-align: center;
 }
-  
-button::before {
+
+.btn::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -69,13 +78,13 @@ button::before {
     z-index: 0;
     transform: scale(1.2);
 }
-  
-button:hover::before {
+
+.btn:hover::before {
     opacity: 1;
     transform: scale(1);
 }
-  
-button span {
+
+.btn span {
     position: relative;
     z-index: 2;
 }
@@ -120,6 +129,12 @@ button span {
 }
     
 .logout-btn i {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.logout-btn span {
     margin-right: 8px;
     position: relative;
     z-index: 2;
