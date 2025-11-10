@@ -8,6 +8,7 @@ from django.contrib.auth import logout
 from .decorators import admin_required, editor_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
+from .models import Usuario
 
 import logging
 
@@ -16,11 +17,30 @@ logger = logging.getLogger(__name__)
 def inicio(request):
     return render(request, 'index.html')
 
+
 def pagina_estatica(request, pagina):
+    # Lista de páginas protegidas que no deben ir a la dinámica
+    protected = [
+        'crud-usuarios',
+        'registrar-usuarios',
+        'modificar-usuarios',
+        'eliminar-usuarios',
+        'editar-contenido',
+        'login',
+        'login-redirigir'
+    ]
+
+    if pagina in protected:
+        # Puedes redirigir al inicio o mostrar 404
+        raise Http404("Página no encontrada")  # Más seguro
+
+    # Solo renderiza páginas públicas
     try:
         return render(request, f'{pagina}.html')
     except TemplateDoesNotExist:
         raise Http404("Página no encontrada")
+
+
 
 
 def cerrar_sesion(request):
@@ -155,15 +175,36 @@ Este correo proviene de la página web, por favor no responder directamente.
     return render(request, "PQRSF.html")
 
 
+#Vistas para CRUD de usuarios (solo admins)|
 
+@login_required
 @admin_required
 def crud_usuarios(request):
     return render(request, "crudUsuarios.html")
 
+@login_required
+@admin_required
+def registrar_usuarios(request):
+    return render(request, "registrarUsuarios.html")
 
+@login_required
+@admin_required
+def modificar_usuarios(request):
+    return render(request, "modificarUsuarios.html")
+
+@login_required
+@admin_required
+def eliminar_usuarios(request):
+    return render(request, "eliminarUsuarios.html")
+
+
+#Vista para editar contenido (solo editores y admins)
+
+@login_required
 @editor_required
 def editar_contenido(request):
     return render(request, "editarContenido.html")
+
 
 
 
@@ -185,4 +226,40 @@ class CustomLoginView(LoginView):
     def form_invalid(self, form):
         messages.error(self.request, "Usuario o contraseña incorrectos.")
         return super().form_invalid(form)
+
+
+#Registro de usuarios
+def registrar_usuario(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        if Usuario.objects.filter(username=username).exists():
+            messages.error(request, "El nombre de usuario ya existe.")
+            return redirect('registrar_usuario')
+        
+        if Usuario.objects.filter(email=email).exists():
+            messages.error(request, "El correo electrónico ya está registrado.")
+            return redirect('registrar_usuario')
+
+
+
+        user = Usuario.objects.create_user(
+            username=username,
+            email=email,
+            password=password,
+            rol=Usuario.ES_EDITOR
+        )
+
+        user.is_superuser = False
+        user.is_staff = False
+        user.save()
+
+
+        messages.success(request, "El usuario {username} ha sido registrado exitosamente como editor.".format(username=username))
+        return redirect('registrar_usuario')
+
+    return render(request, 'registrarUsuarios.html')
+
 
