@@ -50,6 +50,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.csrf',
@@ -102,12 +103,11 @@ EMAIL_HOST_USER = 'giovanniflorez22@gmail.com'  #Correo Emisor
 EMAIL_HOST_PASSWORD = 'zkzdfyadkteayqps'  #Contraseña de la aplicacion
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-
-
-
 # Configuración de usuario
 AUTH_USER_MODEL = 'miapp.Usuario'
 
 # Redirección después del login
 LOGIN_REDIRECT_URL = '/login-redirigir/'  # Redirige a la función que decide según el rol
 LOGIN_URL = '/login/'  # Página de login
+
+

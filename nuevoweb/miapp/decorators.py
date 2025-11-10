@@ -1,15 +1,23 @@
+# decorators.py
+from functools import wraps
 from django.shortcuts import redirect
 
 def admin_required(view_func):
+    @wraps(view_func)
     def wrapper(request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.es_admin():
+        if not request.user.is_authenticated:
+            return redirect('login')
+        if getattr(request.user, 'rol', None) == 'admin':
             return view_func(request, *args, **kwargs)
-        return redirect('inicio')  # Redirige si no es admin
+        return redirect('inicio')
     return wrapper
 
 def editor_required(view_func):
+    @wraps(view_func)
     def wrapper(request, *args, **kwargs):
-        if request.user.is_authenticated and request.user.es_editor():
+        if not request.user.is_authenticated:
+            return redirect('login')
+        if getattr(request.user, 'rol', None) in ['editor', 'admin']:
             return view_func(request, *args, **kwargs)
-        return redirect('inicio')  # Redirige si no es editor
+        return redirect('inicio')
     return wrapper
