@@ -5,11 +5,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Editar Contenido - UAnorte</title>
+        <title>CRUD Noticias - UAnorte</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" type="image/png">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="{% static 'miapp/css/editarContenido.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/crudUsuarios.css' %}">
         <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
     </head>
 
@@ -17,41 +17,40 @@
         {% include 'preloader.html' %}
 
         <div class="logout-global">
-            <form id="logoutForm"method="POST" action="{% url 'cerrar_sesion' %}">
-                {% csrf_token %}
-                <button type="submit" class="logout-btn">
-                    <span><i class="fas fa-sign-out-alt"></i> Cerrar sesión</span>
+            <a href="{% url 'pagina_estatica' 'editarContenido' %}">
+                <button type="button" class="logout-btn">
+                    <span><i class="fas fa-sign-out-alt"></i> Volver</span>
                 </button>
-            </form>
+            </a>
         </div>
 
         <div class="login-container fade show" id="loginContainer">
             <div class="login-box">
                 <img src="{% static 'miapp/media/logoUAnorte.png' %}" alt="Campus UA Norte" class="logo">
             
-                <h2>Editar Contenido</h2>
+                <h2>CRUD Noticias</h2>
 
                 {% if user.is_authenticated %}
-                    <h3 class="welcome-message">Bienvenido, {{user.rol}} {{ user.username }}! </h3>
+                    <h3 class="welcome-message">Bienvenido, {{user.rol}} {{ user.username }}!</h3>
                 {% endif%}
             
-                <a href="{% url 'pagina_estatica' 'crudNoticias' %}" class="btn">
-                    <span>Noticias</span>
+                <a href="#" class="btn">
+                    <span>Crear Noticias</span>
+                </a>
+                
+
+                <a href="#" class="btn">
+                    <span>Editar Noticias</span>
                 </a>
 
                 <a href="#" class="btn">
-                    <span>...</span>
-                </a>
-
-                <a href="#" class="btn">
-                    <span>...</span>
+                    <span>Eliminar Noticias</span>
                 </a>
             
             </div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="{% static 'miapp/js/cerrarSesion.js' %}"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
     </body>
 </html>

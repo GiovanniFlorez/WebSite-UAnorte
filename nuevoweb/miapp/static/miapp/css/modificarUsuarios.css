@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+
+html{
+    overflow: auto;
+}
   
 body {
     min-height: 100vh;
@@ -19,7 +23,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: auto;
 }
     
 .registro-box {

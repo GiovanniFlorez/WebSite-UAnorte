@@ -10,12 +10,10 @@
     <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{% static 'miapp/css/registrarUsuarios.css' %}">
-    <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
   <body>
-    {% include 'preloader.html' %}
 
     <div class="logout-global">
       <a href="{% url 'pagina_estatica' 'crudUsuarios' %}">
@@ -78,6 +76,5 @@
 
 
     <script src="{% static 'miapp/js/registrarUsuarios.js' %}"></script>
-    <script src="{% static 'miapp/js/preloader.js' %}"></script>
   </body>
 </html>
