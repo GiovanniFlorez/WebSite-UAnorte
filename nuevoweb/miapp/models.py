@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.core.exceptions import ValidationError
 
 class Usuario(AbstractUser):
     ES_EDITOR = 'editor'
@@ -19,11 +20,9 @@ class Usuario(AbstractUser):
         return self.rol == self.ES_EDITOR
     
 
-class Contenido(models.Model):
-    titulo = models.CharField(max_length=200)
-    texto = models.TextField()
-    imagen = models.ImageField(upload_to='imagenes/', blank=True, null=True)
-    fecha_modificacion = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.titulo
+def validate_image(image):
+    file_size = image.file.size
+    limit_mb = 5
+    if file_size > limit_mb * 1024 * 1024:
+        raise ValidationError(f"El archivo debe pesar menos de {limit_mb} MB")
+    return image

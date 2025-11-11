@@ -1,4 +1,4 @@
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, JsonResponse
 from django.shortcuts import render, redirect
 from django.template.exceptions import TemplateDoesNotExist
 from django.core.mail import EmailMultiAlternatives
@@ -25,14 +25,13 @@ def pagina_estatica(request, pagina):
         'registrar-usuarios',
         'modificar-usuarios',
         'eliminar-usuarios',
-        'editar-contenido',
         'login',
         'login-redirigir'
     ]
 
     if pagina in protected:
         # Puedes redirigir al inicio o mostrar 404
-        raise Http404("Página no encontrada")  # Más seguro
+        raise Http404("Página no encontrada")  
 
     # Solo renderiza páginas públicas
     try:
@@ -325,7 +324,6 @@ def modificar_usuarios(request):
     })
 
 
-# Eliminar usuarios
 @login_required
 @admin_required
 def eliminar_usuarios(request):
@@ -336,13 +334,20 @@ def eliminar_usuarios(request):
             busqueda = request.POST.get('usuario', '').strip()
 
             if busqueda:
-                usuarios = (Usuario.objects.filter(username__icontains=busqueda) |
-                            Usuario.objects.filter(email__icontains=busqueda))
-                
-                usuarios = usuarios.exclude(id=request.user.id)
+                usuarios_encontrados = (Usuario.objects.filter(username__icontains=busqueda) |
+                                        Usuario.objects.filter(email__icontains=busqueda))
 
-                if not usuarios.exists():
+                if not usuarios_encontrados.exists():
                     messages.info(request, "No se encontraron usuarios con los criterios proporcionados.")
+                else:
+                    if usuarios_encontrados.count() == 1 and usuarios_encontrados.filter(id=request.user.id).exists():
+                        messages.warning(request, "No puedes eliminar tu propio usuario.")
+                        usuarios = None
+                    else:
+                        usuarios = usuarios_encontrados.exclude(id=request.user.id)
+
+                        if not usuarios.exists():
+                            messages.info(request, "No se encontraron usuarios con los criterios proporcionados.")
             else:
                 messages.error(request, "Por favor ingresa un nombre o correo para buscar.")
 
@@ -358,7 +363,6 @@ def eliminar_usuarios(request):
                     nombre = usuario.username
                     usuario.delete()
                     messages.success(request, f"El usuario {nombre} ha sido eliminado exitosamente.")
-
                     return redirect('eliminar_usuarios')
 
             except Usuario.DoesNotExist:
