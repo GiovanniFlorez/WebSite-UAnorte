@@ -10,12 +10,10 @@
     <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{% static 'miapp/css/modificarUsuarios.css' %}">
-    <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
 
   <body>
-    {% include 'preloader.html' %}
 
     <div class="logout-global">
       <a href="{% url 'pagina_estatica' 'crudUsuarios' %}">
@@ -38,7 +36,7 @@
             <label for="usuario">Usuario o Correo:</label>
             <input type="text" id="usuario" name="usuario" placeholder="Ingresa el usuario o correo" required>
           </div>
-          <button type="submit" name="buscar">Buscar</button>
+          <button type="submit" name="buscar"><span>Buscar</span></button>
         </form>
         
         {% if usuario %}
@@ -64,7 +62,7 @@
             </select>
           </div>
         
-          <button type="submit" name="guardar">Guardar cambios</button>
+          <button type="submit" name="guardar"><span>Guardar cambios</span></button>
         </form>
         {% endif %}
 
@@ -80,7 +78,5 @@
         
       </div>
     </div>
-
-    <script src="{% static 'miapp/js/preloader.js' %}"></script>
   </body>
 </html>
