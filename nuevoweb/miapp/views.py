@@ -285,7 +285,7 @@ def modificar_usuarios(request):
                         usuario = None
 
                 if usuario and usuario.id == request.user.id:
-                    messages.error(request, "No puedes modificar tu propio usuario desde esta sección.")
+                    messages.warning(request, "No puedes modificar tu propio usuario.")
                     usuario = None
             else:
                 messages.error(request, "Por favor ingresa un nombre o correo para buscar.")
