@@ -196,3 +196,89 @@ button span {
     transform: scale(1.05);
     background: linear-gradient(135deg, #b00000, #ff4d4d);
 }
+
+/* ========= Responsive ========= */
+@media screen and (max-width: 1024px) {
+    .registro-box {
+        width: 90%;
+        padding: 30px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+
+    .resultados table {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .registro-box {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    input, button {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .logout-global {
+        top: 15px;
+        right: 15px;
+    }
+
+    .resultados table, .resultados th, .resultados td {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .registro-box {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .logo {
+        width: 70px;
+        margin-bottom: 10px;
+    }
+
+    input, button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .resultados table {
+        font-size: 11px;
+    }
+
+    .resultados th, .resultados td {
+        padding: 5px;
+    }
+
+    .logout-btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
