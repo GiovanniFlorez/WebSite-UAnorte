@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.core.exceptions import ValidationError
 
+# Crear un modelo de usuario personalizado
 class Usuario(AbstractUser):
     ES_EDITOR = 'editor'
     ES_ADMIN = 'admin'
@@ -18,11 +18,3 @@ class Usuario(AbstractUser):
     
     def es_editor(self):
         return self.rol == self.ES_EDITOR
-    
-
-def validate_image(image):
-    file_size = image.file.size
-    limit_mb = 5
-    if file_size > limit_mb * 1024 * 1024:
-        raise ValidationError(f"El archivo debe pesar menos de {limit_mb} MB")
-    return image

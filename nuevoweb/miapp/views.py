@@ -1,16 +1,25 @@
-from django.http import HttpResponse, Http404, JsonResponse
+from django.http import Http404, JsonResponse
 from django.shortcuts import render, redirect
 from django.template.exceptions import TemplateDoesNotExist
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives, send_mail, BadHeaderError
 from django.conf import settings
 from django.contrib import messages
-from django.contrib.auth import logout
+from django.contrib.auth import logout, get_user_model
 from .decorators import admin_required, editor_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
-from .models import Usuario
-
 import logging
+from .models import Usuario
+from django.contrib.auth.tokens import PasswordResetTokenGenerator, default_token_generator
+from django.urls import reverse
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_str
+from smtplib import SMTPException
+from django.contrib.auth.hashers import make_password
+
+
+
+
 
 logger = logging.getLogger(__name__)
 
@@ -197,7 +206,7 @@ def eliminar_usuarios(request):
     return render(request, "eliminarUsuarios.html")
 
 
-#Vista para editar contenido (solo editores y admins)
+#Vista para editar contenido
 
 @login_required
 @editor_required
@@ -205,8 +214,7 @@ def editar_contenido(request):
     return render(request, "editarContenido.html")
 
 
-
-
+# Redirección post-login según rol
 @login_required
 def login_redirigir(request):
     usuario = request.user
@@ -369,3 +377,160 @@ def eliminar_usuarios(request):
                 messages.error(request, "El usuario seleccionado no existe.")
 
     return render(request, 'eliminarUsuarios.html', {'usuarios': usuarios})
+
+
+# Envío de correo para restablecimiento de contraseña
+
+
+
+def recuperar_enviar(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+
+        try:
+            usuario = Usuario.objects.get(email=email)
+        except Usuario.DoesNotExist:
+            return JsonResponse({
+                'status': 'error',
+                'message': 'No existe un usuario con ese correo electrónico.'
+            })
+
+        token = PasswordResetTokenGenerator().make_token(usuario)
+        uid = urlsafe_base64_encode(force_bytes(usuario.pk))
+
+        reset_url = request.build_absolute_uri(
+            reverse('password_reset_custom_confirm', kwargs={'uidb64': uid, 'token': token})
+        )
+
+        asunto = "Restablecimiento de contraseña"
+
+        mensaje = (
+            f"Hola {usuario.username},\n\n"
+            "Has solicitado restablecer tu contraseña. Haz clic en el siguiente enlace para continuar:\n\n"
+            f"{reset_url}\n\n"
+            "Si no solicitaste este cambio, puedes ignorar este correo.\n\n"
+            "Saludos,\nEl equipo de soporte."
+        )
+
+        try:
+            send_mail(
+                asunto,
+                mensaje,
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=False,
+            )
+
+        except BadHeaderError:
+            return JsonResponse({
+                'status': 'error',
+                'message': 'Cabecera de correo inválida.'
+            })
+
+        except SMTPException as e:
+            return JsonResponse({
+                'status': 'error',
+                'message': f'Error SMTP: {str(e)}'
+            })
+
+        except Exception as e:
+            return JsonResponse({
+                'status': 'error',
+                'message': f'Error inesperado: {str(e)}'
+            })
+
+        return JsonResponse({
+            'status': 'success',
+            'message': 'Se ha enviado un correo para restablecer la contraseña.'
+        })
+
+    return JsonResponse({
+        'status': 'error',
+        'message': 'Método no permitido.'
+    })
+
+
+
+
+
+Usuario = get_user_model()
+
+def recuperar_confirmar(request, uidb64, token):
+    try:
+        uid = urlsafe_base64_decode(uidb64).decode()
+        usuario = Usuario.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, Usuario.DoesNotExist):
+        usuario = None
+
+    if usuario is not None and PasswordResetTokenGenerator().check_token(usuario, token):
+        
+        if request.method == "POST":
+            nueva = request.POST.get("password1")
+            confirmar = request.POST.get("password2")
+
+            if nueva != confirmar:
+                return JsonResponse({"status": "error", "message": "Las contraseñas no coinciden."})
+
+            usuario.password = make_password(nueva)
+            usuario.save()
+
+            return JsonResponse({"status": "success", "message": "Contraseña cambiada exitosamente."})
+
+        return render(request, "recuperarContraseña.html", {
+            "uidb64": uidb64,
+            "token": token
+        })
+
+    return render(request, "token_invalido.html")
+
+
+# Cambio de contraseña
+
+def password_reset_custom_confirm(request, uidb64, token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = Usuario.objects.get(pk=uid)
+    except Exception:
+        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+            return JsonResponse({
+                "status": "error",
+                "message": "Enlace inválido"
+            })
+        return render(request, "recuperarContraseña.html", {"error": "Enlace inválido"})
+
+    if not default_token_generator.check_token(user, token):
+        if request.headers.get("X-Requested-With") == "XMLHttpRequest":
+            return JsonResponse({
+                "status": "error",
+                "message": "Token expirado o inválido"
+            })
+        return render(request, "recuperarContraseña.html", {"error": "Token inválido"})
+
+    if request.method == "POST":
+        pass1 = request.POST.get("new_password1")
+        pass2 = request.POST.get("new_password2")
+
+        if not pass1 or not pass2:
+            return JsonResponse({
+                "status": "error",
+                "message": "Debes llenar todos los campos."
+            })
+
+        if pass1 != pass2:
+            return JsonResponse({
+                "status": "error",
+                "message": "Las contraseñas no coinciden."
+            })
+
+        user.set_password(pass1)
+        user.save()
+
+        return JsonResponse({
+            "status": "success",
+            "message": "Contraseña actualizada correctamente."
+        })
+
+    return render(request, "recuperarContraseña.html", {
+        "uidb64": uidb64,
+        "token": token
+    })
