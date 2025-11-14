@@ -101,7 +101,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'giovanniflorez22@gmail.com'  #Correo Emisor
 EMAIL_HOST_PASSWORD = 'zkzdfyadkteayqps'  #Contraseña de la aplicacion
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = 'giovanniflorez22@gmail.com'
+BASE_URL = 'http://127.0.0.1:8000/'  
 
 # Configuración de usuario
 AUTH_USER_MODEL = 'miapp.Usuario'
@@ -109,5 +110,3 @@ AUTH_USER_MODEL = 'miapp.Usuario'
 # Redirección después del login
 LOGIN_REDIRECT_URL = '/login-redirigir/'  # Redirige a la función que decide según el rol
 LOGIN_URL = '/login/'  # Página de login
-
-

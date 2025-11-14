@@ -4,6 +4,8 @@ from . import views
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
+
+    # Formularios
     path('enviar-contacto/', views.enviar_contacto, name='enviar_contacto'),
     path('enviar-pqrsf/', views.enviar_pqrsf, name='enviar_pqrsf'),
 
@@ -19,6 +21,9 @@ urlpatterns = [
     path('modificar-usuarios/', views.modificar_usuarios, name='modificar_usuarios'),
     path('eliminar-usuarios/', views.eliminar_usuarios, name='eliminar_usuarios'),
 
+    # Restablecimiento de contraseña
+    path('recuperar-enviar/', views.recuperar_enviar, name='recuperar_enviar'),
+    path('reset/<uidb64>/<path:token>/', views.password_reset_custom_confirm, name='password_reset_custom_confirm'),
 
     # URL dinámica solo para páginas públicas
     path('<str:pagina>/', views.pagina_estatica, name='pagina_estatica'),
