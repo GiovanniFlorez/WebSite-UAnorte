@@ -2,40 +2,61 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("registroFormulario");
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirmPassword");
-  
+
   form.addEventListener("submit", function(e) {
     e.preventDefault();
-  
+
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
-  
+
     if (!regex.test(password.value)) {
       Swal.fire({
-        icon: 'error',
-        title: 'Contraseña inválida',
-        text: 'Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial',
-        confirmButtonText: 'Entendido'
+        icon: "error",
+        title: "Contraseña inválida",
+        text: "Debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial",
       });
       return;
     }
-  
+
     if (password.value !== confirmPassword.value) {
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Las contraseñas no coinciden.',
+        icon: "error",
+        title: "Error",
+        text: "Las contraseñas no coinciden.",
       });
       return;
     }
-  
-    Swal.fire({
-      icon: "success",
-      title: "¡Correcto!",
-      text: "La contraseña ha sido restablecida con éxito.",
-    }).then(() => {
-      form.submit();
+
+    const formData = new FormData(form);
+
+    fetch(window.location.href, {
+      method: "POST",
+      headers: {
+        "X-Requested-With": "XMLHttpRequest"
+      },
+      body: new FormData(form)
+    })    
+    .then(res => res.json())
+    .then(data => {
+      Swal.fire({
+        icon: data.status === "success" ? "success" : "error",
+        title: data.status === "success" ? "¡Éxito!" : "Error",
+        text: data.message,
+      }).then(() => {
+        if (data.status === "success") {
+          window.location.href = "/login/";
+        }
+      });
+    })
+    .catch(() => {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo procesar la solicitud."
+      });
     });
   });
 });
+
 
 const passwordInput = document.getElementById('password');
 const mostrarPasswordCheckbox = document.getElementById('mostrarPassword');
