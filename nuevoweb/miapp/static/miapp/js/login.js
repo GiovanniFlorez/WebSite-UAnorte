@@ -92,5 +92,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.getElementById("formRecuperar").addEventListener("submit", function (e) {
+  e.preventDefault();
 
+  let formData = new FormData(this);
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
+  fetch("/recuperar-enviar/", {
+      method: "POST",
+      headers: { "X-CSRFToken": csrftoken },
+      body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+      Swal.fire({
+          icon: data.status === "success" ? "success" : "error",
+          title: data.status === "success" ? "¡Éxito!" : "Error",
+          text: data.message,
+          confirmButtonColor: "#001D9E"
+      }).then(() => {
+          if (data.status === "success") {
+              window.location.href = "/login/"; 
+          }
+      });
+  })
+  .catch(err => {
+      Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se pudo enviar la solicitud.",
+          confirmButtonColor: "#001D9E"
+      });
+      console.error("Error detectado:", err);
+  });
+});
