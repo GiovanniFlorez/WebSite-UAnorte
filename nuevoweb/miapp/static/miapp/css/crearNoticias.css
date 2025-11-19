@@ -67,7 +67,6 @@ input, textarea {
 
 textarea{
     resize: vertical;
-    min-height: 80px;
 }
     
 input:focus {
@@ -221,4 +220,5 @@ button span {
     font-size: 13px;
     color: #333;
     font-weight: 500;
+
 }
