@@ -34,7 +34,7 @@
                     <h3 class="welcome-message">Bienvenido, {{user.rol}} {{ user.username }}!</h3>
                 {% endif%}
             
-                <a href="#" class="btn">
+                <a href="{% url 'pagina_estatica' 'crearNoticias' %}" class="btn">
                     <span>Crear Noticias</span>
                 </a>
                 
