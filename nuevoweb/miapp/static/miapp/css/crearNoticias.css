@@ -64,6 +64,11 @@ input, textarea {
     font-size: 14px;
     transition: border-color 0.3s ease;
 }
+
+textarea{
+    resize: vertical;
+    min-height: 80px;
+}
     
 input:focus {
     border-color: #001d9e;
@@ -165,19 +170,16 @@ button span {
     z-index: 2;
 }
 
-/* CONTENEDOR DEL INPUT FILE */
 .custom-file {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-/* OCULTAR INPUT ORIGINAL */
 .custom-file input[type="file"] {
     display: none;
 }
 
-/* LABEL PERSONALIZADO */
 .custom-file-label {
     background: linear-gradient(135deg, #4ad8f8, #001d9e);
     color: white;
