@@ -15,6 +15,7 @@ body {
 }
     
 .registro-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,8 +27,8 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: auto;
-    max-width: 1000px;
+    width: 100%;
+    max-width: 400px;
     transition: all 0.3s ease;
 }
     
@@ -35,7 +36,7 @@ body {
     width: 90px;
     margin-bottom: 15px;
 }
-  
+    
 h2 {
     color: #001d9e;
     font-weight: 700;
@@ -56,7 +57,7 @@ label {
     font-size: 14px;
 }
     
-input {
+input, textarea {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -157,147 +158,65 @@ button span {
     position: relative;
     z-index: 2;
 }
-
+  
 .logout-btn span {
     margin-right: 8px;
     position: relative;
     z-index: 2;
-} 
+}
 
-.resultados table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 25px;
-    font-size: 14px;
+/* CONTENEDOR DEL INPUT FILE */
+.custom-file {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
-  
-.resultados th, .resultados td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+
+/* OCULTAR INPUT ORIGINAL */
+.custom-file input[type="file"] {
+    display: none;
 }
-  
-.resultados th {
+
+/* LABEL PERSONALIZADO */
+.custom-file-label {
     background: linear-gradient(135deg, #4ad8f8, #001d9e);
     color: white;
-}
-
-.table-container{
-    width: 100%;
-    overflow-x: auto;
-    display: block;
-}
-
-.resultados td, 
-.resultados th {
-    word-wrap: break-word;
-    word-break: break-word;
-    white-space: normal;
-}
-
-.resultados td:nth-child(1),
-.resultados td:nth-child(2) {
-    max-width: 250px;
-}
-
-.btn-eliminar {
-    background: linear-gradient(135deg, #e63946, #b00000);
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
-}
-  
-.btn-eliminar:hover {
-    transform: scale(1.05);
-    background: linear-gradient(135deg, #b00000, #ff4d4d);
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: color 2s ease;
 }
 
-/* ========================= Responsive ========================= */
-@media screen and (max-width: 1024px) {
-    .registro-box {
-        width: 90%;
-        padding: 30px;
-    }
-
-    .logo {
-        width: 80px;
-    }
-
-    h2 {
-        font-size: 22px;
-    }
-
-    input, button {
-        font-size: 14px;
-    }
-
-    .resultados table {
-        font-size: 13px;
-    }
+.custom-file-label::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #001d9e, #4ad8f8);
+    opacity: 0;
+    transition: opacity 2s ease, transform 0.4s ease;
+    border-radius: inherit;
+    transform: scale(1.2);
+    z-index: 0;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        padding: 15px;
-    }
-
-    .registro-box {
-        padding: 25px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    input, button {
-        font-size: 13px;
-        padding: 10px;
-    }
-
-    .logout-global {
-        top: 15px;
-        right: 15px;
-    }
-
-    .resultados table, .resultados th, .resultados td {
-        font-size: 12px;
-        padding: 4px;
-    }
+.custom-file-label:hover::before {
+    opacity: 1;
+    transform: scale(1);
 }
 
-@media screen and (max-width: 480px) {
-    .registro-box {
-        padding: 20px;
-    }
+.custom-file-label i, span {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
 
-    h2 {
-        font-size: 18px;
-    }
-
-    .logo {
-        width: 70px;
-        margin-bottom: 10px;
-    }
-
-    input, button {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    .resultados table {
-        font-size: 11px;
-    }
-
-    .resultados th, .resultados td {
-        padding: 3px;
-        max-width: 100px;
-    }
-
-    .logout-btn {
-        font-size: 13px;
-        padding: 8px 16px;
-    }
+#file-name {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
 }
