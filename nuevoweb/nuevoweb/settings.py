@@ -65,8 +65,12 @@ WSGI_APPLICATION = 'nuevoweb.wsgi.application'
 # Base de datos
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'nuevoweb_db',
+        'USER': 'root',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -108,5 +112,5 @@ BASE_URL = 'http://127.0.0.1:8000/'
 AUTH_USER_MODEL = 'miapp.Usuario'
 
 # Redirección después del login
-LOGIN_REDIRECT_URL = '/login-redirigir/'  # Redirige a la función que decide según el rol
-LOGIN_URL = '/login/'  # Página de login
+LOGIN_REDIRECT_URL = '/login-redirigir/' 
+LOGIN_URL = '/login/' 
