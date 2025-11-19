@@ -381,8 +381,6 @@ def eliminar_usuarios(request):
 
 # Envío de correo para restablecimiento de contraseña
 
-
-
 def recuperar_enviar(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -454,35 +452,6 @@ def recuperar_enviar(request):
 
 
 Usuario = get_user_model()
-
-def recuperar_confirmar(request, uidb64, token):
-    try:
-        uid = urlsafe_base64_decode(uidb64).decode()
-        usuario = Usuario.objects.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, Usuario.DoesNotExist):
-        usuario = None
-
-    if usuario is not None and PasswordResetTokenGenerator().check_token(usuario, token):
-        
-        if request.method == "POST":
-            nueva = request.POST.get("password1")
-            confirmar = request.POST.get("password2")
-
-            if nueva != confirmar:
-                return JsonResponse({"status": "error", "message": "Las contraseñas no coinciden."})
-
-            usuario.password = make_password(nueva)
-            usuario.save()
-
-            return JsonResponse({"status": "success", "message": "Contraseña cambiada exitosamente."})
-
-        return render(request, "recuperarContraseña.html", {
-            "uidb64": uidb64,
-            "token": token
-        })
-
-    return render(request, "token_invalido.html")
-
 
 # Cambio de contraseña
 
