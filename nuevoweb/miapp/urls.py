@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.inicio, name='inicio'),
@@ -25,6 +27,12 @@ urlpatterns = [
     path('recuperar-enviar/', views.recuperar_enviar, name='recuperar_enviar'),
     path('reset/<uidb64>/<path:token>/', views.password_reset_custom_confirm, name='password_reset_custom_confirm'),
 
+    # Noticias
+    path('noticias/', views.noticias, name='noticias'),
+    path('crear-noticias/', views.crear_noticias, name='crear_noticias'),
+    #path('editar-noticias/', views.editar_noticias, name='editar_noticias'),
+    #path('eliminar-noticias/', views.eliminar_noticias, name='eliminar_noticias'),
+
     # URL dinámica solo para páginas públicas
     path('<str:pagina>/', views.pagina_estatica, name='pagina_estatica'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
