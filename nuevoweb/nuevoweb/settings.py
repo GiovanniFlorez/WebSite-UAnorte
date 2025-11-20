@@ -62,7 +62,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nuevoweb.wsgi.application'
 
-# Base de datos
+# Base de datos con MySQL y Workbench
 DATABASES = {
     'default': {
         'ENGINE': 'mysql.connector.django',
@@ -97,6 +97,11 @@ STATICFILES_DIRS = [
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Enviar correo
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
