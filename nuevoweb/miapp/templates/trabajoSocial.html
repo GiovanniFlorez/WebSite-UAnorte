@@ -18,11 +18,11 @@
     </head>
 
     <body>
-        {% include 'preloader.html' %}
+        {% include 'miapp/preloader.html' %}
 
-        {% include 'whatsappButton.html' %}
+        {% include 'miapp/whatsappButton.html' %}
         
-        {% include 'header.html' %}
+        {% include 'miapp/header.html' %}
 
         <div class="Trabajo Social">
             <div class="imagen">
@@ -101,7 +101,7 @@
                         Contáctanos para más información
                     </div>
             
-                    {% include 'formulario_contacto.html' %}
+                    {% include 'miapp/formulario_contacto.html' %}
 
                     {% if messages %}
                     <script>
@@ -121,7 +121,7 @@
         </div>
         
         <div class="footer">
-            {% include 'footer.html' %}
+            {% include 'miapp/footer.html' %}
         </div>
 
         <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
