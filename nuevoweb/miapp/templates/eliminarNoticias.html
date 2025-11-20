@@ -11,14 +11,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
     <link rel="stylesheet" href="{% static 'miapp/css/noticias.css' %}">
     <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
-    <link rel="stylesheet" href="{% static 'miapp/css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
-    <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
 </head>
 <body>
-    {% include 'miapp/preloader.html' %}
-    {% include 'miapp/whatsappButton.html' %}
-    {% include 'miapp/header.html' %}
+    {% include 'preloader.html' %}
 
     <section class="noticias">
         <h1 class="titulo">Noticias</h1>
@@ -48,9 +43,6 @@
         {% endfor %}
     </section>
 
-    {% include 'miapp/footer.html' %}
-
     <script src="{% static 'miapp/js/preloader.js' %}"></script>
-    <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
 </body>
 </html>

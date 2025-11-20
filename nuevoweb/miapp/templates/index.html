@@ -19,11 +19,11 @@
   </head>
 
   <body> 
-    {% include 'preloader.html' %}
+    {% include 'miapp/preloader.html' %}
 
-    {% include 'whatsappButton.html' %}
+    {% include 'miapp/whatsappButton.html' %}
     
-    {% include 'header.html' %}
+    {% include 'miapp/header.html' %}
 
     <div class="slider">
       <button class="slider-btn prev">&#10094;</button>
@@ -90,7 +90,7 @@
           Contáctanos para más información
         </div>
 
-        {% include 'formulario_contacto.html' %}
+        {% include 'miapp/formulario_contacto.html' %}
 
         
 
@@ -188,7 +188,7 @@
 
     <div class="noticias">
       <div class="column">
-        <a href="{% url 'pagina_estatica' 'noticias' %}">
+        <a href="{% url 'noticias' %}">
           <img class="noticiasImg" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/114-e1727384036171.png" alt="">
           <p class="noticiasTitulo">Visita del Ministerio de Justicia y del Derecho</p>
         </a>
@@ -196,7 +196,7 @@
       </div>
 
       <div class="column">
-        <a href="{% url 'pagina_estatica' 'noticias' %}">
+        <a href="{% url 'noticias' %}">
           <img class="noticiasImg" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/114-1-e1731450834696.png" alt="">
           <p class="noticiasTitulo">Nuevas Generaciones</p>
         </a>
@@ -204,7 +204,7 @@
       </div>
 
       <div class="column">
-        <a href="{% url 'pagina_estatica' 'noticias' %}">
+        <a href="{% url 'noticias' %}">
           <img class="noticiasImg" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/115-e1727384312539.png" alt="">
           <p class="noticiasTitulo">Reconocimiento al Dr. Tomás Wilches.</p>
         </a>
@@ -212,7 +212,7 @@
       </div>
 
       <div class="column">
-        <a href="{% url 'pagina_estatica' 'noticias' %}">
+        <a href="{% url 'noticias' %}">
           <img class="noticiasImg" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/115-1-e1727384352336.png" alt="">
           <p class="noticiasTitulo">Jornada Integral en el Barrio María Teresa.</p>
         </a>
@@ -264,7 +264,7 @@
       </a>
     </div>
 
-    {% include 'footer.html' %}
+    {% include 'miapp/footer.html' %}
 
     <script src="{% static 'miapp/js/index.js' %}"></script>
     <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
