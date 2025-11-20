@@ -15,7 +15,8 @@ from django.urls import reverse
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from smtplib import SMTPException
-from django.contrib.auth.hashers import make_password
+from .models import Noticia
+
 
 
 
@@ -24,11 +25,12 @@ from django.contrib.auth.hashers import make_password
 logger = logging.getLogger(__name__)
 
 def inicio(request):
-    return render(request, 'index.html')
+    return render(request, 'miapp/index.html')
+
+
 
 
 def pagina_estatica(request, pagina):
-    # Lista de páginas protegidas que no deben ir a la dinámica
     protected = [
         'crud-usuarios',
         'registrar-usuarios',
@@ -39,14 +41,13 @@ def pagina_estatica(request, pagina):
     ]
 
     if pagina in protected:
-        # Puedes redirigir al inicio o mostrar 404
-        raise Http404("Página no encontrada")  
+        raise Http404("Página no encontrada")
 
-    # Solo renderiza páginas públicas
     try:
-        return render(request, f'{pagina}.html')
+        return render(request, f'miapp/{pagina}.html')
     except TemplateDoesNotExist:
         raise Http404("Página no encontrada")
+
 
 
 
@@ -124,7 +125,7 @@ Este correo es automático, por favor no responder directamente.
             logger.error(f"Error enviando correo: {e}")
             messages.error(request, "Hubo un error al enviar el mensaje. Intenta más tarde.")
 
-    return render(request, "index.html")
+    return render(request, "miapp/index.html")
 
 
 
@@ -180,30 +181,30 @@ Este correo proviene de la página web, por favor no responder directamente.
 
         return redirect("enviar_pqrsf")
 
-    return render(request, "PQRSF.html")
+    return render(request, "miapp/PQRSF.html")
 
 
-#Vistas para CRUD de usuarios (solo admins)|
+#Vistas para CRUD de usuarios (solo admins)
 
 @login_required
 @admin_required
 def crud_usuarios(request):
-    return render(request, "crudUsuarios.html")
+    return render(request, "miapp/crudUsuarios.html")
 
 @login_required
 @admin_required
 def registrar_usuarios(request):
-    return render(request, "registrarUsuarios.html")
+    return render(request, "miapp/registrarUsuarios.html")
 
 @login_required
 @admin_required
 def modificar_usuarios(request):
-    return render(request, "modificarUsuarios.html")
+    return render(request, "miapp/modificarUsuarios.html")
 
 @login_required
 @admin_required
 def eliminar_usuarios(request):
-    return render(request, "eliminarUsuarios.html")
+    return render(request, "miapp/eliminarUsuarios.html")
 
 
 #Vista para editar contenido
@@ -211,7 +212,7 @@ def eliminar_usuarios(request):
 @login_required
 @editor_required
 def editar_contenido(request):
-    return render(request, "editarContenido.html")
+    return render(request, "miapp/editarContenido.html")
 
 
 # Redirección post-login según rol
@@ -227,7 +228,7 @@ def login_redirigir(request):
 
 
 class CustomLoginView(LoginView):
-    template_name = 'login.html'
+    template_name = 'miapp/login.html'
     redirect_authenticated_user = True
 
     def form_invalid(self, form):
@@ -269,7 +270,7 @@ def registrar_usuario(request):
         messages.success(request, "El usuario {username} ha sido registrado exitosamente como editor.".format(username=username))
         return redirect('registrar_usuario')
 
-    return render(request, 'registrarUsuarios.html')
+    return render(request, 'miapp/registrarUsuarios.html')
 
 
 # Modificación de usuarios
@@ -326,7 +327,7 @@ def modificar_usuarios(request):
 
     roles_disponibles = Usuario.ROLES
 
-    return render(request, 'modificarUsuarios.html', {
+    return render(request, 'miapp/modificarUsuarios.html', {
         'usuario': usuario,
         'roles_disponibles': roles_disponibles
     })
@@ -376,7 +377,7 @@ def eliminar_usuarios(request):
             except Usuario.DoesNotExist:
                 messages.error(request, "El usuario seleccionado no existe.")
 
-    return render(request, 'eliminarUsuarios.html', {'usuarios': usuarios})
+    return render(request, 'miapp/eliminarUsuarios.html', {'usuarios': usuarios})
 
 
 # Envío de correo para restablecimiento de contraseña
@@ -465,7 +466,7 @@ def password_reset_custom_confirm(request, uidb64, token):
                 "status": "error",
                 "message": "Enlace inválido"
             })
-        return render(request, "recuperarContraseña.html", {"error": "Enlace inválido"})
+        return render(request, "miapp/recuperarContraseña.html", {"error": "Enlace inválido"})
 
     if not default_token_generator.check_token(user, token):
         if request.headers.get("X-Requested-With") == "XMLHttpRequest":
@@ -473,7 +474,7 @@ def password_reset_custom_confirm(request, uidb64, token):
                 "status": "error",
                 "message": "Token expirado o inválido"
             })
-        return render(request, "recuperarContraseña.html", {"error": "Token inválido"})
+        return render(request, "miapp/recuperarContraseña.html", {"error": "Token inválido"})
 
     if request.method == "POST":
         pass1 = request.POST.get("new_password1")
@@ -499,7 +500,56 @@ def password_reset_custom_confirm(request, uidb64, token):
             "message": "Contraseña actualizada correctamente."
         })
 
-    return render(request, "recuperarContraseña.html", {
+    return render(request, "miapp/recuperarContraseña.html", {
         "uidb64": uidb64,
         "token": token
     })
+
+
+
+# Crear Noticias
+@login_required
+@editor_required
+
+
+def crear_noticias(request):
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo')
+        descripcion = request.POST.get('descripcion')
+        imagen = request.FILES.get('imagen')
+
+        # Validaciones
+        if not titulo:
+            messages.error(request, "Debes ingresar un título.")
+            return redirect('crear_noticias')
+
+        if not descripcion:
+            messages.error(request, "Debes ingresar una descripción.")
+            return redirect('crear_noticias')
+
+        if not imagen:
+            messages.error(request, "Debes seleccionar una imagen.")
+            return redirect('crear_noticias')
+
+        # Guardar la noticia
+        Noticia.objects.create(
+            titulo=titulo,
+            descripcion=descripcion,
+            imagen=imagen,
+            autor=request.user if request.user.is_authenticated else None
+        )
+
+        messages.success(request, "La noticia fue creada correctamente.")
+        return redirect('crear_noticias')
+
+    return render(request, 'miapp/crearNoticias.html')
+
+
+
+
+
+# Mostrar Noticias
+
+def noticias(request):
+    lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
+    return render(request, 'miapp/noticias.html', {'noticias': lista_noticias})
