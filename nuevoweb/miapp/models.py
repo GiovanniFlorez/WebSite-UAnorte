@@ -21,7 +21,7 @@ class Usuario(AbstractUser):
 
 
 class Noticia(models.Model):
-    titulo = models.CharField(max_length=200)
+    titulo = models.CharField(max_length=2000)
     descripcion = models.TextField()
     imagen = models.ImageField(upload_to='noticias/')
     fecha_creacion = models.DateTimeField(auto_now_add=True)
