@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Usuario
+from .models import Usuario, Noticia 
 
-# Registrar el modelo de usuario personalizado en el admin de Django
 class UsuarioAdmin(UserAdmin):
     list_display = ('username', 'email', 'first_name', 'last_name', 'rol', 'is_staff', 'is_active', 'date_joined')
     list_filter = ('rol', 'is_staff', 'is_active', 'date_joined')
@@ -11,5 +10,6 @@ class UsuarioAdmin(UserAdmin):
         ('Información extra', {'fields': ('rol',)}),
     )
 
-
 admin.site.register(Usuario, UsuarioAdmin)
+
+admin.site.register(Noticia)

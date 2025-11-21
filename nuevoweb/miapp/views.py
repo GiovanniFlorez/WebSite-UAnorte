@@ -553,3 +553,11 @@ def crear_noticias(request):
 def noticias(request):
     lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
     return render(request, 'miapp/noticias.html', {'noticias': lista_noticias})
+
+#def ver_noticias_editar(request):
+#    lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
+#    return render(request, 'miapp/editarNoticias.html', {'ver_noticias_editar': lista_noticias})
+
+#def ver_noticias_eliminar(request):
+#    lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
+#    return render(request, 'miapp/eliminarNoticias.html', {'noticias': lista_noticias})
