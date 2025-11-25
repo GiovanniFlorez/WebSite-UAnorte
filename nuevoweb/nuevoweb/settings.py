@@ -62,17 +62,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nuevoweb.wsgi.application'
 
-# Base de datos con MySQL y Workbench
+# Base de datos
 DATABASES = {
     'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'nuevoweb_db',
-        'USER': 'root',
-        'PASSWORD': '1234',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / "db.sqlite3",
     }
 }
+
 
 # Validadores de contraseña
 AUTH_PASSWORD_VALIDATORS = [
