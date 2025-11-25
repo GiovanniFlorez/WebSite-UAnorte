@@ -41,3 +41,16 @@ inputImagen.addEventListener("change", function () {
         width: 500
     });
 });
+
+document.querySelector("form").addEventListener("submit", function(e) {
+    const imagen = document.getElementById("imagen").files[0];
+
+    if (!imagen) {
+        e.preventDefault();
+        Swal.fire({
+            icon: "error",
+            title: "Debes seleccionar una imagen.",
+            text: "Por favor selecciona un archivo antes de continuar."
+        });
+    }
+});
