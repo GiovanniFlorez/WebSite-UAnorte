@@ -45,7 +45,7 @@ body, html {
     border-radius: 10px;
 }
 
-/* --- RESPONSIVE --- */
+/* =========== RESPONSIVE =========== */
 
 @media (max-width: 1024px) {
     .titulo {

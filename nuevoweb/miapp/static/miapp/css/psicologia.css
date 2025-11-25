@@ -300,7 +300,6 @@ select {
 
 /* =========== RESPONSIVE =========== */
 
-/* Tablet */
 @media (max-width: 1024px) {
     .Psicología,
     .formularioDeInscripcion,
@@ -333,7 +332,6 @@ select {
     }
 }
 
-/* Móviles */
 @media (max-width: 768px) {
     .imagen {
         flex-direction: column;
