@@ -17,7 +17,7 @@ def admin_required(view_func):
     return wrapper
 
 
-# Decorador para verificar si el usuario es editor o administrador
+# Decorador para verificar si el usuario es editor
 def editor_required(view_func):
     @wraps(view_func)
     def wrapper(request, *args, **kwargs):

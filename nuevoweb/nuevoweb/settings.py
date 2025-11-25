@@ -4,7 +4,10 @@ from pathlib import Path
 # Ruta base del proyecto
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+
 SECRET_KEY = 'django-insecure-y1qh#76^di&k70zz41h%chowi7k!1pd(u8hf%s2=+j3jb3p2#f'
+
 
 #////////////////////////////////////////////////////////////////////////////////////
 #Cuando se vaya a entregar la pagina cambiar True por False por si hay algun error
@@ -14,8 +17,10 @@ DEBUG = True
 
 #////////////////////////////////////////////////////////////////////////////////////
 
+
 # Dominios permitidos
 ALLOWED_HOSTS = ['*']
+
 
 # Aplicaciones instaladas
 INSTALLED_APPS = [
@@ -27,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'miapp',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -41,6 +47,7 @@ MIDDLEWARE = [
 
 
 ROOT_URLCONF = 'nuevoweb.urls'
+
 
 # Templates
 TEMPLATES = [
@@ -62,6 +69,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nuevoweb.wsgi.application'
 
+
 # Base de datos
 DATABASES = {
     'default': {
@@ -80,10 +88,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Configuración internacionalización
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
+
 
 # Archivos estáticos (CSS y JS)
 STATIC_URL = '/static/'
@@ -95,7 +105,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+# Configuración de medios (archivos subidos por usuarios)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -110,8 +120,10 @@ EMAIL_HOST_PASSWORD = 'zkzdfyadkteayqps'  #Contraseña de la aplicacion
 DEFAULT_FROM_EMAIL = 'giovanniflorez22@gmail.com'
 BASE_URL = 'http://127.0.0.1:8000/'  
 
+
 # Configuración de usuario
 AUTH_USER_MODEL = 'miapp.Usuario'
+
 
 # Redirección después del login
 LOGIN_REDIRECT_URL = '/login-redirigir/' 

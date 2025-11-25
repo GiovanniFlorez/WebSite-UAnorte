@@ -52,6 +52,8 @@ def cerrar_sesion(request):
     return redirect('inicio')
 
 
+# ================================================ FORMULARIOS DE CONTACTO Y PQRSF ================================================
+
 # FUNCIÓN PARA ENVIAR EL FORMULARIO DE CONTACTO
     
 def enviar_contacto(request):
@@ -179,7 +181,7 @@ Este correo proviene de la página web, por favor no responder directamente.
     return render(request, "miapp/PQRSF.html")
 
 
-#Vistas para CRUD de usuarios (solo admins)
+# ================================================ CRUD USUARIOS ================================================
 
 @login_required
 @admin_required
@@ -374,6 +376,7 @@ def eliminar_usuarios(request):
 
     return render(request, 'miapp/eliminarUsuarios.html', {'usuarios': usuarios})
 
+# ================================================ RECUPERACIÓN DE CONTRASEÑA ================================================
 
 # Envío de correo para restablecimiento de contraseña
 
@@ -444,12 +447,11 @@ def recuperar_enviar(request):
     })
 
 
-
-
+# Modelo de usuario personalizado   
 
 Usuario = get_user_model()
 
-# Cambio de contraseña
+# Confirmación y restablecimiento de contraseña
 
 def password_reset_custom_confirm(request, uidb64, token):
     try:
@@ -500,14 +502,11 @@ def password_reset_custom_confirm(request, uidb64, token):
         "token": token
     })
 
-
-# CRUD de Noticias
-
+# ================================================ CRUD NOTICIAS ================================================
 
 # Crear Noticias
 @login_required
 @editor_required
-
 
 def crear_noticias(request):
     if request.method == 'POST':
@@ -515,7 +514,6 @@ def crear_noticias(request):
         descripcion = request.POST.get('descripcion')
         imagen = request.FILES.get('imagen')
 
-        # Validaciones
         if not titulo:
             messages.error(request, "Debes ingresar un título.")
             return redirect('crear_noticias')
@@ -528,7 +526,6 @@ def crear_noticias(request):
             messages.error(request, "Debes seleccionar una imagen.")
             return redirect('crear_noticias')
 
-        # Guardar la noticia
         Noticia.objects.create(
             titulo=titulo,
             descripcion=descripcion,
@@ -550,6 +547,30 @@ def editar_noticias(request):
     noticias = Noticia.objects.all().order_by('-fecha_creacion')
     
     return render(request, 'miapp/editarNoticias.html', {'noticias': noticias})
+
+@login_required
+@editor_required
+
+def actualizar_noticia(request):
+    if request.method == "POST":
+        try:
+            id = request.POST.get("noticia_id")
+            noticia = Noticia.objects.get(id=id)
+
+            noticia.titulo = request.POST.get("titulo")
+            noticia.descripcion = request.POST.get("descripcion")
+
+            if request.FILES.get("imagen"):
+                noticia.imagen = request.FILES["imagen"]
+
+            noticia.save()
+            messages.success(request, "Noticia actualizada correctamente.")
+
+        except Exception as e:
+            messages.error(request, "Hubo un error al actualizar la noticia.")
+
+        return redirect("editar_noticias")
+
 
 
 # Eliminar Noticias
