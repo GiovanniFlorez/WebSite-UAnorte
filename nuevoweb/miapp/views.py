@@ -1,5 +1,5 @@
 from django.http import Http404, JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template.exceptions import TemplateDoesNotExist
 from django.core.mail import EmailMultiAlternatives, send_mail, BadHeaderError
 from django.conf import settings
@@ -19,9 +19,6 @@ from .models import Noticia
 
 
 
-
-
-
 logger = logging.getLogger(__name__)
 
 def inicio(request):
@@ -29,7 +26,7 @@ def inicio(request):
 
 
 
-
+# FUNCIÓN PARA RENDERIZAR PÁGINAS
 def pagina_estatica(request, pagina):
     protected = [
         'crud-usuarios',
@@ -49,9 +46,7 @@ def pagina_estatica(request, pagina):
         raise Http404("Página no encontrada")
 
 
-
-
-
+# FUNCIÓN PARA CERRAR SESIÓN
 def cerrar_sesion(request):
     logout(request)
     return redirect('inicio')
@@ -506,6 +501,8 @@ def password_reset_custom_confirm(request, uidb64, token):
     })
 
 
+# CRUD de Noticias
+
 
 # Crear Noticias
 @login_required
@@ -545,6 +542,37 @@ def crear_noticias(request):
     return render(request, 'miapp/crearNoticias.html')
 
 
+# Editar Noticias
+@login_required
+@editor_required
+
+def editar_noticias(request):
+    noticias = Noticia.objects.all().order_by('-fecha_creacion')
+    
+    return render(request, 'miapp/editarNoticias.html', {'noticias': noticias})
+
+
+# Eliminar Noticias
+@login_required
+@editor_required
+
+def eliminar_noticias(request):
+    noticias = Noticia.objects.all().order_by('-fecha_creacion')
+
+    if request.method == 'POST':
+        noticia_id = request.POST.get('noticia_id')
+        noticia = get_object_or_404(Noticia, id=noticia_id)
+
+        # Validación de permisos
+        if request.user != noticia.autor and not request.user.es_admin():
+            messages.error(request, "No tienes permiso para eliminar esta noticia.")
+            return redirect('eliminar_noticias')
+
+        noticia.delete()
+        messages.success(request, "La noticia fue eliminada correctamente.")
+        return redirect('eliminar_noticias')
+
+    return render(request, 'miapp/eliminarNoticias.html', {'noticias': noticias})
 
 
 
@@ -553,11 +581,3 @@ def crear_noticias(request):
 def noticias(request):
     lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
     return render(request, 'miapp/noticias.html', {'noticias': lista_noticias})
-
-#def ver_noticias_editar(request):
-#    lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
-#    return render(request, 'miapp/editarNoticias.html', {'ver_noticias_editar': lista_noticias})
-
-#def ver_noticias_eliminar(request):
-#    lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
-#    return render(request, 'miapp/eliminarNoticias.html', {'noticias': lista_noticias})
