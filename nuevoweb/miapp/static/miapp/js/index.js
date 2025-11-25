@@ -1,4 +1,5 @@
-/*------------------------------------------------------Slider de imágenes------------------------------------------------*/
+// --------------------------- Slider de imágenes --------------------------- 
+
 const images = document.querySelectorAll(".slider img");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");

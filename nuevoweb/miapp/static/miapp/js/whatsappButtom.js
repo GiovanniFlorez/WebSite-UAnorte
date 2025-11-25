@@ -1,4 +1,3 @@
-/**------------------------------------------------Boton flotante de whatsapp-------------------------------------------*/
 const whatsappBtn = document.getElementById('whatsappBtn');
 const whatsappPopup = document.getElementById('whatsappPopup');
 const openChatBtn = document.getElementById('openChatBtn');
