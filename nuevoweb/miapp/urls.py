@@ -29,12 +29,12 @@ urlpatterns = [
 
     # Noticias
     path('noticias/', views.noticias, name='noticias'),
-    #path('ver-noticias-editar/', views.ver_noticias_editar, name='ver_noticias_editar'),
-    #path('ver-noticias-eliminar/', views.ver_noticias_eliminar, name='ver_noticias_eliminar'),
     path('crear-noticias/', views.crear_noticias, name='crear_noticias'),
-    #path('editar-noticias/', views.editar_noticias, name='editar_noticias'),
-    #path('eliminar-noticias/', views.eliminar_noticias, name='eliminar_noticias'),
+    path('editar-noticias/', views.editar_noticias, name='editar_noticias'),
+    path('eliminar-noticias/', views.eliminar_noticias, name='eliminar_noticias'),
 
-    # URL dinámica solo para páginas públicas
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += [
     path('<str:pagina>/', views.pagina_estatica, name='pagina_estatica'),
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
