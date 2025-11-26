@@ -34,11 +34,20 @@ def pagina_estatica(request, pagina):
         'modificar-usuarios',
         'eliminar-usuarios',
         'login',
-        'login-redirigir'
+        'login-redirigir',
+        'crudNoticias',
+        'crudUsuarios',
+        'editarContenido',
+        'crearNoticias',
+        'editarNoticias',
+        'eliminarNoticias',
+        'registrarUsuarios',
+        'modificarUsuarios',
+        'eliminarUsuarios',
     ]
 
     if pagina in protected:
-        raise Http404("Página no encontrada")
+        return render(request, 'miapp/login.html')
 
     try:
         return render(request, f'miapp/{pagina}.html')
