@@ -25,7 +25,6 @@ def inicio(request):
     return render(request, 'miapp/index.html')
 
 
-
 # FUNCIÓN PARA RENDERIZAR PÁGINAS
 def pagina_estatica(request, pagina):
     protected = [
@@ -47,12 +46,15 @@ def pagina_estatica(request, pagina):
     ]
 
     if pagina in protected:
-        return render(request, 'miapp/login.html')
+        if not request.user.is_authenticated:
+            return redirect(f'/login/?next=/{pagina}')
 
     try:
         return render(request, f'miapp/{pagina}.html')
     except TemplateDoesNotExist:
         raise Http404("Página no encontrada")
+
+
 
 
 # FUNCIÓN PARA CERRAR SESIÓN
