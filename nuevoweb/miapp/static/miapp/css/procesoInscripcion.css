@@ -224,18 +224,18 @@ select {
     padding: 0 20px;
 }
 
-.botonEnviar {
-    display: block;
-    margin: 30px auto;
+.botonEnviar{
+    margin-left: 40%;
     border: none;
     color: #6b6b6b;
-    background-color: #f0f0f0;
-    height: 40px;
-    width: 30%;
+    background-color:  #f0f0f0;
+    height: 60%;
+    width: 23%;
+    padding: 20px 0;
     font-size: 115%;
     font-weight: 250;
     transition: all 0.3s ease;
-}
+  }
   
 .botonEnviar:hover {
     background-color: rgb(79, 79, 218);
@@ -322,7 +322,7 @@ select {
     }
 
     .botonEnviar {
-        width: 80%;
+        margin-left: 20%;
         font-size: 16px;
     }
 
