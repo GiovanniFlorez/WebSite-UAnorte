@@ -273,8 +273,8 @@ body, html{
 }
 
 .columna3 p{
-    cursor: default;
-    margin-left: 6.3%;
+  cursor: default;
+  margin-left: 6.3%;
 }
 
 .columna3 input::placeholder,
@@ -345,8 +345,9 @@ select {
   border: none;
   color: #6b6b6b;
   background-color:  #f0f0f0;
-  height: 6%;
+  height: 60%;
   width: 23%;
+  padding: 20px 0;
   font-size: 115%;
   font-weight: 250;
   transition: all 0.3s ease;
