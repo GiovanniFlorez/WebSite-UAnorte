@@ -109,16 +109,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
-# Enviar correo
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+# Envío de correos usando SendGrid
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'giovanniflorez22@gmail.com'  #Correo Emisor
-EMAIL_HOST_PASSWORD = 'zkzdfyadkteayqps'  #Contraseña de la aplicacion
-DEFAULT_FROM_EMAIL = 'giovanniflorez22@gmail.com'
-BASE_URL = 'http://127.0.0.1:8000/'  
+EMAIL_HOST_USER = "apikey"
+EMAIL_HOST_PASSWORD = "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"
+DEFAULT_FROM_EMAIL = "soporte.sistemas@uanorte.edu.co"  
+
 
 
 # Configuración de usuario
