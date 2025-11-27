@@ -31,7 +31,6 @@ urlpatterns = [
     path('noticias/', views.noticias, name='noticias'),
     path('crear-noticias/', views.crear_noticias, name='crear_noticias'),
     path('editar-noticias/', views.editar_noticias, name='editar_noticias'),
-    path("actualizar-noticia/", views.actualizar_noticia, name="actualizar_noticia"),
     path('eliminar-noticias/', views.eliminar_noticias, name='eliminar_noticias'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
