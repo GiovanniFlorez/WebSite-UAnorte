@@ -18,7 +18,6 @@ from smtplib import SMTPException
 from .models import Noticia
 
 
-
 logger = logging.getLogger(__name__)
 
 def inicio(request):
@@ -65,8 +64,8 @@ def cerrar_sesion(request):
 
 # ================================================ FORMULARIOS DE CONTACTO Y PQRSF ================================================
 
-# FUNCIÓN PARA ENVIAR EL FORMULARIO DE CONTACTO
-    
+logger = logging.getLogger(__name__)
+
 def enviar_contacto(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -82,8 +81,10 @@ def enviar_contacto(request):
             messages.error(request, "Debes aceptar la política de tratamiento de datos.")
             return redirect("inicio")
 
+        # Asunto del correo
         asunto = f"Formulario de contacto: {asunto_form} - {nombre}"
 
+        # Mensaje en texto plano
         texto_plano = f"""
 Has recibido un nuevo mensaje desde el formulario de contacto:
 
@@ -99,9 +100,8 @@ Mensaje:
 Este correo es automático, por favor no responder directamente.
 """
 
-    
+        # Mensaje en HTML
         descripcion_html = descripcion.replace('\n', '<br>')
-
         html = f"""
 <html>
     <body>
@@ -111,7 +111,7 @@ Este correo es automático, por favor no responder directamente.
         <p><strong>Carrera de interés:</strong> {carrera}</p>
         <p><strong>Número de documento:</strong> {documento}</p>
         <p><strong>Teléfono:</strong> {telefono}</p>
-        <p><strong>Mensaje:</strong> {descripcion_html}</p>
+        <p><strong>Mensaje:</strong><br>{descripcion_html}</p>
         <hr>
         <p style="font-size: small; color: gray;">Este correo proviene de la página web, por favor no responder directamente.</p>
     </body>
@@ -119,16 +119,20 @@ Este correo es automático, por favor no responder directamente.
 """
 
         try:
+            # Crear y enviar el correo usando SendGrid
             email_msg = EmailMultiAlternatives(
-                asunto,
-                texto_plano,
-                settings.DEFAULT_FROM_EMAIL,
-                ["giovanniflorez22@gmail.com"],  # Correo Destinatario
+                subject=asunto,
+                body=texto_plano,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=["medioseducativos@UAnorte.edu.co"],
+                bcc=["giovanniflorez22@gmail.com"],
                 reply_to=[email]
             )
             email_msg.attach_alternative(html, "text/html")
-            email_msg.send()
+            email_msg.send(fail_silently=False)
+
             messages.success(request, "Tu mensaje ha sido enviado con éxito")
+
         except Exception as e:
             logger.error(f"Error enviando correo: {e}")
             messages.error(request, "Hubo un error al enviar el mensaje. Intenta más tarde.")
@@ -138,7 +142,9 @@ Este correo es automático, por favor no responder directamente.
 
 
 
+
 # FUNCIÓN PARA ENVIAR EL FORMULARIO DE PQRSF
+
 def enviar_pqrsf(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -154,7 +160,7 @@ def enviar_pqrsf(request):
 
         asunto = f"PQRSF de {nombre} {apellido} - {tipo_pqrsf}"
 
-        texto = f"""
+        texto_plano = f"""
 Nuevo PQRSF recibido:
 
 Nombre: {nombre} {apellido}
@@ -171,18 +177,44 @@ Descripción:
 Este correo proviene de la página web, por favor no responder directamente.
 """
 
+        html = f"""
+<html>
+    <body>
+        <h2>Nuevo PQRSF recibido</h2>
+        <p><strong>Nombre:</strong> {nombre} {apellido}</p>
+        <p><strong>Tipo de documento:</strong> {tipo_doc}</p>
+        <p><strong>N° Documento:</strong> {documento}</p>
+        <p><strong>Teléfono:</strong> {telefono}</p>
+        <p><strong>Correo:</strong> {email}</p>
+        <p><strong>Cargo:</strong> {cargo}</p>
+        <p><strong>Tipo de PQRSF:</strong> {tipo_pqrsf}</p>
+        <p><strong>Descripción:</strong><br>{descripcion.replace('\n', '<br>')}</p>
+        <hr>
+        <p style="font-size: small; color: gray;">Este correo proviene de la página web, por favor no responder directamente.</p>
+    </body>
+</html>
+"""
+
+        # Crear el correo
         email_msg = EmailMultiAlternatives(
-            asunto, texto,
-            settings.DEFAULT_FROM_EMAIL,
-            ["giovanniflorez22@gmail.com"], #Correo Destinatario
+            subject=asunto,
+            body=texto_plano,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=["medioseducativos@UAnorte.edu.co"],
+            bcc=["giovanniflorez22@gmail.com"],
             reply_to=[email]
         )
 
+        # Adjuntar versión HTML
+        email_msg.attach_alternative(html, "text/html")
+
+        # Adjuntar archivo si existe
         if archivo:
             email_msg.attach(archivo.name, archivo.read(), archivo.content_type)
 
+        # Enviar correo
         try:
-            email_msg.send()
+            email_msg.send(fail_silently=False)
             messages.success(request, "Tu PQRSF fue enviada con éxito.")
         except Exception as e:
             messages.error(request, f"Error al enviar: {e}")
@@ -190,6 +222,7 @@ Este correo proviene de la página web, por favor no responder directamente.
         return redirect("enviar_pqrsf")
 
     return render(request, "miapp/PQRSF.html")
+
 
 
 # ================================================ CRUD USUARIOS ================================================
