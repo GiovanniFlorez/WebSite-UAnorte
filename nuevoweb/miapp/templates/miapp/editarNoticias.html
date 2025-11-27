@@ -72,7 +72,7 @@
 
             <h2>Editar Noticia</h2>
 
-            <form id="formEditar" method="POST" action="{% url 'actualizar_noticia' %}" enctype="multipart/form-data">
+            <form id="formEditar" method="POST" action="{% url 'editar_noticias' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 
                 <input type="hidden" name="noticia_id" id="edit_id">
