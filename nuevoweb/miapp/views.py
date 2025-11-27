@@ -557,12 +557,6 @@ def crear_noticias(request):
 def editar_noticias(request):
     noticias = Noticia.objects.all().order_by('-fecha_creacion')
     
-    return render(request, 'miapp/editarNoticias.html', {'noticias': noticias})
-
-@login_required
-@editor_required
-
-def actualizar_noticia(request):
     if request.method == "POST":
         try:
             id = request.POST.get("noticia_id")
@@ -581,6 +575,9 @@ def actualizar_noticia(request):
             messages.error(request, "Hubo un error al actualizar la noticia.")
 
         return redirect("editar_noticias")
+    
+    return render(request, 'miapp/editarNoticias.html', {'noticias': noticias})
+
 
 
 
@@ -595,7 +592,6 @@ def eliminar_noticias(request):
         noticia_id = request.POST.get('noticia_id')
         noticia = get_object_or_404(Noticia, id=noticia_id)
 
-        # Validación de permisos
         if request.user != noticia.autor and not request.user.es_admin():
             messages.error(request, "No tienes permiso para eliminar esta noticia.")
             return redirect('eliminar_noticias')
