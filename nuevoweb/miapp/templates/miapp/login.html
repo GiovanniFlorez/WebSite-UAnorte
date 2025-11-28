@@ -17,6 +17,8 @@
   <body>
     {% include 'miapp/preloader.html' %}
 
+
+    <!-- ========================================== BOTON VOLVER ========================================== -->
     <div class="logout-global">
       <a href="{% url 'inicio' %}">
         <button type="submit" class="logout-btn">
@@ -25,6 +27,7 @@
       </a>
     </div>
 
+    <!-- ========================================== FORMULARIO LOGIN ========================================== -->
     <div class="login-container fade show" id="loginContainer">
       <div class="login-box">
         <img src="{% static 'miapp/media/logoUAnorte.png' %}" alt="Campus UA Norte" class="logo">
@@ -76,7 +79,7 @@
       </div>
     </div>
     
-    
+    <!-- ========================================== FORMULARIO RECUPERAR CONTRASEÑA ========================================== -->
     <div class="login-container fade" id="recuperarContainer" style="display:none;">
       <div class="login-box">
         <img src="{% static 'miapp/media/logoUAnorte.png' %}" alt="Campus UA Norte" class="logo">
