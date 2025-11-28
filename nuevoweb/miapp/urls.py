@@ -33,6 +33,12 @@ urlpatterns = [
     path('editar-noticias/', views.editar_noticias, name='editar_noticias'),
     path('eliminar-noticias/', views.eliminar_noticias, name='eliminar_noticias'),
 
+
+    path("slider-editor/", views.slider_editor, name="slider_editor"),
+    path("slider-editor/add/", views.add_slider_image, name="add_slider_image"),
+    path("slider-editor/delete/", views.delete_slider_image, name="delete_slider_image"),
+
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [

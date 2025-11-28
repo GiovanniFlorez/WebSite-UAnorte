@@ -16,12 +16,17 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from smtplib import SMTPException
 from .models import Noticia
+from django.contrib.auth.decorators import login_required
+from .models import SliderImage
 
 
 logger = logging.getLogger(__name__)
 
 def inicio(request):
-    return render(request, 'miapp/index.html')
+    slider_images = SliderImage.objects.all()
+    return render(request, 'miapp/index.html', {
+        "slider_images": slider_images
+    })
 
 
 # FUNCIÓN PARA RENDERIZAR PÁGINAS
@@ -642,3 +647,33 @@ def eliminar_noticias(request):
 def noticias(request):
     lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
     return render(request, 'miapp/noticias.html', {'noticias': lista_noticias})
+
+
+
+# ================================================ CRUD DE SLIDER ================================================
+
+
+
+@login_required
+@editor_required
+def slider_editor(request):
+    images = SliderImage.objects.all()
+    return render(request, "miapp/crudSlider.html", {"images": images})
+
+
+@login_required
+@editor_required
+def add_slider_image(request):
+    image_file = request.FILES.get("image")
+    if image_file:
+        SliderImage.objects.create(image=image_file)
+    return redirect("slider_editor")
+
+
+@login_required
+@editor_required
+def delete_slider_image(request):
+    image_id = request.POST.get("image_id")
+    img = get_object_or_404(SliderImage, id=image_id)
+    img.delete()
+    return redirect("slider_editor")
