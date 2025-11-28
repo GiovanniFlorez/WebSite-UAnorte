@@ -25,21 +25,31 @@
     
     {% include 'miapp/header.html' %}
 
-    <div class="slider">
-      <button class="slider-btn prev">&#10094;</button>
-
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho.png" class="active">
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-2.png">
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-1-2.png">
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho-1-1.png">
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-3-3.png">
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/portada-de-inicio-2-2.png">
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/PAGINA-WEB-PRINCIPAL.png">
-      <img src="https://uanorte.edu.co/web/wp-content/uploads/2025/11/PAGINA-WEB-2.jpg">
-
-      <button class="slider-btn next">&#10095;</button>
-    </div>
+    <!-- ========================================== MODAL ========================================== -->
+    <div class="modal">
       
+    </div>
+
+    <!-- ========================================== SLIDER ========================================== -->
+    <div class="slider">
+
+      {% if slider_images|length > 1 %}
+        <button class="slider-btn prev">&#10094;</button>
+      {% endif %}
+  
+      {% for img in slider_images %}
+        <img src="{{ img.image.url }}" class="{% if forloop.first %}active{% endif %}">
+      {% endfor %}
+  
+      {% if slider_images|length > 1 %}
+        <button class="slider-btn next">&#10095;</button>
+      {% endif %}
+  
+     </div>
+  
+  
+
+    <!-- ========================================== IMAGENES ENLACES ========================================== -->
     <div class="imagenes">
       <a href="https://site2.q10.com/login?ReturnUrl=%2FPreinscripcion&aplentId=ccfdab40-6d54-4719-a89c-e85a6c812a14" target="_blank" rel="noopener noreferrer">
         <img class="img" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/1-1.png" alt="">
