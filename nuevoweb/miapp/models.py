@@ -31,3 +31,15 @@ class Noticia(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+
+
+class SliderImage(models.Model):
+    image = models.ImageField(upload_to="slider/")
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __str__(self):
+        return f"Imagen {self.id}"
