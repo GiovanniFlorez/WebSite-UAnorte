@@ -1,11 +1,10 @@
 import os
 from pathlib import Path
 
-# Ruta base del proyecto
+# RUTA BASE DEL PROYECTO
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
+# CLAVE SECRETA - Cambiar en producción
 SECRET_KEY = 'django-insecure-y1qh#76^di&k70zz41h%chowi7k!1pd(u8hf%s2=+j3jb3p2#f'
 
 
@@ -18,11 +17,11 @@ DEBUG = True
 #////////////////////////////////////////////////////////////////////////////////////
 
 
-# Dominios permitidos
+# DOMAINOS PERMITIDOS   
 ALLOWED_HOSTS = ['*']
 
 
-# Aplicaciones instaladas
+# APPS INSTALADAS
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -33,7 +32,7 @@ INSTALLED_APPS = [
     'miapp',
 ]
 
-
+# MIDDLEWARE
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  
@@ -49,7 +48,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'nuevoweb.urls'
 
 
-# Templates
+# TEMPLATES
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -70,7 +69,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'nuevoweb.wsgi.application'
 
 
-# Base de datos
+# BASE DE DATOS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -79,7 +78,7 @@ DATABASES = {
 }
 
 
-# Validadores de contraseña
+# VALIDADORES DE CONTRASEÑAS
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
@@ -88,14 +87,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Configuración internacionalización
+# CONFIGURACIÓN INTERNACIONALIZACIÓN
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
 
-# Archivos estáticos (CSS y JS)
+# ARCHIVOS ESTÁTICOS (CSS, JS)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'   
 STATICFILES_DIRS = [
@@ -105,11 +104,15 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configuración de medios (archivos subidos por usuarios)
+
+
+# CONFIGURACIÓN DE MEDIOS (ARCHIVOS SUBIDOS POR USUARIOS)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Envío de correos usando SendGrid
+
+
+# ENVÍO DE CORREOS USANDO SENDGRID
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
@@ -120,10 +123,10 @@ DEFAULT_FROM_EMAIL = "soporte.sistemas@uanorte.edu.co"
 
 
 
-# Configuración de usuario
+# CONFIGURACIÓN DE MODELO DE USUARIO PERSONALIZADO
 AUTH_USER_MODEL = 'miapp.Usuario'
 
 
-# Redirección después del login
+# REDIRECCIONES DE LOGIN
 LOGIN_REDIRECT_URL = '/login-redirigir/' 
 LOGIN_URL = '/login/' 

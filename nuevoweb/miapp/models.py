@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings 
 
+# MODELO DE USUARIO PERSONALIZADO CON ROLES DE 'EDITOR' Y 'ADMIN'
 class Usuario(AbstractUser):
     ES_EDITOR = 'editor'
     ES_ADMIN = 'admin'
@@ -20,6 +21,7 @@ class Usuario(AbstractUser):
         return self.rol == self.ES_EDITOR
 
 
+# MODELO DE NOTICIA CON CAMPOS PARA TÍTULO, DESCRIPCIÓN, IMAGEN Y FECHAS DE CREACIÓN Y MODIFICACIÓN
 class Noticia(models.Model):
     titulo = models.CharField(max_length=2000)
     descripcion = models.TextField()
@@ -34,6 +36,7 @@ class Noticia(models.Model):
     
 
 
+# MODELO PARA GESTIONAR IMÁGENES EN UN SLIDER CON ORDEN PERSONALIZABLE
 class SliderImage(models.Model):
     image = models.ImageField(upload_to="slider/")
     order = models.PositiveIntegerField(default=0)

@@ -20,6 +20,9 @@ from django.contrib.auth.decorators import login_required
 from .models import SliderImage
 
 
+# ================================================ VISTAS BÁSICAS ================================================
+
+# FUNCIÓN PARA RENDERIZAR LA PÁGINA DE INICIO
 logger = logging.getLogger(__name__)
 
 def inicio(request):
@@ -31,6 +34,7 @@ def inicio(request):
 
 # FUNCIÓN PARA RENDERIZAR PÁGINAS
 def pagina_estatica(request, pagina):
+    # LISTA DE PÁGINAS PROTEGIDAS QUE REQUIEREN AUTENTICACIÓN
     protected = [
         'crud-usuarios',
         'registrar-usuarios',
@@ -71,6 +75,7 @@ def cerrar_sesion(request):
 
 logger = logging.getLogger(__name__)
 
+# FUNCIÓN PARA ENVIAR EL FORMULARIO DE CONTACTO
 def enviar_contacto(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -253,7 +258,7 @@ def eliminar_usuarios(request):
     return render(request, "miapp/eliminarUsuarios.html")
 
 
-#Vista para editar contenido
+#VISTA PARA EDITAR CONTENIDO (SOLO EDITORES Y ADMIN)
 
 @login_required
 @editor_required
@@ -261,7 +266,7 @@ def editar_contenido(request):
     return render(request, "miapp/editarContenido.html")
 
 
-# Redirección post-login según rol
+# REDIRECCIÓN POST LOGIN SEGÚN ROL DE USUARIO
 @login_required
 def login_redirigir(request):
     usuario = request.user
@@ -273,6 +278,7 @@ def login_redirigir(request):
         return redirect('inicio')
 
 
+# LOGIN PERSONALIZADO CON MENSAJES DE ERROR
 class CustomLoginView(LoginView):
     template_name = 'miapp/login.html'
     redirect_authenticated_user = True
@@ -282,7 +288,7 @@ class CustomLoginView(LoginView):
         return super().form_invalid(form)
 
 
-#Registro de usuarios
+#REGISTRAR USUARIOS
 @login_required
 @admin_required
 def registrar_usuario(request):
@@ -319,7 +325,7 @@ def registrar_usuario(request):
     return render(request, 'miapp/registrarUsuarios.html')
 
 
-# Modificación de usuarios
+# MODIFICAR USUARIOS
 @login_required
 @admin_required
 def modificar_usuarios(request):
@@ -379,6 +385,7 @@ def modificar_usuarios(request):
     })
 
 
+# ELIMINAR USUARIOS
 @login_required
 @admin_required
 def eliminar_usuarios(request):
@@ -427,8 +434,7 @@ def eliminar_usuarios(request):
 
 # ================================================ RECUPERACIÓN DE CONTRASEÑA ================================================
 
-# Envío de correo para restablecimiento de contraseña
-
+# ENVÍO DE CORREO PARA RECUPERAR CONTRASEÑA
 def recuperar_enviar(request):
     if request.method == 'POST':
         email = request.POST.get('email')
@@ -494,14 +500,11 @@ def recuperar_enviar(request):
         'status': 'error',
         'message': 'Método no permitido.'
     })
-
-
-# Modelo de usuario personalizado   
+   
 
 Usuario = get_user_model()
 
-# Confirmación y restablecimiento de contraseña
-
+# CONFIRMACIÓN Y CAMBIO DE CONTRASEÑA
 def password_reset_custom_confirm(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
@@ -553,7 +556,7 @@ def password_reset_custom_confirm(request, uidb64, token):
 
 # ================================================ CRUD NOTICIAS ================================================
 
-# Crear Noticias
+# CREAR NOTICIAS
 @login_required
 @editor_required
 
@@ -588,7 +591,7 @@ def crear_noticias(request):
     return render(request, 'miapp/crearNoticias.html')
 
 
-# Editar Noticias
+# EDITAR NOTICIAS
 @login_required
 @editor_required
 
@@ -619,7 +622,7 @@ def editar_noticias(request):
 
 
 
-# Eliminar Noticias
+# ELIMINAR NOTICIAS
 @login_required
 @editor_required
 
@@ -642,7 +645,7 @@ def eliminar_noticias(request):
 
 
 
-# Mostrar Noticias
+# MOSTRAR NOTICIAS PÚBLICAS
 
 def noticias(request):
     lista_noticias = Noticia.objects.all().order_by('-fecha_creacion')
@@ -652,15 +655,14 @@ def noticias(request):
 
 # ================================================ CRUD DE SLIDER ================================================
 
-
-
+# EDITOR DE SLIDER
 @login_required
 @editor_required
 def slider_editor(request):
     images = SliderImage.objects.all()
     return render(request, "miapp/crudSlider.html", {"images": images})
 
-
+# AÑADIR IMAGEN AL SLIDER
 @login_required
 @editor_required
 def add_slider_image(request):
@@ -669,7 +671,7 @@ def add_slider_image(request):
         SliderImage.objects.create(image=image_file)
     return redirect("slider_editor")
 
-
+# ELIMINAR IMAGEN DEL SLIDER
 @login_required
 @editor_required
 def delete_slider_image(request):

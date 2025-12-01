@@ -1,7 +1,7 @@
 from functools import wraps
 from django.shortcuts import redirect
 
-# Decorador para verificar si el usuario es administrador
+# DECORADORES PARA LA GESTIÓN DE ROLES DE USUARIO
 def admin_required(view_func):
     @wraps(view_func)
     def wrapper(request, *args, **kwargs):
@@ -17,7 +17,7 @@ def admin_required(view_func):
     return wrapper
 
 
-# Decorador para verificar si el usuario es editor
+# DECORADOR PARA RESTRINGIR EL ACCESO A USUARIOS CON ROL DE 'EDITOR' O 'ADMIN'
 def editor_required(view_func):
     @wraps(view_func)
     def wrapper(request, *args, **kwargs):
