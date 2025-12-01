@@ -18,12 +18,14 @@
   </head>
 
   <body>
+    <!-- ========================================== INCLUDES ========================================== -->
     {% include 'miapp/preloader.html' %}
 
     {% include 'miapp/whatsappButton.html' %}
       
     {% include 'miapp/header.html' %}
 
+    <!-- ========================================== Imagen Título =========================================================== -->
     <div class="imagen">
       <img src="https://uanorte.edu.co/web/wp-content/uploads/2023/11/IMG_0552-scaled.jpg" alt="">
       <div class="encima">
@@ -146,8 +148,10 @@
       </script>
     {% endif %}
 
+    <!-- ========================================== FOOTER ========================================== -->
     {% include 'miapp/footer.html' %}
 
+    <!-- ========================================== SCRIPTS ========================================== -->
     <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
     <script src="{% static 'miapp/js/preloader.js' %}"></script>
     <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>

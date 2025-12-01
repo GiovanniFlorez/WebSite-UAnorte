@@ -65,6 +65,7 @@ slider.addEventListener("mouseleave", () => {
   }
 });
 
+// EVENTOS TÁCTILES PARA DISPOSITIVOS MÓVILES
 slider.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
   clearInterval(interval);

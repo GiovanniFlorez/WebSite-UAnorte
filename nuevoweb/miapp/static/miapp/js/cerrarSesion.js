@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const logoutForm = document.querySelector("#logoutForm");
 
+    //CONFIRMAR DE CERRAR SESIÓN
     if (logoutForm) {
         logoutForm.addEventListener("submit", (e) => {
             e.preventDefault();

@@ -14,7 +14,10 @@
     </head>
 
     <body>
+        <!-- ========================================== PRELOADER ========================================== -->
         {% include 'miapp/preloader.html' %}
+
+        <!-- ========================================== BOTÓN CERRAR SESIÓN ========================================== -->
 
         <div class="logout-global">
             <form id="logoutForm" method="POST" action="{% url 'cerrar_sesion' %}">
@@ -25,6 +28,7 @@
             </form>
         </div>
 
+        <!-- ========================================== MENÚ ========================================== -->
         <div class="login-container fade show" id="loginContainer">
             <div class="login-box">
                 <img src="{% static 'miapp/media/logoUAnorte.png' %}" alt="Campus UA Norte" class="logo">
@@ -50,6 +54,8 @@
             
             </div>
         </div>
+
+        <!-- ========================================== SCRIPTS ========================================== -->
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="{% static 'miapp/js/cerrarSesion.js' %}"></script>

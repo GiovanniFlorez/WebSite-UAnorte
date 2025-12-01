@@ -1,5 +1,4 @@
-  // --------------------------- Habilitar botón si se marca el checkbox --------------------------- 
-
+// HABILITA O DESHABILITA EL BOTÓN DE ENVÍO SEGÚN EL ESTADO DEL CHECKBOX
   document.addEventListener('DOMContentLoaded', function () {
     const checkbox = document.getElementById('checkboxAcepto');
     const boton = document.getElementById('botonEnviar');

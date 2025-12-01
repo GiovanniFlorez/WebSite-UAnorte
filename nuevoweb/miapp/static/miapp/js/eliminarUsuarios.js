@@ -1,4 +1,6 @@
 document.querySelectorAll('.form-eliminar').forEach(form => {
+
+    // CONFIRMACIÓN ANTES DE ELIMINAR USUARIO
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         Swal.fire({

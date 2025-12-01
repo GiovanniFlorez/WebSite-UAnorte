@@ -17,12 +17,14 @@
     </head>
 
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
 
+        <!-- ========================================== CONTENIDO ========================================== -->
         <div class="imagen">
             <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/CSM-4.png" alt="">
         </div>
@@ -85,8 +87,10 @@
             </div>
         </div>
         
+        <!-- ========================================== FOOTER ========================================== -->
         {% include 'miapp/footer.html' %}
 
+        <!-- ========================================== SCRIPTS ========================================== -->
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
     </body>

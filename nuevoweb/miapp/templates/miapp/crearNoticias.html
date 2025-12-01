@@ -14,7 +14,7 @@
   </head>
 
   <body>
-
+    <!-- ========================================== BOTÓN VOLVER ========================================== -->
     <div class="logout-global">
       <a href="{% url 'pagina_estatica' 'crudNoticias' %}">
         <button type="submit" class="logout-btn">
@@ -22,6 +22,8 @@
         </button>
       </a>
     </div>
+
+    <!-- ========================================== FORMULARIO DE CREAR NOTICIAS ========================================== -->
   
     <div class="registro-container">
       <div class="registro-box">
@@ -76,6 +78,8 @@
         {% endfor %}
       </script>
     {% endif %}
+
+    <!-- ========================================== SCRIPTS ========================================== -->
 
     <script src="{% static 'miapp/js/crearNoticias.js' %}"></script>
   </body>

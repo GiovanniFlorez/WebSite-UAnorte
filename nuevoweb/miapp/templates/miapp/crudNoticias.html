@@ -14,7 +14,10 @@
     </head>
 
     <body>
+        <!-- ========================================== PRELOADER ========================================== -->
         {% include 'miapp/preloader.html' %}
+
+        <!-- ========================================== BOTÓN VOLVER ========================================== -->
 
         <div class="logout-global">
             <a href="{% url 'pagina_estatica' 'editarContenido' %}">
@@ -23,6 +26,8 @@
                 </button>
             </a>
         </div>
+
+        <!-- ========================================== MENÚ ========================================== -->
 
         <div class="login-container fade show" id="loginContainer">
             <div class="login-box">
@@ -49,6 +54,8 @@
             
             </div>
         </div>
+
+        <!-- ========================================== SCRIPTS ========================================== -->
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>

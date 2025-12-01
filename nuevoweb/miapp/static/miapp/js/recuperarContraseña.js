@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirmPassword");
 
+  // VALIDACIÓN Y ENVÍO DEL FORMULARIO DE REGISTRO
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
+    // VERIFICAR SI LA CONTRASEÑA CUMPLE CON LOS REQUISITOS
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
 
     if (!regex.test(password.value)) {
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // VERIFICAR SI LAS CONTRASEÑAS COINCIDEN
     if (password.value !== confirmPassword.value) {
       Swal.fire({
         icon: "error",
@@ -28,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const formData = new FormData(form);
 
+    // ENVÍO DEL FORMULARIO CON FETCH API
     fetch(window.location.href, {
       method: "POST",
       headers: {
@@ -57,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
+// MOSTRAR / OCULTAR CONTRASEÑA
 const passwordInput = document.getElementById('password');
 const mostrarPasswordCheckbox = document.getElementById('mostrarPassword');
 
@@ -82,6 +86,7 @@ if (mostrarPasswordCheckbox) {
   });
 }
 
+// MOSTRAR / OCULTAR CONFIRMAR CONTRASEÑA
 const passwordInput2 = document.getElementById('confirmPassword');
 const mostrarPasswordCheckbox2 = document.getElementById('mostrarPassword2');
 

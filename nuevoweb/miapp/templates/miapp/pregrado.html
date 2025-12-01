@@ -17,12 +17,14 @@
     </head>
     
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
 
+        <!-- ========================================== OFERTAS PREGRADO ========================================== -->
         <div class="imagen">
             <img src="https://uanorte.edu.co/web/wp-content/uploads/2023/12/37.png" alt="">
         </div>
@@ -33,8 +35,10 @@
             <a href="{% url 'pagina_estatica' 'trabajoSocial' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2023/12/disenos-PAGINA-WEB-6-e1701979415401.png" alt="Trabajo Social"></a>
         </div>
         
+        <!-- ========================================== FOOTER ========================================== -->
         {% include 'miapp/footer.html' %}
 
+        <!-- ========================================== SCRIPTS ========================================== -->
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
     </body>

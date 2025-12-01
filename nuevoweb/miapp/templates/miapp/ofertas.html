@@ -17,12 +17,14 @@
     </head>
     
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
 
+        <!-- ========================================== OFER} ========================================== -->
         <div class="ofertas-grid">
             <a href="{% url 'pagina_estatica' 'trabajoSocial' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/TRS-2-768x960.png" alt="Trabajo Social"></a>
             <a href="{% url 'pagina_estatica' 'comunicacionSocialMedios' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/CSM-1-768x960.png" alt="Comunicación Social"></a>
@@ -34,11 +36,13 @@
             <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/DIPLO-768x960.png" alt="Diplomados"></a>
         </div>
 
+        <!-- ========================================== PREGRADO ========================================== -->
         <div class="textOfertas">
             <div class="Pregrado">
                 <p class="titulo">Pregrado</p>
                 <hr class="hrTitulo">
 
+                <!-- ===================== TRABAJO SOCIAL ===================== -->
                 <div class="Trabajo Social">
                     <div class="imagen">
                         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/TRS-1-1.png" alt="Trabajo Social">
@@ -71,6 +75,7 @@
                     </div>
                 </div>
 
+                <!-- ===================== COMUNICACIÓN SOCIAL Y MEDIOS ===================== -->
                 <div class="Comunicación Social y Medios">
                     <div class="imagen">
                         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/CSM-2.png" alt="Comunicación Social y Medios">
@@ -103,6 +108,7 @@
                     </div>
                 </div>
 
+                <!-- ===================== DERECHO ===================== -->
                 <div class="estudiaDerecho">
                     <div class="imagen">
                         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/DER-2.png" alt="Derecho">
@@ -135,6 +141,7 @@
                     </div>
                 </div>
 
+                <!-- ===================== PSICOLOGÍA ===================== -->
                 <div class="EstudiaPsicología">
                     <div class="imagen">
                         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/PSI-2.png" alt="Psicología">
@@ -168,10 +175,12 @@
                 </div>
             </div>
 
+            <!-- ========================================== POSGRADO ========================================== -->
             <div class="Posgrados">
                 <p class="titulo">Posgrados</p>
                 <hr class="hrTitulo">
 
+                <!-- ===================== ESPECIALIZACIÓN EN INTERVENCIÓN COMUNITARIA ===================== -->
                 <div class="Especialización en Intervención Comunitaria">
                     <div class="imagen">
                         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/EIC-2.png" alt="Especialización en Intervención Comunitaria">
@@ -204,6 +213,7 @@
                     </div>
                 </div>
 
+                <!-- ===================== ESPECIALIZACIÓN EN DERECHO ADMINISTRATIVO ===================== -->
                 <div class="Especialización en Derech0 Administrativo">
                     <div class="imagen">
                         <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/EDA-2.png" alt="Especialización en Intervención Comunitaria">
@@ -238,8 +248,10 @@
             </div>
         </div>
         
+        <!-- ========================================== FOOTER ========================================== -->
         {% include 'miapp/footer.html' %}
 
+        <!-- ========================================== SCRIPTS ========================================== -->
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
     </body>

@@ -3,6 +3,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const form = document.getElementById("registroFormulario");
 
+// VALIDACIONES PERSONALIZADAS
 email.addEventListener('invalid', function() {
     this.setCustomValidity('Por favor, ingresa el email del usuario');
 });
@@ -27,12 +28,13 @@ password.addEventListener('input', function() {
     this.setCustomValidity('');
 });
 
-
+// VALIDACIÓN Y ENVÍO DEL FORMULARIO DE REGISTRO
 document.addEventListener("DOMContentLoaded", () => {
   
   form.addEventListener("submit", function(e) {
     e.preventDefault();
   
+    // VERIFICAR SI LA CONTRASEÑA CUMPLE CON LOS REQUISITOS
     const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
   
     if (!regex.test(password.value)) {
@@ -45,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
   
+    // SWEETALERT AL REGISTRAR USUARIO
     Swal.fire({
       title: "Verificando datos...",
       text: "Por favor espera unos segundos",
@@ -62,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const passwordInput = document.getElementById('password');
 const mostrarPasswordCheckbox = document.getElementById('mostrarPassword');
 
+// MOSTRAR / OCULTAR CONTRASEÑA
 if (mostrarPasswordCheckbox) {
   const labelText = mostrarPasswordCheckbox.nextElementSibling;
   labelText.innerHTML = `<i class="fa-solid fa-eye"></i> Mostrar Contraseña`;

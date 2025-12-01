@@ -18,11 +18,14 @@
     </head>
     
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
 
         <div class="Especialización en Intervención Comunitaria">
             <div class="imagen">
@@ -100,7 +103,8 @@
                     <div class="tituloFormularioContacto">
                         Contáctanos para más información
                     </div>
-            
+
+                    <!-- =====================FORMULARIO===================== -->
                     {% include 'miapp/formulario_contacto.html' %}
 
                     {% if messages %}
@@ -120,10 +124,12 @@
             </div>
         </div>
 
+        <!-- ========================================== FOOTER ========================================== -->
         <div class="footer">
             {% include 'miapp/footer.html' %}
         </div>
-        
+
+        <!-- ========================================== SCRIPTS ========================================== -->
         <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>

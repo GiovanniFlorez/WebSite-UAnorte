@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
 </head>
 <body>
+    <!-- ========================================== INCLUDES ========================================== -->
     {% include 'miapp/preloader.html' %}
 
     {% include 'miapp/whatsappButton.html' %}
     
     {% include 'miapp/header.html' %}
 
+    <!-- ========================================== NOTICIAS ========================================== -->
     <section class="noticias">
         <h1 class="titulo">Noticias</h1>
         <hr class="hrTitulo">
@@ -50,8 +52,10 @@
         {% endfor %}
     </section>
 
+    <!-- ========================================== FOOTER ========================================== -->
     {% include 'miapp/footer.html' %}
 
+    <!-- ========================================== SCRIPTS ========================================== -->
     <script src="{% static 'miapp/js/preloader.js' %}"></script>
     <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
 </body>

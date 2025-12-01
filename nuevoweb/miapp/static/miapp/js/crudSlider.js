@@ -3,6 +3,7 @@ let index = 0;
 let interval;
 let selectedImage = null;
 
+// MOVIMIENTO AUTOMÁTICO DEL SLIDER
 function showImage(i) {
     images.forEach(img => img.classList.remove("active"));
     images[i].classList.add("active");

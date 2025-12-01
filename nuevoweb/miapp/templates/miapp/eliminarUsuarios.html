@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+  <!-- ========================================== BOTÓN VOLVER ========================================== -->
   <div class="logout-global">
     <a href="{% url 'pagina_estatica' 'crudUsuarios' %}">
       <button type="submit" class="logout-btn">
@@ -21,6 +21,8 @@
       </button>
     </a>
   </div>
+
+  <!-- ========================================== ELIMINAR USUARIOS ========================================== -->
 
   <div class="registro-container">
     <div class="registro-box">
@@ -83,6 +85,7 @@
     </div>
   </div>
 
+  <!-- ========================================== SCRIPTS ========================================== -->
   <script src="{% static 'miapp/js/eliminarUsuarios.js' %}"></script>
   <script src="{% static 'miapp/js/preloader.js' %}"></script>
 </body>

@@ -14,7 +14,7 @@
   </head>
 
   <body>
-
+    <!-- ========================================== BOTÓN VOLVER ========================================== -->
     <div class="logout-global">
       <a href="{% url 'pagina_estatica' 'crudUsuarios' %}">
         <button type="submit" class="logout-btn">
@@ -23,6 +23,7 @@
       </a>
     </div>
   
+    <!-- ========================================== FORMULARIO DE REGISTRO DE USUARIOS ========================================== -->
     <div class="registro-container">
       <div class="registro-box">
         <img src="{% static 'miapp/media/logoUAnorte.png' %}" alt="Campus UA Norte" class="logo">
@@ -74,7 +75,7 @@
       </script>
     {% endif %}
 
-
+    <!-- ========================================== SCRIPTS ========================================== -->
     <script src="{% static 'miapp/js/registrarUsuarios.js' %}"></script>
   </body>
 </html>
