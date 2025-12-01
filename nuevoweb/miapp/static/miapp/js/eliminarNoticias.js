@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const forms = document.querySelectorAll(".form-eliminar");
 
+    // CONFIRMACIÓN ANTES DE ELIMINAR NOTICIA
     forms.forEach(form => {
         form.addEventListener("submit", function(e) {
             e.preventDefault();

@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const botonesEditar = document.querySelectorAll(".btn-editar");
 
+    // ABRIR MODAL Y RELLENAR CAMPOS
     botonesEditar.forEach((btn, index) => {
         btn.addEventListener("click", () => {
 
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.classList.add("oculto");
     });
 
-
+    // PREVISUALIZAR IMAGEN SELECCIONADA
     editImagen.addEventListener("change", (e) => {
         const file = e.target.files[0];
         editFilename.innerText = file ? file.name : "Ningún archivo seleccionado";

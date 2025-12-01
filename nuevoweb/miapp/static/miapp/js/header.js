@@ -4,6 +4,7 @@ const linksContainer = document.querySelector('.links-container');
 
 let nivel = 0;
 
+// FUNCIÓN PARA TOGGLE SUBMENÚS EN MÓVIL
 function toggleSubmenu(submenu) {
   if (submenu.style.maxHeight) {
     submenu.style.maxHeight = null;
@@ -12,6 +13,7 @@ function toggleSubmenu(submenu) {
   }
 }
 
+// EVENTO PARA TOGGLE MENÚ PRINCIPAL
 toggleBtn.addEventListener('click', () => {
   nivel++;
   if (nivel === 1) {
@@ -29,6 +31,7 @@ toggleBtn.addEventListener('click', () => {
 
 const submenuItems = document.querySelectorAll('.submenu > a');
 
+// EVENTOS PARA TOGGLE SUBMENÚS EN MÓVIL
 submenuItems.forEach(item => {
   item.addEventListener('click', e => {
     const isMobile = window.innerWidth <= 768;
@@ -40,6 +43,7 @@ submenuItems.forEach(item => {
   });
 });
 
+// RESETEAR ESTILOS AL CAMBIAR TAMAÑO DE VENTANA
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) {
     document.querySelectorAll('.submenu-nivel3').forEach(sub => {

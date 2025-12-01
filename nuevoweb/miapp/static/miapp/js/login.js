@@ -2,6 +2,7 @@ const inputNombre = document.getElementById('usuario');
 const inputpPassword = document.getElementById('password');
 const formulario = document.getElementById('formLogin');
 
+// VALIDACIÓN PERSONALIZADA DE CAMPOS
 inputNombre.addEventListener('invalid', function() {
   this.setCustomValidity('Por favor, ingresa tu usuario');
 });
@@ -15,6 +16,7 @@ inputpPassword.addEventListener('input', function() {
   this.setCustomValidity('');
 });
 
+// MOSTRAR / OCULTAR CONTRASEÑA
 const passwordInput = document.getElementById('password');
 const mostrarPasswordCheckbox = document.getElementById('mostrarPassword');
 
@@ -39,6 +41,7 @@ if (mostrarPasswordCheckbox) {
   });
 }
 
+// ANIMACIONES ENTRE LOGIN Y RECUPERAR CONTRASEÑA
 const loginContainer = document.getElementById('loginContainer');
 const recuperarContainer = document.getElementById('recuperarContainer');
 const olvidasteLink = document.getElementById('olvidasteLink');
@@ -76,6 +79,7 @@ if (volverLogin) {
   });
 }
 
+// SWEETALERT AL INICIAR SESIÓN
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("formLogin");
   if (form) {
@@ -92,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// ENVÍO DEL FORMULARIO DE RECUPERAR CONTRASEÑA CON FETCH API
 document.getElementById("formRecuperar").addEventListener("submit", function (e) {
   e.preventDefault();
 

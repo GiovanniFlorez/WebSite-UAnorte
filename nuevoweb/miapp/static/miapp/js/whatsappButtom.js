@@ -16,6 +16,7 @@ whatsappBtn.addEventListener('mouseenter', () => {
   }
 });
 
+// MANEJO DEL HOVER EN EL BOTÓN Y EL POPUP
 whatsappBtn.addEventListener('mouseleave', () => {
   isHoveringBtn = false;
   setTimeout(() => {
@@ -41,6 +42,7 @@ whatsappPopup.addEventListener('mouseleave', () => {
   }, 150);
 });
 
+// MANEJO DEL CLICK EN EL BOTÓN Y LOS BOTONES DEL POPUP
 whatsappBtn.addEventListener('click', () => {
   if (manualOpen) {
     manualOpen = false;
@@ -53,6 +55,7 @@ whatsappBtn.addEventListener('click', () => {
   }
 });
 
+// ABRIR WHATSAPP EN UNA NUEVA PESTAÑA
 openChatBtn.addEventListener('click', () => {
   window.open(
     'https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0',

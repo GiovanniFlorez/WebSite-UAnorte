@@ -5,6 +5,7 @@ const imgPreview = document.getElementById("img-preview");
 inputImagen.addEventListener("change", function () {
     const archivo = this.files[0];
 
+    // SI NO HAY ARCHIVO SELECCIONADO
     if (!archivo) {
         fileName.textContent = "Ningún archivo seleccionado";
         imgPreview.style.display = "none";
@@ -25,6 +26,7 @@ inputImagen.addEventListener("change", function () {
 
     fileName.textContent = archivo.name;
 
+    // VISTA PREVIA DE LA IMAGEN
     const url = URL.createObjectURL(archivo);
     imgPreview.src = url;
     imgPreview.style.display = "block";
@@ -42,6 +44,8 @@ inputImagen.addEventListener("change", function () {
     });
 });
 
+
+// VALIDAR QUE SE HAYA SELECCIONADO UNA IMAGEN ANTES DE ENVIAR EL FORMULARIO
 document.querySelector("form").addEventListener("submit", function(e) {
     const imagen = document.getElementById("imagen").files[0];
 
