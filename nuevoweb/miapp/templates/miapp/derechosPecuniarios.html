@@ -17,11 +17,14 @@
     </head>
 
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
 
         <div class="imagen">
             <img src="https://uanorte.edu.co/web/wp-content/uploads/2023/12/portada-de-identidad-institucional-7.png" alt="">
@@ -31,8 +34,12 @@
             <iframe src="https://uanorte.edu.co/web/wp-content/uploads/2023/11/Certificacion_Derechos_pecuniarios_y_Valores_de_matricula_vigencia_2024-1.pdf" width="100%" height="600px" style="border: none;">
             </iframe>
         </div>
+
+        <!-- ========================================== FOOTER ========================================== -->
         
         {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
 
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>

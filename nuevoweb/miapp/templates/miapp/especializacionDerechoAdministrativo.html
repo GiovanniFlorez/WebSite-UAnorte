@@ -17,11 +17,14 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
 
         <div class="Especialización en Derecho Administrativo">
             <div class="imagen">
@@ -99,6 +102,8 @@
                     <div class="tituloFormularioContacto">
                         Contáctanos para más información
                     </div>
+
+                    <!-- ===================== FORMULARIO ===================== -->
             
                     {% include 'miapp/formulario_contacto.html' %}
 
@@ -119,9 +124,13 @@
             </div>
         </div>
 
+        <!-- ========================================== FOOTER ========================================== -->
+
         <div class="footer">
             {% include 'miapp/footer.html' %}
         </div>
+
+        <!-- ========================================== SCRIPTS ========================================== -->
         
         <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>

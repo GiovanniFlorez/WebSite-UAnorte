@@ -17,12 +17,14 @@
   </head>
 
   <body>
+    <!-- ========================================== INCLUDES ========================================== -->
     {% include 'miapp/preloader.html' %}
 
     {% include 'miapp/whatsappButton.html' %}
       
     {% include 'miapp/header.html' %}
 
+    <!-- ========================================== CONTENIDO ========================================== -->
     <div class="imagen">
       <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/carrusel-derecho-1.png" alt="">
     </div>    
@@ -33,6 +35,7 @@
 
       <div class="columnasNormativas">
         <div>
+          <!-- ===================== ESTATUTOS ===================== -->
           <div class="subColumaNormativa">
             <div>
               <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
@@ -52,6 +55,7 @@
             </div>
           </div>
 
+          <!-- ===================== REGLAMENTOS ===================== -->
           <div class="subColumaNormativa">
             <div>
               <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
@@ -105,7 +109,8 @@
           <div>
             <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
           </div>
-    
+
+
           <div>
             <p class="subTitulo">Políticas</p>
             <hr class="hrTitulo">
@@ -171,8 +176,10 @@
       </div>
     </div>
 
+    <!-- ========================================== FOOTER ========================================== -->
     {% include 'miapp/footer.html' %}
 
+    <!-- ========================================== SCRIPTS ========================================== -->
     <script src="{% static 'miapp/js/preloader.js' %}"></script>
     <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
   </body>

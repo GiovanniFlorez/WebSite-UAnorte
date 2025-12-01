@@ -18,9 +18,14 @@
 </head>
 
 <body>
+    <!-- ========================================== INCLUDES ========================================== -->
     {% include 'miapp/preloader.html' %}
+
     {% include 'miapp/whatsappButton.html' %}
+
     {% include 'miapp/header.html' %}
+
+    <!-- ========================================== CONTENIDO ========================================== -->
 
     <div class="Comunicación Social y Medios">
         <div class="imagen">
@@ -51,6 +56,8 @@
             <img class="procesoInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-1-1-e1730304150940.png" alt="">
         </a>
     </div>
+
+    <!-- ========================================== REQUISITOS ========================================== -->
 
     <div>
         <p class="titulo">Proceso de Inscripción</p>
@@ -96,6 +103,8 @@
                     Contáctanos para más información
                 </div>
 
+                <!-- ===================== FORMULARIO ===================== -->
+
                 {% include 'miapp/formulario_contacto.html' %}
 
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -117,9 +126,12 @@
         </div>
     </div>
 
+    <!-- ========================================== FOOTER ========================================== -->
     <div class="footer">
         {% include 'miapp/footer.html' %}
     </div>
+
+    <!-- ========================================== SCRIPTS ========================================== -->
 
     <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
     <script src="{% static 'miapp/js/preloader.js' %}"></script>

@@ -18,12 +18,14 @@
   </head>
 
   <body>
+    <!-- ========================================== INCLUDES ========================================== -->
     {% include 'miapp/preloader.html' %}
 
     {% include 'miapp/whatsappButton.html' %}
       
     {% include 'miapp/header.html' %}
 
+    <!-- ========================================== CONTENIDO ========================================== -->
     <div class="imagen">
       <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/CSM-3.png" alt="">
     </div>
@@ -74,6 +76,7 @@
           Contáctanos para más información
         </div>
 
+        <!-- ===================== FORMULARIO ===================== -->
         {% include 'miapp/formulario_contacto.html' %}
 
         {% if messages %}
@@ -165,6 +168,7 @@
       </div>
     </div>
 
+    <!-- ========================================== FINANCIACIÓN, BECAS Y CONVENIOS ========================================== -->
     <p class="palabraEducacion">Financiación, Becas y Convenios</p>
     <hr class="hrEducacion">
         
@@ -181,6 +185,7 @@
     <p class="palabraEducacion">Financiación</p>
     <hr class="hrEducacion">
 
+    <!-- =====================UAnorte===================== -->
     <div class="columnas">
       <div class="columnaOne">
         <img class="imgColumnaOne" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/43.png" alt="">
@@ -203,6 +208,7 @@
       </div>
     </div>
 
+    <!-- ===================== ICETEX ===================== -->
     <div class="columnas">
       <div class="columnaOne">
         <img class="imgColumnaTwo" src="https://uanorte.edu.co/web/wp-content/uploads/2023/12/contenido-financiacion-becas-y-convenios-4-1024x470.png" alt="">
@@ -228,6 +234,7 @@
       </div>
     </div>
 
+    <!-- ===================== COOFUTURO ===================== -->
     <div class="columnas">
       <div class="columnas">
         <img class="imgColumna2" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/45.png" alt="">
@@ -258,6 +265,7 @@
       </div>
     </div>
 
+    <!-- ========================================== BECAS =============================================================== -->
     <p class="palabraEducacion">Becas</p>
     <hr class="hrEducacion">
 
@@ -290,6 +298,7 @@
       </div>
     </div>
 
+    <!-- ========================================== CONVENIOS =============================================================== -->
     <p class="palabraEducacion">Convenios</p>
     <hr class="hrEducacion">
 
@@ -317,6 +326,7 @@
       </div>
     </div>
 
+    <!-- ========================================== ENLACES DE INTERÉS ========================================== -->
     <p class="palabraEducacion">Enlaces de interés</p>
     <hr class="hrEducacion">
         
@@ -338,8 +348,10 @@
       </a>
     </div>
 
+    <!-- ========================================== FOOTER ========================================== -->
     {% include 'miapp/footer.html' %}
 
+    <!-- ========================================== SCRIPTS ========================================== -->
     <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
     <script src="{% static 'miapp/js/preloader.js' %}"></script>
     <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>

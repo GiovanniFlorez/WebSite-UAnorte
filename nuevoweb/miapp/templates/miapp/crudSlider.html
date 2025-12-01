@@ -14,7 +14,7 @@
         <h2>Editor de Slider</h2>
 
 
-        <!-- ====================================== Botón Volver ====================================== -->
+        <!-- ====================================== BOTÓN VOLVER ====================================== -->
         <div class="logout-global">
             <a href="{% url 'pagina_estatica' 'editarContenido' %}">
                 <button type="button" class="logout-btn">
@@ -23,7 +23,7 @@
             </a>
         </div>
 
-        <!-- ====================================== Slider ====================================== -->
+        <!-- ====================================== SLIDER ====================================== -->
         <div class="slider" id="editor-slider">
             <button class="slider-btn prev">&#10094;</button>
 
@@ -35,17 +35,17 @@
         </div>
 
 
-        <!-- ====================================== Controles ====================================== -->
+        <!-- ====================================== CONTROLES ====================================== -->
         <div style="margin-top: 20px; text-align:center;">
             
-            <!-- Botón eliminar -->
+            <!-- BOTÓN ELIMINAR -->
             <form id="delete-form" method="POST" action="{% url 'delete_slider_image' %}" style="display:inline;">
                 {% csrf_token %}
                 <input type="hidden" name="image_id" id="delete-image-id">
                 <button type="submit" class="delete-btn" disabled><i class="fas fa-trash-alt"></i> Eliminar imagen</button>
             </form>
 
-            <!-- Botón agregar -->
+            <!-- BOTÓN AGREGAR -->
             <form method="POST" enctype="multipart/form-data" action="{% url 'add_slider_image' %}" style="display:inline; margin-left: 20px;">
                 {% csrf_token %}
                 <label class="add-btn">
@@ -56,6 +56,8 @@
 
 
         </div>
+
+        <!-- ====================================== SCRIPTS ====================================== -->
 
         <script src="{% static 'miapp/js/crudSlider.js' %}"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

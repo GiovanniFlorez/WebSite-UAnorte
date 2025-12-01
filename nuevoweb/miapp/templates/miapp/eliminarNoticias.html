@@ -13,7 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
+    <!-- ========================================== PRELOADER ========================================== -->
     {% include 'miapp/preloader.html' %}
+
+    <!-- ========================================== BOTÓN VOLVER ========================================== -->
 
     <div class="logout-global">
         <a href="{% url 'pagina_estatica' 'crudNoticias' %}">
@@ -22,6 +25,8 @@
           </button>
         </a>
     </div>
+
+    <!-- ========================================== NOTICIAS ========================================== -->
 
     <section class="noticias">
         <h1 class="titulo">Noticias</h1>
@@ -60,6 +65,7 @@
                     {% endif %}
                 </div>
 
+                <!-- ===================== BOTÓN ELIMINAR ===================== -->
 
                 {% if user.rol == "admin" or user.rol == "editor" %}
                 <form method="POST" class="form-eliminar">
@@ -77,6 +83,8 @@
             <p>No hay noticias disponibles por el momento.</p>
         {% endfor %}
     </section>
+
+    <!-- ========================================== SCRIPTS ========================================== -->
 
     <script src="{% static 'miapp/js/eliminarNoticias.js' %}"></script>
     <script src="{% static 'miapp/js/preloader.js' %}"></script>

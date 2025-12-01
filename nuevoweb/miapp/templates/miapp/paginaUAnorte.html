@@ -17,16 +17,19 @@
     </head>
     
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
             
         {% include 'miapp/header.html' %}
 
+        <!-- ========================================== CONTENIDO ========================================== -->
         <div class="imagen">
             <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/carrusel-derecho-1.png" alt="">
         </div>
 
+        <!-- ========================================== REDIRECCIONES ========================================== -->
         <div class="UAnorte-grid">
             <a href="{% url 'pagina_estatica' 'quienesSomos' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/5.png" alt="Quiénes Somos"></a>
             <a href="{% url 'pagina_estatica' 'identidadInstitucional' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/6.png" alt="Identidad Institucional"></a>
@@ -38,9 +41,10 @@
             <a href="{% url 'pagina_estatica' 'normatividad' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/12.png" alt="Normativa"></a>
         </div>
 
-        
+        <!-- ========================================== FOOTER ========================================== -->
         {% include 'miapp/footer.html' %}
 
+        <!-- ========================================== SCRIPTS ========================================== -->
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
     </body>

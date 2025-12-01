@@ -18,11 +18,14 @@
     </head>
 
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
 
         <div class="estudiaDerecho">
             <div class="imagen">
@@ -98,6 +101,8 @@
                     <img class="imgFormularioDeInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/44.png" alt="">
                 </div>
 
+                <!-- ===================== FORMULARIO ===================== -->
+
                 <div>
                     {% include 'miapp/formulario_contacto.html' %}
 
@@ -120,9 +125,13 @@
 
         </div>
 
+        <!-- ========================================== FOOTER ========================================== -->
+
         <div class="footer">
             {% include 'miapp/footer.html' %}
         </div>
+
+        <!-- ========================================== SCRIPTS ========================================== -->
         
         <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>

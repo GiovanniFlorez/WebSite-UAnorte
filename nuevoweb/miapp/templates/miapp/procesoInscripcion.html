@@ -18,13 +18,14 @@
     </head>
 
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
-
         
+        <!-- ========================================== CONTENIDO ========================================== -->
         <div class="inscripcion">
             <div class="imgInscripcion">
                 <img class="img1Inscripción" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/60.png" alt="">
@@ -39,6 +40,7 @@
                     Contáctanos para más información
                 </div>
 
+                <!-- ===================== FORMULARIO ===================== -->
                 {% include 'miapp/formulario_contacto.html' %}
 
                 {% if messages %}
@@ -57,10 +59,12 @@
 
         </div>
 
+        <!-- ========================================== FOOTER ========================================== -->
         <div class="footer">
             {% include 'miapp/footer.html' %}
         </div>
 
+        <!-- ========================================== SCRIPTS ========================================== -->
         <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>

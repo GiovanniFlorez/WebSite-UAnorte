@@ -17,12 +17,14 @@
     </head>
     
     <body>
+        <!-- ========================================== INCLUDES ========================================== -->
         {% include 'miapp/preloader.html' %}
 
         {% include 'miapp/whatsappButton.html' %}
         
         {% include 'miapp/header.html' %}
         
+        <!-- ========================================== CONTENIDO ========================================== -->
         <div>
             <p class="titulo">Educación</p>
             <hr class="hrTitulo">
@@ -34,8 +36,10 @@
             </div>
         </div>
         
+        <!-- ========================================== FOOTER ========================================== -->
         {% include 'miapp/footer.html' %}
 
+        <!-- ========================================== SCRIPTS ========================================== -->
         <script src="{% static 'miapp/js/preloader.js' %}"></script>
         <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
     </body>
