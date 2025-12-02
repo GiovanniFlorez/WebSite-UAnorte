@@ -432,6 +432,7 @@ def eliminar_usuarios(request):
 
     return render(request, 'miapp/eliminarUsuarios.html', {'usuarios': usuarios})
 
+
 # ================================================ RECUPERACIÓN DE CONTRASEÑA ================================================
 
 # ENVÍO DE CORREO PARA RECUPERAR CONTRASEÑA
@@ -456,39 +457,50 @@ def recuperar_enviar(request):
 
         asunto = "Restablecimiento de contraseña"
 
-        mensaje = (
+        mensaje_plano = (
             f"Hola {usuario.username},\n\n"
-            "Has solicitado restablecer tu contraseña. Haz clic en el siguiente enlace para continuar:\n\n"
+            "Has solicitado restablecer tu contraseña. Haz clic en el siguiente enlace:\n\n"
             f"{reset_url}\n\n"
-            "Si no solicitaste este cambio, puedes ignorar este correo.\n\n"
+            "Si no solicitaste este cambio, ignora este correo.\n\n"
             "Saludos,\nEl equipo de soporte."
         )
 
+        mensaje_html = f"""
+        <html>
+            <body>
+                <p>Hola <strong>{usuario.username}</strong>,</p>
+                <p>Has solicitado restablecer tu contraseña.</p>
+                <p>
+                    Haz clic en el siguiente botón para continuar:
+                </p>
+                <p>
+                    <a href="{reset_url}" 
+                       style="display:inline-block;padding:10px 20px;background:#007bff;color:white;
+                              text-decoration:none;border-radius:5px;">
+                        Restablecer contraseña
+                    </a>
+                </p>
+                <p>Si no solicitaste este cambio, puedes ignorar este correo.</p>
+                <br>
+                <p>Saludos,<br>El equipo de soporte.</p>
+            </body>
+        </html>
+        """
+
         try:
-            send_mail(
-                asunto,
-                mensaje,
-                settings.DEFAULT_FROM_EMAIL,
-                [email],
-                fail_silently=False,
+            email_msg = EmailMultiAlternatives(
+                subject=asunto,
+                body=mensaje_plano,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[email]
             )
-
-        except BadHeaderError:
-            return JsonResponse({
-                'status': 'error',
-                'message': 'Cabecera de correo inválida.'
-            })
-
-        except SMTPException as e:
-            return JsonResponse({
-                'status': 'error',
-                'message': f'Error SMTP: {str(e)}'
-            })
+            email_msg.attach_alternative(mensaje_html, "text/html")
+            email_msg.send(fail_silently=False)
 
         except Exception as e:
             return JsonResponse({
                 'status': 'error',
-                'message': f'Error inesperado: {str(e)}'
+                'message': f'Error enviando correo: {str(e)}'
             })
 
         return JsonResponse({
