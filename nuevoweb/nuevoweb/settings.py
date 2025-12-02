@@ -118,7 +118,7 @@ EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "apikey"
-EMAIL_HOST_PASSWORD = "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"
+EMAIL_HOST_PASSWORD = "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"
 DEFAULT_FROM_EMAIL = "soporte.sistemas@uanorte.edu.co"  
 
 
