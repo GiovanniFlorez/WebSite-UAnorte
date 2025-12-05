@@ -206,6 +206,67 @@ html, body {
   background: #eef2ff;
 }
 
+/* =================== BUSCADOR CUSTOMIZADO =================== */
+.buscador-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.gsc-input-box {
+  border-radius: 10px !important;
+  border: 2px solid #ccc !important;
+  overflow: hidden;
+}
+
+.gsc-input {
+  font-size: 16px !important;
+  padding: 10px !important;
+}
+
+.gsc-search-button-v2 {
+  background-color: #0056b3 !important;
+  border-radius: 10px !important;
+  border: none !important;
+  padding: 10px 20px !important;
+}
+
+.gsc-search-button-v2 svg {
+  fill: white !important;
+}
+
+.gsc-result {
+  background: white;
+  border-radius: 12px;
+  padding: 15px !important;
+  margin-bottom: 15px !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gs-title {
+  font-size: 18px !important;
+  color: #0b3c76 !important;
+}
+
+.gs-visibleUrl {
+  color: #007bff !important;
+}
+
+.gs-bidi-start-align.gs-snippet {
+  color: #555 !important;
+}
+
+.gs-image-preview {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.gsc-adBlock,
+.gsc-adBlockVertical {
+  display: none !important;
+}
+
+
 /* =================== RESPONSIVE =================== */
 @media screen and (max-width: 768px) {
   .btnMas {
@@ -214,5 +275,19 @@ html, body {
 
   .links-container {
     display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .links-container {
+    margin-left: auto;
+    align-self: flex-end;    
+    margin-bottom: 30px; 
+    margin-right: 10px;
+    gap: 30px;
+  }
+
+  .linksHeader {
+    padding-top: 10px;
   }
 }
