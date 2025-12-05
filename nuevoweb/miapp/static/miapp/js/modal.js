@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             prevEl: '.swiper-button-prev',
         },
         autoplay: {
-            delay: 3000,
+            delay: 5000,
             disableOnInteraction: false,
         },
         slidesPerView: 1,
