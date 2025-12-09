@@ -1,0 +1,245 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.imagen{
+    display: flex;
+    height: 510px;
+}
+
+.titulo {
+    color: rgb(19, 19, 138);
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 0.7%;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+  
+.hrTitulo {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.295);
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.columnas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.imgExtensión,
+.imgDireccionamientoEstrategico{
+    margin-left: 20px;
+    width: 645px;
+    height: 360px;
+}
+
+.azul {
+    color: #00b4b4;
+}
+  
+.naranja {
+    color: #f89a1c;
+}
+
+.textDireccionamientoEstrategico{
+    max-width: 650px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.subColumnas{
+    display: flex;
+}
+
+.titulo2 {
+    color: rgb(95, 95, 95);
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.iconUAnorte{
+    margin-top: 20px;
+    width: 65px;
+    height: 65px;
+    margin-left: 10px;
+    margin-bottom: 0;
+}
+
+.hrSubTitulo {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.295);
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    width: 100%;
+}
+
+.textDireccionamientoEstrategico2{
+    max-width: 615px;
+    margin-left: 35px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.divImgDireccionamientoEstrategico{
+    display: flex;
+    align-items: center;
+}
+
+.textDireccionamientoEstrategico3{
+    margin-left: 15px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.Enlaces{
+    margin-bottom: 4px;
+}
+
+.contenedorEnlaces {
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 0;;               
+}
+  
+.imgEnlaces {
+    width: 250px;  
+    margin: 0 20px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+  
+.imgEnlaces:hover {
+    transform: scale(1.05); 
+}
+  
+.imgEnlacesCiencia{
+    width: 210px;
+    margin: 0 20px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+  
+.imgEnlacesCiencia:hover{
+    transform: scale(1.05); 
+}
+
+/* ============== RESPONSIVE ============== */
+
+@media (max-width: 1024px) {
+    .columnas {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imgExtensión,
+    .imgDireccionamientoEstrategico {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin-left: 0;
+    }
+
+    .textDireccionamientoEstrategico,
+    .textDireccionamientoEstrategico2,
+    .textDireccionamientoEstrategico3 {
+        font-size: 18px;
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .subColumnas {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .divImgDireccionamientoEstrategico {
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .imagen {
+        height: auto;
+    }
+
+    .imagen img {
+        width: 100%;
+        height: auto;
+    }
+
+    .titulo,
+    .titulo2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .hrTitulo,
+    .hrSubTitulo {
+        width: 60%;
+        margin: 10px auto;
+    }
+
+    .columnas {
+        flex-direction: column;
+    }
+
+    .textDireccionamientoEstrategico,
+    .textDireccionamientoEstrategico2,
+    .textDireccionamientoEstrategico3 {
+        font-size: 16px;
+        text-align: justify;
+    }
+
+    .subColumnas {
+        align-items: center;
+        text-align: center;
+    }
+
+    .divImgExtensión,
+    .divImgDireccionamientoEstrategico {
+        margin: 15px 0;
+    }
+
+    .contenedorEnlaces {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .imgEnlaces,
+    .imgEnlacesCiencia {
+        width: 45%;
+        margin: 0;
+    }
+
+    .Enlaces {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .Enlaces {
+        text-align: center;
+    }
+
+    .imgEnlaces,
+    .imgEnlacesCiencia {
+        width: 90%;
+    }
+}

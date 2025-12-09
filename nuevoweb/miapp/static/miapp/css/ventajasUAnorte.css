@@ -1,0 +1,164 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.titulo {
+    color: rgb(19, 19, 138);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.tituloBajo {
+    color: rgb(156, 156, 156);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 5px 10px;
+}
+
+.hrTitulo {
+    border: none;
+    height: 3px;
+    background: rgba(117, 117, 117, 0.295);
+    margin: 0 10px 10px 10px;
+}
+
+.subTitulo {
+    color: #0000FF;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 10px 15px 25px 15px;
+    text-align: left;
+}
+
+.columnas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 20px;
+}
+
+.subColumnas {
+    border: 1px solid rgba(117, 117, 117, 0.295);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.subColumnas:hover {
+    transform: translateY(-5px);
+}
+
+.tituloColumas {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.textColumnas {
+    color: rgb(44, 44, 44);
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: justify;
+    margin: 10px;
+}
+
+.divImgColumnas {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.imgColumnas {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* =========== RESPONSIVE =========== */
+
+@media (max-width: 1024px) {
+    .columnas {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 15px;
+    }
+
+    .titulo {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .tituloBajo {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .subTitulo {
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .columnas {
+        grid-template-columns: 1fr;
+        margin: 10px;
+    }
+
+    .subColumnas {
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .tituloBajo {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .subTitulo {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .textColumnas {
+        font-size: 0.95rem;
+    }
+
+    .imgColumnas {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 1.2rem;
+    }
+
+    .tituloBajo {
+        font-size: 1rem;
+    }
+
+    .subTitulo {
+        font-size: 1rem;
+    }
+
+    .textColumnas {
+        font-size: 0.9rem;
+    }
+
+    .imgColumnas {
+        max-width: 100%;
+    }
+}

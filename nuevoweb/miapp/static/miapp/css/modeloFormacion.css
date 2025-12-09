@@ -1,0 +1,78 @@
+html {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.titulo {
+    color: rgb(19, 19, 138);
+    font-size: 150%;
+    font-weight: 700;
+    margin-left: 6px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.tituloBajo {
+    color: rgb(156, 156, 156);
+    font-size: 150%;
+    font-weight: 700;
+    margin-top: 0;
+    margin-left: 6px;
+    padding: 0;
+}
+
+.hrTitulo {
+    border: none;
+    height: 3px;
+    background: rgba(117, 117, 117, 0.295);
+    margin-bottom: 0;
+    margin-left: 4px;
+}
+
+.divImg {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.imgModeloFormacion {
+    width: 100%; 
+    max-width: 900px; 
+    height: auto; 
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media screen and (max-width: 768px) {
+
+    .titulo {
+        font-size: 130%;
+        margin-left: 10px;
+    }
+
+    .tituloBajo {
+        font-size: 130%;
+        margin-left: 10px;
+    }
+
+    .imgModeloFormacion {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .titulo {
+        font-size: 120%;
+    }
+
+    .tituloBajo {
+        font-size: 120%;
+    }
+
+    .imgModeloFormacion {
+        width: 100%;
+        height: auto;
+    }
+}
