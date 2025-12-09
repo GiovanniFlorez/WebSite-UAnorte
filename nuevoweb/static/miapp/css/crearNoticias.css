@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+  
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4ad8f8, #001d9e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+    
+.registro-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
+.registro-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease;
+}
+    
+.logo {
+    width: 90px;
+    margin-bottom: 15px;
+}
+    
+h2 {
+    color: #001d9e;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+    
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 18px;
+}
+    
+label {
+    font-weight: 600;
+    color: #001d9e;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+    
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+textarea{
+    resize: vertical;
+}
+    
+input:focus {
+    border-color: #001d9e;
+    outline: none;
+}
+  
+input[type="checkbox"] {
+    display: none;
+}
+    
+button {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #4ad8f8, #001d9e);
+    transition: color 2s ease;
+    z-index: 1;
+    margin-top: 10px;
+    width: 100%;
+}
+    
+button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #001d9e, #4ad8f8);
+    opacity: 0;
+    transition: opacity 2s ease, transform 0.4s ease;
+    border-radius: inherit;
+    z-index: 0;
+    transform: scale(1.2);
+}
+    
+button:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+    
+button span {
+    position: relative;
+    z-index: 2;
+}
+    
+  
+.logout-global {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 10;
+}
+    
+.logout-btn {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #4ad8f8, #001d9e);
+    transition: color 2s ease;
+    z-index: 1;
+}
+    
+.logout-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #001d9e, #4ad8f8);
+    opacity: 0;
+    transition: opacity 2s ease, transform 0.4s ease;
+    border-radius: inherit;
+    z-index: 0;
+    transform: scale(1.2);
+}
+    
+.logout-btn:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+    
+.logout-btn i {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
+  
+.logout-btn span {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.custom-file {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.custom-file input[type="file"] {
+    display: none;
+}
+
+.custom-file-label {
+    background: linear-gradient(135deg, #4ad8f8, #001d9e);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: color 2s ease;
+}
+
+.custom-file-label::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #001d9e, #4ad8f8);
+    opacity: 0;
+    transition: opacity 2s ease, transform 0.4s ease;
+    border-radius: inherit;
+    transform: scale(1.2);
+    z-index: 0;
+}
+
+.custom-file-label:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.custom-file-label i, span {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+#file-name {
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}

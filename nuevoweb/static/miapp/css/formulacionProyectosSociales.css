@@ -1,0 +1,140 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.columnasEducacionContinua {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.imgEducacionContinua {
+    display: flex;
+    height: 370px;
+    width: 645px;
+    margin-left: 20px;
+}
+
+.img2EducacionContinua {
+    display: flex;
+    height: 150px;
+    width: 650px;
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.imgLinkEducacionContinua {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.btnMayorInformacion,
+.btnRrealizarInscripcion,
+.btnVolver {
+    height: 35px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.imgLinkEducacionContinua a {
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.imgLinkEducacionContinua a:hover {
+    transform: scale(1.02);
+}
+
+.img3EducacionContinua {
+    display: flex;
+    height: 380px;
+    width: 630px;
+}
+
+.img4EducacionContinua {
+    display: flex;
+    height: 350px;
+    width: 635px;
+    margin-top: 40px;
+}
+
+.img3EducacionContinua,
+.img4EducacionContinua {
+    margin-left: 20px;
+}
+
+/* =============== RESPONSIVE =============== */
+
+@media screen and (max-width: 768px) {
+
+    .columnasEducacionContinua {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .imgLinkEducacionContinua {
+        grid-template-columns: 1fr;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 40px;   
+        margin-bottom: 20px;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        width: 80%;  
+        height: auto;
+        margin-left: 10%;  
+    }
+
+    .img3EducacionContinua,
+    .img4EducacionContinua {
+        margin-left: 0;
+    }
+
+    .img3EducacionContinua {
+        height: 250px;
+    }
+
+    .img4EducacionContinua {
+        height: 220px;
+    }
+
+    .btnVolver {
+        width: 70%;
+        height: 40px;
+        margin-left: 15%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .imgEducacionContinua,
+    .img2EducacionContinua,
+    .img3EducacionContinua,
+    .img4EducacionContinua {
+        width: 100%;
+        height: auto;
+    }
+
+    .btnMayorInformacion,
+    .btnRrealizarInscripcion,
+    .btnVolver {
+        height: 35px; 
+        width: 90%;   
+        margin-left: 5%; 
+    }
+}

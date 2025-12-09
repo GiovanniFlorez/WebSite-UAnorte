@@ -1,0 +1,217 @@
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+h2{
+    color: #001d9e;
+    font-weight: 700;
+    text-align: center;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: auto;           
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 1;
+    border-radius: 0;
+}
+  
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       
+    display: none;
+    transition: opacity 0.8s ease-in-out;
+    cursor: pointer;
+}
+  
+.slider img.active {
+    display: block;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    animation: fade 1s ease-in-out;
+}
+  
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+  
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    font-size: 4rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.slider-btn:hover {
+    background: rgba(0, 0, 0, 0);
+    transform: translateY(-50%) scale(1.1);
+}
+  
+.slider-btn.prev {
+    left: 15px;
+}
+  
+.slider-btn.next {
+    right: 15px;
+}
+  
+  /* ======== RESPONSIVE DEL SLIDER ======== */
+  
+@media (max-width: 992px) {
+    .slider {
+      height: 400px;
+    }
+  
+    .slider-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+    }
+}
+  
+@media (max-width: 768px) {
+    .slider {
+      height: 320px;
+    }
+  
+    .slider-btn {
+      width: 45px;
+      height: 45px;
+      font-size: 1.5rem;
+    }
+  
+    .slider-btn.prev {
+      left: 10px;
+    }
+  
+    .slider-btn.next {
+      right: 10px;
+    }
+}
+  
+  @media (max-width: 767px) {
+    .slider-btn {
+      display: none;
+    }
+}
+  
+@media (max-width: 480px) {
+    .slider {
+      height: auto; 
+      line-height: 0;        
+    }
+  
+    .slider img {
+      margin: 0;
+      width: 100%;
+      height: auto;          
+      object-fit: cover;    
+      background-color: #000; 
+    }
+  
+    .slider-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.3rem;
+      background: rgba(0, 0, 0, 0.4);
+    }
+}
+
+.selected {
+    border: 5px solid #00a2ff;
+    box-sizing: border-box;
+}
+
+.delete-btn{
+    padding: 10px 20px;
+    background: #ff0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    background: #005bbb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.delete-btn[disabled] {
+    background: #777;
+    cursor: not-allowed;
+}
+
+.logout-global {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 10;
+}
+    
+.logout-btn {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #4ad8f8, #001d9e);
+    transition: color 2s ease;
+    z-index: 1;
+}
+    
+.logout-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #001d9e, #4ad8f8);
+    opacity: 0;
+    transition: opacity 2s ease, transform 0.4s ease;
+    border-radius: inherit;
+    z-index: 0;
+    transform: scale(1.2);
+}
+    
+.logout-btn:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+    
+.logout-btn i {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
+
+.logout-btn span {
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+}
