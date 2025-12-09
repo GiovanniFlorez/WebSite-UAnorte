@@ -1,0 +1,137 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+.imagen {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 100%; 
+    height: auto; 
+}
+
+.titulo {
+    color: rgb(19, 19, 138);
+    font-size: 150%;
+    font-weight: 700;
+    margin-left: 0.7%;
+    margin-bottom: 0;
+}
+
+.hrTitulo {
+    border: none;
+    height: 2px;
+    background: rgba(117, 117, 117, 0.295);
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.subTitulo {
+    color: rgb(133, 133, 133);
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.columnasNormativas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.subColumaNormativa {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.iconUAnorte {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 60px;
+    height: auto;
+}
+
+.PDF {
+    color: rgb(78, 78, 78);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media screen and (max-width: 768px) {
+
+    .columnasNormativas {
+        grid-template-columns: 1fr; 
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 130%;
+        margin-left: 10px;
+    }
+
+    .subTitulo {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .imagen {
+        height: auto;
+        width: 100%;
+    }
+
+    .iconUAnorte {
+        width: 50px; 
+    }
+
+    .PDF {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .titulo {
+        font-size: 120%;
+    }
+
+    .subTitulo {
+        font-size: 18px;
+    }
+
+    .imagen {
+        width: 100%;
+        height: auto;
+    }
+
+    .iconUAnorte {
+        width: 40px;
+    }
+
+    .PDF {
+        font-size: 14px;
+    }
+}

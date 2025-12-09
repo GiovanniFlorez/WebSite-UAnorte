@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Comunicación Social y Medios - UAnorte</title>
+    <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'miapp/css/comunicacionSocialMedios.css' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- ========================================== INCLUDES ========================================== -->
+    {% include 'miapp/preloader.html' %}
+
+    {% include 'miapp/whatsappButton.html' %}
+
+    {% include 'miapp/headerPrueba.html' %}
+
+    <!-- ========================================== CONTENIDO ========================================== -->
+
+    <div class="Comunicación Social y Medios">
+        <div class="imagen">
+            <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/CSM-2.png" alt="Comunicación Social y Medios">
+        </div>
+
+        <div class="ComunicacionSocial">
+            <div class="columna1">
+                <img class="imgComunicacionSocial" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/18-1-e1726587384255-768x394.png" alt="">
+                <img class="imgComunicacionSocialAbajo" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/20-e1726587690453-768x398.png" alt="">
+            </div>
+
+            <div>
+                <img class="imgComunicacionSocialPequeña" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/19-1-e1726587650732-768x311.png" alt="">
+                <img class="imgComunicacionSocialAbajo2" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/21-e1726587713347-768x398.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="imgBotones">
+        <a href="https://uanorte.edu.co/web/wp-content/uploads/2024/09/Plan-de-Estudios-DER.pdf" target="_blank" rel="noopener noreferrer">
+            <img class="imgPlanEstudio" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/22-e1726587795851.png" alt="">
+        </a>
+        <a href="{% url 'pagina_estatica' 'financiacion' %}">
+            <img class="becasFinanciacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-5-e1730303524450.png" alt="">
+        </a>
+        <a href="{% url 'pagina_estatica' 'procesoInscripcion' %}">
+            <img class="procesoInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-1-1-e1730304150940.png" alt="">
+        </a>
+    </div>
+
+    <!-- ========================================== REQUISITOS ========================================== -->
+
+    <div>
+        <p class="titulo">Proceso de Inscripción</p>
+        <hr class="hrTitulo">
+
+        <div class="columnasInscripcion">
+            <div>
+                <img class="imgOneInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/40.png" alt="">
+                <div class="textOneInscripcion">
+                    <p class="tituloAzluClaro">REQUISITOS DE MATRÍCULA</p>
+                    <p><span>&#9679;</span> <span class="textProcesoInscripcion">Fotocopia del documento de identidad.</span></p>
+                    <p><span>&#9679;</span> <span class="textProcesoInscripcion">Fotocopia del Registro Civil.</span></p>
+                    <p><span>&#9679;</span> <span class="textProcesoInscripcion">Pruebas nacionales ICFES / SABER 11.</span></p>
+                    <p><span>&#9679;</span> <span class="textProcesoInscripcion">Fotocopia del certificado de salud (ADRES).</span></p>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <p class="tituloAzluClaro">REQUISITOS DE INSCRIPCIÓN</p>
+                    <p><span>&#9679;</span> <span class="textProcesoInscripcion">Fotocopia del diploma de Bachiller en cualquiera de sus modalidades aprobadas por el Gobierno Nacional y Acta del Grado.</span></p>
+                    <p><span>&#9679;</span> <span class="textProcesoInscripcion">Recibo de Pago de Derechos de Inscripción.</span></p>
+                    <p><span>&#9679;</span> <span class="textProcesoInscripcion">Los aspirantes extranjeros deberán presentar adicionalmente una fotocopia del pasaporte, con la visa vigente que lo habilite para estudiar , PPT o la cédula de extranjería como residente.</span></p>
+                </div>
+
+                <div class="imgBotones2">
+                    <a href="https://site2.q10.com/Preinscripcion?aplentId=ccfdab40-6d54-4719-a89c-e85a6c812a14" target="_blank" rel="noopener noreferrer">
+                        <img class="procesoInscripcion2" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/41-e1730407626730.png" alt="">
+                    </a>
+                </div>
+
+                <img class="imgTwoInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/42.png" alt="">
+            </div>
+        </div>
+
+        <div class="formularioDeInscripcion">
+            <div>
+                <img class="imgFormularioDeInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/44.png" alt="">
+            </div>
+
+            <div>
+                <div class="tituloFormularioContacto">
+                    Contáctanos para más información
+                </div>
+
+                <!-- ===================== FORMULARIO ===================== -->
+
+                {% include 'miapp/formulario_contacto.html' %}
+
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                {% if messages %}
+                <script>
+                    {% for message in messages %}
+                    Swal.fire({
+                        icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+                        title: "{{ message|escapejs }}",
+                        showConfirmButton: false,
+                        timer: 4000
+                    });
+                    {% endfor %}
+                </script>
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- ========================================== FOOTER ========================================== -->
+    <div class="footer">
+        {% include 'miapp/footer.html' %}
+    </div>
+
+    <!-- ========================================== SCRIPTS ========================================== -->
+
+    <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
+    <script src="{% static 'miapp/js/preloader.js' %}"></script>
+    <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Diplomados y Cursos - UAnorte</title>
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/diplomadosCursos.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== OFERTAS ========================================== -->
+
+        <div class="ofertas-grid">
+            <a href="{% url 'pagina_estatica' 'formulacionProyectosSociales' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-2-1.png" alt=""></a>
+            <a href="{% url 'pagina_estatica' 'analisisAtlas' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-6.png" alt=""></a>
+            <a href="{% url 'pagina_estatica' 'investigacionCualitativa' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-1-2.png" alt=""></a>
+            <a href="{% url 'pagina_estatica' 'apa7a' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/12-1.png" alt=""></a>
+            <a href="{% url 'pagina_estatica' 'objetivosInvestigacion' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/13-2.png" alt=""></a>
+            <a href="{% url 'pagina_estatica' 'finanzasNoFinancieros' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/14-2.png" alt=""></a>
+            <a href="{% url 'pagina_estatica' 'sistemasTrayectoriaCritica' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/15-1.png" alt=""></a>
+            <a href="{% url 'pagina_estatica' 'comunicacionMediosDeportivo' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/16-1.png" alt=""></a>
+        </div>
+
+        <!-- ========================================== EDUCACIÓN CONTINUA ========================================== -->
+
+        <p class="titulo">Educación Continua</p>
+        <hr class="hrTitulo">
+
+        <div class="educacionContinua">
+            <!-- ================================================ 1 ================================================ -->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/61.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/64-3-e1726615651583.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/64-2-e1726611326425.png" alt="">
+                        </a>
+                        
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/64-1-e1726611372484.png" alt="">
+                        
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/64-e1726611211270.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/63-1.png" alt="">
+                    <img class="img4EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/66-1.png" alt="">
+                </div>
+            </div>
+
+            <!-- ================================================ 2 ================================================ -->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/67.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/69-1-e1726616587256.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/70-1-e1726616444798.png" alt="">
+                        </a>
+                        
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/70-2-e1726616510728.png" alt="">
+                
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/70-3-e1726616568782.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/68-1.png" alt="">
+                    <img class="img4EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/71-1.png" alt="">
+                </div>
+            </div>
+
+            <!-- ================================================ 3 ================================================ -->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/97.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/99-e1726699856254.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/75-e1726617170266.png" alt="">
+                        </a>
+                        
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/75-1-e1726617199424.png" alt="">
+                        
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/75-2-e1726617241392.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/98.png" alt="">
+                    <img class="img4EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/101.png" alt="">
+                </div>
+            </div>
+
+            <!-- ================================================ 4 ================================================-->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/72.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/74-e1726617080206.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/75-e1726617170266.png" alt="">
+                        </a>
+                        
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/75-1-e1726617199424.png" alt="">
+                    
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/75-2-e1726617241392.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/73.png" alt="">
+                    <img class="img4EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/76.png" alt="">
+                </div>
+            </div>
+
+            <!-- ================================================ 5 ================================================ -->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/77.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/79-e1726618020131.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/80-e1726618093755.png" alt="">
+                        </a>
+                        
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/80-2-e1726618143881.png" alt="">
+                    
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/80-1-e1726618180695.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/78.png" alt="">
+                    <img class="img4EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/81.png" alt="">
+                </div>
+            </div>
+
+            <!-- ================================================ 6 ================================================ -->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/82.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/84-e1726618415646.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/85-e1726618483644.png" alt="">
+                        </a>
+                        
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/85-1-e1726618510767.png" alt="">
+                        
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/85-2-e1726618563550.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/83.png" alt="">
+                    <img class="img4EducacionContinua1" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/86-e1726618444413.png" alt="">
+                </div>
+            </div>
+
+            <!-- ================================================ 7 ================================================ -->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/87.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/89-e1726692980622.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/90-e1726693109844.png" alt="">
+                        </a>
+                        
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/90-1-e1726693145918.png" alt="">
+                        
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/90-2-e1726693182440.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/88.png" alt="">
+                    <img class="img4EducacionContinua1" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/91-e1726693000110.png" alt="">
+                </div>
+            </div>
+
+            <!-- ================================================ 8 ================================================ -->
+            <div class="columnasEducacionContinua">
+                <div>
+                    <img class="imgEducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/92.png" alt="">
+                    <img class="img2EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/94-e1726693409276.png" alt="">
+                    <div class="imgLinkEducacionContinua">
+                        <a href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                            <img class="btnMayorInformacion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/95-e1726693491386.png" alt="">
+                        </a>
+                    
+                        <img class="btnRrealizarInscripcion" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/95-1-e1726693531398.png" alt="">
+                        
+                        <a href="{% url 'pagina_estatica' 'diplomadosCursos' %}">
+                            <img class="btnVolver" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/95-2-e1726693574200.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <img class="img3EducacionContinua" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/93.png" alt="">
+                    <img class="img4EducacionContinua1" src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/96-e1726693440150.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== FOOTER ========================================== -->
+        
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>

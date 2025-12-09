@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bienestar - UAnorte</title>
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/bienestar.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+    
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+
+        <div class="imagen">
+            <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/CSM-1.png" alt="">
+        </div>
+        
+        <div class="UAnorte-grid">
+            <a href="{% url 'pagina_estatica' 'tutorias' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/13-e1731536496329.png" alt="Tutoría Académica"></a>
+            <a href="{% url 'pagina_estatica' 'atencionPsicologica' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/24-e1731536447615.png" alt="Atención Psicológica"></a>
+            <a href="{% url 'pagina_estatica' 'zonaBienestar' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/34-e1731536412285.png" alt="Zona de Bien - Estar"></a>
+            <a href="{% url 'pagina_estatica' 'acompañamientoPermanente' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/42-e1731536381992.png" alt="Acompañamiento Permanente"></a>
+        </div>
+
+        <!-- ========================================== FOOTER ========================================== -->
+        
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4ad8f8, #001d9e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 380px;
+}
+
+.logo {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  color: #001d9e;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+label {
+  font-weight: 600;
+  color: #001d9e;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #001d9e;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.verPassword{
+  cursor: pointer;
+}
+
+#mostrarPassword{
+  cursor: pointer;
+}
+
+button {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4ad8f8, #001d9e);
+  transition: color 2s ease;
+  z-index: 1;
+  margin-top: 10px;
+  width: 100%;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #001d9e, #4ad8f8);
+  opacity: 0;
+  transition: opacity 2s ease, transform 0.4s ease;
+  border-radius: inherit;
+  z-index: 0;
+  transform: scale(1.2);
+}
+
+button:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+button span {
+  position: relative;
+  z-index: 2;
+}
+
+.links {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.links a {
+  color: #001d9e;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logout-global {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 10;
+}
+  
+.logout-btn {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4ad8f8, #001d9e);
+  transition: color 2s ease;
+  z-index: 1;
+}
+  
+.logout-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #001d9e, #4ad8f8);
+  opacity: 0;
+  transition: opacity 2s ease, transform 0.4s ease;
+  border-radius: inherit;
+  z-index: 0;
+  transform: scale(1.2);
+}
+  
+.logout-btn:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+  
+.logout-btn i {
+  margin-right: 8px;
+  position: relative;
+  z-index: 2;
+}
