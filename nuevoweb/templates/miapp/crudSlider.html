@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRUD Slider</title>
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" type="image/png">
+        <link rel="stylesheet" href="{% static 'miapp/css/crudSlider.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <h2>Editor de Slider</h2>
+
+
+        <!-- ====================================== BOTÓN VOLVER ====================================== -->
+        <div class="logout-global">
+            <a href="{% url 'pagina_estatica' 'editarContenido' %}">
+                <button type="button" class="logout-btn">
+                    <span>Volver</span>
+                </button>
+            </a>
+        </div>
+
+        <!-- ====================================== SLIDER ====================================== -->
+        <div class="slider" id="editor-slider">
+            <button class="slider-btn prev">&#10094;</button>
+
+            {% for img in images %}
+                <img src="{{ img.image.url }}" data-id="{{ img.id }}" class="{% if forloop.first %}active{% endif %}">
+            {% endfor %}
+
+            <button class="slider-btn next">&#10095;</button>
+        </div>
+
+
+        <!-- ====================================== CONTROLES ====================================== -->
+        <div style="margin-top: 20px; text-align:center;">
+            
+            <!-- BOTÓN ELIMINAR -->
+            <form id="delete-form" method="POST" action="{% url 'delete_slider_image' %}" style="display:inline;">
+                {% csrf_token %}
+                <input type="hidden" name="image_id" id="delete-image-id">
+                <button type="submit" class="delete-btn" disabled><i class="fas fa-trash-alt"></i> Eliminar imagen</button>
+            </form>
+
+            <!-- BOTÓN AGREGAR -->
+            <form method="POST" enctype="multipart/form-data" action="{% url 'add_slider_image' %}" style="display:inline; margin-left: 20px;">
+                {% csrf_token %}
+                <label class="add-btn">
+                    <i class="fas fa-plus"></i> Agregar imagen
+                    <input type="file" name="image" accept="image/*" onchange="previewImage(event)" hidden>
+                </label>
+            </form>
+
+
+        </div>
+
+        <!-- ====================================== SCRIPTS ====================================== -->
+
+        <script src="{% static 'miapp/js/crudSlider.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>

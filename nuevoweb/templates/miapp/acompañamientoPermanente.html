@@ -1,1 +1,73 @@
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <title>Acompañamiento Permanente - UAnorte</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/acompañamientoPermanente.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+
+        <div class="container">
+            <div class="zona-de-bienestar">
+                <p class="titulo">Acompañamiento permanente</p>
+                <hr class="hrTitulo">
+        
+                <div class="columnas">
+                    <div>
+                        <ul>
+                            <li>Generar una cultura de bienestar y articular desde la transversalidad el 
+                                desarrollo humano y la formación integral con las funciones sustantivas 
+                                de la Institución.
+                            </li>
+
+                            <li>Propiciar las condiciones que permitan mantener y elevar una convivencia 
+                                en todos los miembros de la comunidad académica, a través de la creación 
+                                de espacios para el desarrollo de la cultura de la paz y el reconocimiento 
+                                de la persona en todas sus dimensiones.
+                            </li>
+
+                            <li>Promover la inclusión educativa a través del ofrecimiento de planes y 
+                                programas adecuados que permitan garantizar la igualdad de condiciones a 
+                                todos los miembros de la comunidad universitaria
+                            </li>
+                        </ul>
+                        <p class="textAbajo">Política de Bienestar Institucional UAnorte</p>
+                    </div>
+        
+                    <img class="imgAcompañamientoPermanente" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-4.png" alt="">
+                </div>
+        
+                <div class="img">
+                    <img class="imgAcompañamientoPermanente2" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-Programas-3-1536x853.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================== FOOTER ========================================== -->
+
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>

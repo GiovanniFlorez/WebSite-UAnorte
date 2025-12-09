@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Editar Contenido - UAnorte</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="{% static 'miapp/css/editarContenido.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+    </head>
+
+    <body>
+        <!-- ========================================== PRELOADER ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        <!-- ========================================== BOTÓN CERRAR SESIÓN ========================================== -->
+
+        <div class="logout-global">
+            <form id="logoutForm"method="POST" action="{% url 'cerrar_sesion' %}">
+                {% csrf_token %}
+                <button type="submit" class="logout-btn">
+                    <span><i class="fas fa-sign-out-alt"></i> Cerrar sesión</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- ========================================== MENÚ ========================================== -->
+
+        <div class="login-container fade show" id="loginContainer">
+            <div class="login-box">
+                <img src="{% static 'miapp/media/logoUAnorte.png' %}" alt="Campus UA Norte" class="logo">
+            
+                <h2>Editar Contenido</h2>
+
+                {% if user.is_authenticated %}
+                    <h3 class="welcome-message">Bienvenido, {{user.rol}} {{ user.username }}! </h3>
+                {% endif%}
+            
+                <a href="{% url 'pagina_estatica' 'crudNoticias' %}" class="btn">
+                    <span><i class="fas fa-newspaper"></i> Noticias</span>
+                </a>
+
+                <a href="{% url 'slider_editor' %}" class="btn">
+                    <span><i class="fas fa-images"></i> Carrusel de Imagenes</span>
+                </a>
+
+                <a href="{% url 'pagina_estatica' 'crudModal' %}" class="btn">
+                    <span><i class="fas fa-window-restore"></i> Ventana Emergente</span>
+                </a>
+            
+            </div>
+        </div>
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="{% static 'miapp/js/cerrarSesion.js' %}"></script>
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+    </body>
+</html>

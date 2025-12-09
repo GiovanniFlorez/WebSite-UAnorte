@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer UA Norte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+
+  <body>
+    <footer class="footer">
+      <div class="footer-container">
+
+        <!-- ========================================== CONTACTO ========================================== -->
+        <div class="footer-column">
+          <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/UA-NORTE-Logo-P-blanco-1024x457.png" alt="UA Norte" class="footer-logo">
+          <p class="contacto">CONTACTO:</p>
+
+          <a class="primeracolumnaLinks" href="https://www.google.com/maps/place/Corporaci%C3%B3n+Universitaria+Aut%C3%B3noma+del+Norte+(UANORTE)/@7.8833525,-72.5011238,21z/data=!4m6!3m5!1s0x8e66457d96f194a5:0x423003d68d040b48!8m2!3d7.8834329!4d-72.5009237!16s%2Fg%2F11hz6k9lmw?entry=tts" target="_blank" rel="noopener noreferrer">
+            <p><i class="fa-solid fa-location-dot"></i> Av. 3. 13-81, Cl. 14 #2-74, Cúcuta, Norte de Santander</p>
+          </a>
+
+          <a class="primeracolumnaLinks" href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+            <p><i class="fa-brands fa-whatsapp"></i> 317 256 6612</p>
+          </a>
+
+          <a class="primeracolumnaLinks" href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AVQVeywfCzh6DTME-azhWssCtRJZieDQxvoJkZv7XUHRsXJREbtUxxt7srWJxGKTwxjSdyNwwReW&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-2129705125%3A1698699238073613&theme=glif" target="_blank" rel="noopener noreferrer">
+            <p><i class="fa-solid fa-envelope"></i> admisiones@uanorte.edu.co</p>
+          
+          <a class="primeracolumnaLinks" href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AVQVeywfCzh6DTME-azhWssCtRJZieDQxvoJkZv7XUHRsXJREbtUxxt7srWJxGKTwxjSdyNwwReW&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-2129705125%3A1698699238073613&theme=glif" target="_blank" rel="noopener noreferrer">
+            <p><i class="fa-solid fa-envelope"></i> talentohumano@uanorte.edu.co</p>
+          </a>
+        </div>
+
+        <!-- ========================================== REDES SOCIALES ========================================== -->
+        <div class="footer-column">
+          <a class="links" href="https://api.whatsapp.com/send/?phone=3172566612&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><p><i class="fa-brands fa-whatsapp"></i> 317 256 6612</p></a>
+          <a class="links" href="https://www.instagram.com/somosuanorte/" target="_blank" rel="noopener noreferrer"><p><i class="fa-brands fa-instagram"></i> Instagram</p></a>
+          <a class="links" href="https://www.tiktok.com/@uanorte?lang=es" target="_blank" rel="noopener noreferrer"><p><i class="fa-brands fa-tiktok"></i> TikTok</p></a>
+          <a class="links" href="https://web.facebook.com/somosuanorte/?_rdc=1&_rdr" target="_blank" rel="noopener noreferrer"><p><i class="fa-brands fa-facebook"></i> Facebook</p></a>
+          <a class="links" href="https://www.youtube.com/@uanortecomunicaciones7292/about" target="_blank" rel="noopener noreferrer"><p><i class="fa-brands fa-youtube"></i> YouTube</p></a>
+        </div>
+
+        <!-- ========================================== ENLACES RÁPIDOS ========================================== -->
+        <div class="footer-column">
+          <ul>
+            <li><a href="https://site2.q10.com/Preinscripcion?aplentId=ccfdab40-6d54-4719-a89c-e85a6c812a14" class="linkFooter" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-angle-right"></i> Aspirantes</li></a>
+            <li><a href="{% url 'pagina_estatica' 'estudiantes' %}" class="linkFooter"><i class="fa-solid fa-angle-right"></i> Estudiantes</li></a>
+            <li><a href="{% url 'pagina_estatica' 'docentes' %}" class="linkFooter"><i class="fa-solid fa-angle-right"></i> Docentes</li></a>
+            <li><a href="{% url 'pagina_estatica' 'administrativos' %}" class="linkFooter"><i class="fa-solid fa-angle-right"></i> Administrativos</li></a>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================== FOOTER BOTTOM ========================================== -->
+      <div class="footer-bottom">
+        <p>&#169; Copyright 2025 - UAnorte</p>
+        <div class="footer-icons">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://co.pinterest.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-pinterest"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

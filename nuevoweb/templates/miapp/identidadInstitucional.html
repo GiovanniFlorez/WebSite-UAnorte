@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Identidad Institucional - UAnorte</title>
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/identidadInstitucional.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+        <div class="imagen">
+            <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/carrusel-derecho-1.png" alt="">
+        </div>
+
+        <div class="Identidad Institucional">
+            <p class="titulo">Identidad Institucional</p>
+            <hr class="hrTitulo">
+
+            <div class="columnas">
+                <div class="subColumnas">
+                    <div>
+                        <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
+                    </div>
+
+                    <div>
+                        <p class="subTitulo">Misión</p>
+                        <hr class="hrTitulo2">
+                        
+                        <p class="textIdentidad">
+                            Somos una Institución de Educación Superior de carácter privado, autónoma, independiente e 
+                            innovadora, que forma profesionales líderes, promoviendo la investigación científica, la 
+                            enseñanza de las profesiones; la docencia, la extensión y la formación de futuros investigadores, 
+                            personas con enfoque social, humano, creativo, emprendedor y con mentalidad global, contribuyendo 
+                            con ello a la educación de nuevos hombres de ciencia de nuestra sociedad, región y país.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="subColumnas">
+                    <div>
+                        <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
+                    </div>
+
+                    <div>
+                        <p class="subTitulo">Visión</p>
+                        <hr class="hrTitulo2">
+                        
+                        <p class="textIdentidad">
+                            Superado el primer decenio seremos una Institución de Educación Superior de calidad, consolidada 
+                            y líder en el Nororiente Colombiano reconocida nacional e internacionalmente por su excelencia 
+                            académica, por su docencia, investigación, innovación, y extensión, orientada a la formación 
+                            integral de personas, la transformación social y al desarrollo de la región y del país.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="subColumnas">
+                    <img class="iconUAnorte" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Botones-Pagina-Web-5-e1727965264522.png" alt="">
+
+                    <p class="subTitulo">Valores</p>
+                    <hr class="hrTitulo">
+                </div>
+            </div>
+
+            <div class="imgValores">
+                <div class="divValores">
+                    <img class="imagenesValores" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/11-2-e1731596782835.png" alt="">
+                    <p class="p">Posibilidad de que cada ser humano tenga los mismos derechos y oportunidades.</p>
+                </div>
+
+                <div class="divValores">
+                    <img class="imagenesValores" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/61-e1731596933340.png" alt="">
+                    <p class="p2">Factor de cohesión de una sociedad caracterizada por la diversidad.</p>
+                </div>
+
+                <div class="divValores">
+                    <img class="imagenesValores" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/51-e1731596906214.png" alt="">
+                    <p class="p3">Manejarse a sí mismo de manera responsable, mediante normas que regulen sus propios intereses.</p>
+                </div>
+
+                <div class="divValores">
+                    <img class="imagenesValores" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/41-1-e1731596881358.png" alt="">
+                    <p class="p4">Compartir valores que contribuyen con el mejoramiento de la calidad académica y el compromiso de estar en permanente auto evaluación.</p>
+                </div>
+
+                <div class="divValores">
+                    <img class="imagenesValores" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/32-1-e1731596845583.png" alt="">
+                    <p class="p5">Fomento del espíritu de superación.</p>
+                </div>
+
+                <div class="divValores">
+                    <img class="imagenesValores" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/22-2-e1731596817159.png" alt="">
+                    <p class="p6">Fomento de las iniciativas educativas, investigativas, emprendedoras y la creatividad de los actores del proceso formativo.</p>
+                </div>
+
+                <div class="divValores">
+                    <img class="imagenesValores" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/7-e1731596976359.png" alt="">
+                    <p class="p7">Posibilidad de contribuir con el desarrollo social local, departamental, nacional y global.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========================================== FOOTER ========================================== -->
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>
