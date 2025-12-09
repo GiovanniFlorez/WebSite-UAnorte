@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <title>Atención Psicológica - UAnorte</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/atencionPsicologica.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+
+        <div class="Atención Psicológica">
+            <p class="titulo">Atención Psicológica</p>
+            <hr class="hrTitulo">
+
+            <div class="columnas">
+                <img class="imgAtencionPsicologica" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho-1-e1727885658325-1024x363.png" alt="">
+              
+                <p class="textAtencionPsicologica">
+                    Bienestar Universitario. Desde el área de desarrollo humano asumimos la responsabilidad de generar 
+                    espacios para promover la salud mental, la cual hace referencia a un estado de bienestar mental 
+                    proporcionando herramientas saludables para enfrentarnos a los momentos de estrés que cada uno de 
+                    nosotros podemos pasar, como también potenciar las habilidades facilitándonos poder aprender y 
+                    trabajar de una manera adecuada, favoreciendo la interacción intra e interpersonal.
+                </p>
+                
+            </div>
+
+            <p class="titulo2">Permítenos acompañarte en tu desarrollo personal y emocional, agenda tu cita:</p>
+
+            <div class="columnas">
+                <div class="textSegundaColumna">
+                    <p class="tituloAtencionPsicologica">
+                        La importancia de cuidar la salud mental
+                    </p>
+
+                    <p class="textAtencionPsicologica">
+                        Podemos orientarnos hacia la defensa, la seguridad o el miedo. P]ero en el lado opuesto está la 
+                        opción de crecimiento. Elegir el crecimiento en lugar del miedo doce veces al día, significa avanzar 
+                        significa avanzar doce hacia la autorrealización.
+                    </p>
+
+                    <p class="nombreAutor">
+                        Abraham Maslow
+                    </p>
+                </div>
+
+                <img class="imgAtencionPsicologica" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/carrusel-derecho-5-e1727886049182-1024x339.png" alt="">
+            </div>
+        </div>
+
+        <!-- ========================================== FOOTER ========================================== -->
+
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>

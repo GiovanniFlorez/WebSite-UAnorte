@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Organos de Gobierno - UAnorte</title>
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/organosGobierno.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+        
+    </head>
+
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+        <div class="imagen">
+            <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/CSM-1-1.png" alt="">
+        </div>
+
+        <div class="Organos de Gobierno">
+            <p class="titulo">Órganos de Gobierno</p>
+            <hr class="hrTitulo2">
+
+            <div class="ColumnasOrganosGobierno">
+                <div>
+                    <img class="imgColumnas" src="https://uanorte.edu.co/web/wp-content/uploads/2024/11/Botones-Pagina-Web-Programas-2-2-e1731619959862.png" alt="">
+                </div>
+
+                <div>
+                    <p class="textColumnas">La Institución tiene desde sus Estatutos Estatutos definidos los siguientes 
+                        órganos de gobierno:
+                    </p>
+                    
+                    <ul>
+                        <li class="textColumnas">Consejo de Fundadores.</li>
+                        <li class="textColumnas">Consejo Directivo – Órgano de Dirección y Administración, cuenta con la participación de representantes de estudiantes, profesores y egresados.</li>
+                        <li class="textColumnas">Rector.</li>
+                        <li class="textColumnas">Vicerrectores.</li>
+                        <li class="textColumnas">Consejo Académico – Autoridad Académica y Disciplinaria, cuenta con la participación de representantes de estudiantes, profesores y egresados).</li>
+                        <li class="textColumnas">Secretaría General.</li>
+                        <li class="textColumnas">Decano.</li>
+                        <li class="textColumnas">Consejo para el Buen Gobierno.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="textColumnas">
+                La Corporación Universitaria Autónoma del Norte, entidad sin ánimo de lucro, es la primera Institución 
+                de Educación Superior privada constituida en Cúcuta, Norte de Santander, fundada por líderes del sector 
+                que han trabajado por más de 43 años aportando al desarrollo de esta región de frontera.
+            </p>
+
+            <p class="textColumnas">
+                El 28 de Julio de 2017 los miembros fundadores realizaron la reunión para la constitución de la Corporación 
+                Universitaria Autónoma del Norte – UAnorte, con domicilio en la ciudad de San José de Cúcuta, Norte de 
+                Santander, una vez realizaron todos los aportes económicos (infraestructura, muebles y dinero en efectivo) 
+                y reunidos y cumplidos todos los requisitos, el Ministerio de Educación Nacional reconoció su personería 
+                jurídica como Institución de Educación Superior de naturaleza privada con carácter académico de Institución 
+                Universitaria  y aprobó sus estatutos mediante resolución No. 004013 de 12 de Abril de 2019.
+            </p>
+        </div>
+        
+        <!-- ========================================== FOOTER ========================================== -->
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>

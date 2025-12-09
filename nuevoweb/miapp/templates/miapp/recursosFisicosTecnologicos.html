@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <title>Recursos Físicos y Tecnológicos - UAnorte</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/recursosFisicosTecnologicos.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+        <div class="imagen">
+            <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/carrusel-derecho-1.png" alt="">
+        </div>
+
+       <div>
+            <p class="titulo">Campus y Ubicaión</p>
+            <hr class="hrTitulo">
+
+            <div class="columnaCampus">
+
+                <!-- ===================== CAMPUS ===================== -->
+                <div>
+                    <div class="filaAdmisiones">
+                        <img class="campus" src="https://uanorte.edu.co/web/wp-content/uploads/2024/10/Campus-3-1024x592.png" alt="">
+                    </div>
+                </div>
+            
+                <!-- ===================== UBICACIÓN ===================== -->
+                <div class="map-responsive">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1976.0547380764033!2d-72.50188125294363!3d7.883613558572656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e66457d96f194a5%3A0x423003d68d040b48!2sCorporaci%C3%B3n%20Universitaria%20Aut%C3%B3noma%20del%20Norte%20(UANORTE)!5e0!3m2!1ses-419!2sco!4v1758557943388!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            
+            </div>
+       </div>
+
+         <!-- ========================================== FOOTER ========================================== -->
+       {% include 'miapp/footer.html' %}
+
+         <!-- ========================================== SCRIPTS ========================================== -->
+       <script src="{% static 'miapp/js/preloader.js' %}"></script>
+       <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>

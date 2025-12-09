@@ -1,0 +1,158 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PQRSF - UAnorte</title>
+    <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'miapp/css/PQRSF.css' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <!-- ========================================== INCLUDES ========================================== -->
+    {% include 'miapp/preloader.html' %}
+
+    {% include 'miapp/whatsappButton.html' %}
+      
+    {% include 'miapp/headerPrueba.html' %}
+
+    <!-- ========================================== Imagen Título =========================================================== -->
+    <div class="imagen">
+      <img src="https://uanorte.edu.co/web/wp-content/uploads/2023/11/IMG_0552-scaled.jpg" alt="">
+      <div class="encima">
+        <p>PETICIONES, QUEJAS, RECLAMOS, SUGERENCIAS Y FELICITACIONES</p>
+      </div>
+    </div>
+
+    <!-- ========================================== Formulario PQRSF =========================================================== -->
+    <form method="POST" action="{% url 'enviar_pqrsf' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="divFormulario">
+        <div class="formularioDeInscripcion">
+          <div class="columna3">
+            <p class="pFormularioContacto">Nombre:</p>
+            <input type="text" name="nombre" placeholder="Nombre" required>
+
+            <p class="pFormularioContacto">Tipo de Identidad:</p>
+            <select name="tipoDocumento" required>
+              <option value="">Seleccione un Tipo de Documento</option>
+              <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+              <option value="Tarjeta de Identidad">Tarjeta de Identidad</option>
+              <option value="Registro Civil de Nacimiento">Registro Civil de Nacimiento</option>
+              <option value="Cédula de Extrangería">Cédula de Extrangería</option>
+              <option value="Pasaporte">Pasaporte</option>
+              <option value="Otro">Otro</option>
+            </select>
+
+            <p class="pFormularioContacto">Correo Electrónico:</p>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+
+            <p class="pFormularioContacto">Cargo:</p>
+            <select name="cargo" required>
+              <option value="">Seleccione un Cargo</option>
+              <option value="Estudiante">Estudiante</option>
+              <option value="Docente">Docente</option>
+              <option value="Administrativo">Administrativo</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="columna3">
+            <p class="pFormularioContacto">Apellido:</p>
+            <input type="text" name="apellido" placeholder="Apellido" required>
+
+            <p class="pFormularioContacto">Número de Documento de Identidad:</p>
+            <input type="tel" name="documento" min="0" placeholder="Número de identidad" required>
+
+            <p class="pFormularioContacto">Teléfono:</p>
+            <input type="tel" min="0" name="telefono" placeholder="Número de teléfono" required>
+                    
+            <p class="pFormularioContacto">Tipo de PQRSF:</p>
+            <select name="selectCarreraInteres" required>
+              <option value="">Seleccione un Tipo de PQRSF</option>
+              <option value="Peticiones">Peticiones</option>
+              <option value="Quejas">Quejas</option>
+              <option value="Reclamos">Reclamos</option>
+              <option value="Sugerencias">Sugerencias</option>
+              <option value="Felicitaciones">Felicitaciones</option>
+            </select>
+          </div>
+        </div>
+          
+        <div class="divDescripcion">
+          <hr class="">
+            
+          <p class="pFormularioContacto">Descripción:</p>
+          <textarea name="descripcion" placeholder="Descripción" required></textarea>
+          
+          <hr class="">
+          <div class="subirArchivos">     
+            <p class="pFormularioContacto">Subir Archivos:</p>
+            <input type="file" name="archivo">
+          </div>
+
+          <hr>
+            
+          <div class="divTextFormulario">
+            <div class="checkbox-container">
+              <label class="textoFormulario">
+                <input type="checkbox" id="checkboxAcepto"> Acepto
+              </label>
+            </div>
+
+            <p class="textoFormulario">
+              El Sistema PQRS, es un formulario en el que podrá interponer peticiones, quejas, reclamos 
+              y sugerencias donde podrá expresar su opinión de los procesos y servicios que brinda la 
+              Corporación Universitaria Autónoma del Norte. En cumplimiento de la Ley 1581 de 2012 y 
+              sus decretos reglamentarios en calidad de titular(es) de la información de manera libre, 
+              expresa e informada, autorizo a la CORPORACION UNIVERSITARIA AUTONOMA DEL NORTE – UAnorte 
+              y/o a la persona natural o jurídica a quien este encargue, a recolectar, almacenar, utilizar, 
+              circular, suprimir y en general, a usar mis datos personales para el cumplimiento de las 
+              siguientes finalidades: a. Gestión de PQR, b. Publicidad y Prospección Comercial, c. Enseñanza 
+              Universitaria o Superior. Declaro que he conocido la Política de tratamiento de datos personales.
+            </p>
+
+            <p class="textoFormulario">Gracias por tu opinión.</p>
+          </div>
+            
+          <hr class="">
+            
+          <button class="botonEnviar" id="botonEnviar" disabled>ENVIAR</button>
+          <hr class="hrFormularioContacto">
+        </div>
+      </div>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    {% if messages %}
+      <script>
+        {% for message in messages %}
+          Swal.fire({
+            icon: "{% if message.tags == 'success' %}success{% elif message.tags == 'error' %}error{% else %}info{% endif %}",
+            title: "{{ message|escapejs }}",
+            showConfirmButton: false,
+            timer: 3500
+          });
+        {% endfor %}
+      </script>
+    {% endif %}
+
+    <!-- ========================================== FOOTER ========================================== -->
+    {% include 'miapp/footer.html' %}
+
+    <!-- ========================================== SCRIPTS ========================================== -->
+    <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
+    <script src="{% static 'miapp/js/preloader.js' %}"></script>
+    <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página UAnorte - UAnorte</title>
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/paginaUAnorte.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+    
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+            
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+        <div class="imagen">
+            <img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/carrusel-derecho-1.png" alt="">
+        </div>
+
+        <!-- ========================================== REDIRECCIONES ========================================== -->
+        <div class="UAnorte-grid">
+            <a href="{% url 'pagina_estatica' 'quienesSomos' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/5.png" alt="Quiénes Somos"></a>
+            <a href="{% url 'pagina_estatica' 'identidadInstitucional' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/6.png" alt="Identidad Institucional"></a>
+            <a href="{% url 'pagina_estatica' 'organosGobierno' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/7.png" alt="Órganos de Gobierno"></a>
+            <a href="{% url 'pagina_estatica' 'direccionamientoEstrategico' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/8.png" alt="Plan de Desarrollo Institucional"></a>
+            <a href="{% url 'pagina_estatica' 'SIGAC' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/9.png" alt="Sistema de Aseguramiento de Calidad"></a>
+            <a href="{% url 'pagina_estatica' 'estructuraOrganizativa' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/10.png" alt="Estructura Organizativa"></a>
+            <a href="{% url 'pagina_estatica' 'recursosFisicosTecnologicos' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/11.png" alt="Campus"></a>
+            <a href="{% url 'pagina_estatica' 'normatividad' %}"><img src="https://uanorte.edu.co/web/wp-content/uploads/2024/09/12.png" alt="Normativa"></a>
+        </div>
+
+        <!-- ========================================== FOOTER ========================================== -->
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>

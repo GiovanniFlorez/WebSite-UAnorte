@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+  <link rel="stylesheet" href="{% static 'miapp/css/headerPrueba.css' %}">
+  <title>UAnorte</title>
+</head>
+<body>
+
+<header class="header">
+  <div class="div1">
+
+    <!-- ============================================= LOGO ============================================= -->
+    <a href="{% url 'inicio' %}">
+      <img class="imgRedireccion" src="{% static 'miapp/media/logoHeader.png' %}" alt="Logo de UANorte">
+    </a>
+
+    <!-- ============================================= ENLACES ============================================= -->
+    <div class="links-container">
+      <a href="https://site2.q10.com/Preinscripcion?aplentId=ccfdab40-6d54-4719-a89c-e85a6c812a14" target="_blank" class="linksHeader">Aspirantes</a>
+      <a href="{% url 'pagina_estatica' 'estudiantes' %}" class="linksHeader">Estudiantes</a>
+      <a href="{% url 'pagina_estatica' 'docentes' %}" class="linksHeader">Docentes</a>
+      <a href="{% url 'pagina_estatica' 'administrativos' %}" class="linksHeader">Administrativos</a>
+      <a href="#" class="linksHeader">Graduados</a>
+      <a href="#" class="linksHeader">Carnet Digital</a>
+      <a href="https://www.zonapagos.net/formulariosNV/?cod=..." target="_blank" class="linksHeader">Pagos</a>
+    </div>
+
+    <!-- ====================== BOTÓN HAMBURGUESA ====================== -->
+    <button class="hamburger-btn" id="hamburger-btn">☰</button>
+  </div>
+
+  <!-- ============================================= MENÚ DESPLEGABLE ============================================= -->
+  <div class="menu-desplegable" id="menu-desplegable">
+
+    <!-- ====================== BOTÓN INICIAR SESIÓN ======================= -->
+    <a href="{% url 'pagina_estatica' 'login' %}">
+      <button class="btnLogin">Iniciar Sesión</button>
+    </a>
+
+    <!-- ====================== BOTÓN MÁS ======================= -->
+    <div class="btnMas" id="btnMas">Más ▼</div>
+
+    <!-- ====================== MENÚ EXTRA ======================= -->
+    <ul class="menu-extra" id="menu-extra">
+      <li><a href="https://site2.q10.com/Preinscripcion?aplentId=ccfdab40-6d54-4719-a89c-e85a6c812a14" target="_blank">Aspirantes</a></li>
+      <li><a href="{% url 'pagina_estatica' 'estudiantes' %}">Estudiantes</a></li>
+      <li><a href="{% url 'pagina_estatica' 'docentes' %}">Docentes</a></li>
+      <li><a href="{% url 'pagina_estatica' 'administrativos' %}">Administrativos</a></li>
+      <li><a href="#">Graduados</a></li>
+      <li><a href="#">Carnet Digital</a></li>
+      <li><a href="https://www.zonapagos.net/formulariosNV/?cod=..." target="_blank">Pagos</a></li>
+    </ul>
+
+    <!-- ============================================= MENÚ COMPLETO ============================================== -->
+    <nav class="navbar" id="navbar-completo">
+      <ul>
+        <!-- ============================================ UAnorte ============================================ -->
+        <li class="submenu">
+          <a href="#">UAnorte <span class="flecha">&#8250;</span></a>
+          <ul class="submenu-nivel2">
+            <li><a href="{% url 'pagina_estatica' 'quienesSomos' %}">Quienes Somos</a></li>
+            <li><a href="{% url 'pagina_estatica' 'identidadInstitucional' %}">Identidad Institucional</a></li>
+            <li><a href="{% url 'pagina_estatica' 'direccionamientoEstrategico' %}">Direccionamiento Estratégico</a></li>
+            <li><a href="{% url 'pagina_estatica' 'SIGAC' %}">SIGAC-UANORTE</a></li>
+            <li><a href="{% url 'pagina_estatica' 'organosGobierno' %}">Órganos de Gobierno</a></li>
+            <li><a href="{% url 'pagina_estatica' 'estructuraOrganizativa' %}">Estructura Organizativa</a></li>
+            <li><a href="{% url 'pagina_estatica' 'recursosFisicosTecnologicos' %}">Recursos Físicos y Tecnológicos</a></li>
+            <li><a href="{% url 'pagina_estatica' 'normatividad' %}">Normatividad</a></li>
+            <li><a href="{% url 'pagina_estatica' 'derechosPecuniarios' %}">Derechos Pecuniarios</a></li>
+          </ul>
+        </li>
+
+        <!-- ============================================ OFERTA ACADÉMICA ============================================ -->
+        <li class="submenu">
+          <a href="#">Oferta Académica <span class="flecha">&#8250;</span></a>
+          <ul class="submenu-nivel2">
+
+            <!-- =========================== SUBMENÚ PREGRADO =========================== -->
+            <li class="submenu">
+              <a href="#">Pregrado <span class="flecha">&#8250;</span></a>
+              <ul class="submenu-nivel3">
+                <li><a href="{% url 'pagina_estatica' 'derecho' %}">Derecho</a></li>
+                <li><a href="{% url 'pagina_estatica' 'trabajoSocial' %}">Trabajo Social</a></li>
+                <li><a href="{% url 'pagina_estatica' 'comunicacionSocialMedios' %}">Comunicación Social y Medios</a></li>
+                <li><a href="{% url 'pagina_estatica' 'psicologia' %}">Psicología</a></li>
+              </ul>
+            </li>
+
+            <!-- =========================== SUBMENÚ POSGRADO =========================== -->
+            <li class="submenu">
+              <a href="#">Posgrado <span class="flecha">&#8250;</span></a>
+              <ul class="submenu-nivel3">
+                <li><a href="{% url 'pagina_estatica' 'especializacionIntervencionComunitaria' %}">Especialización en Intervención Comunitaria</a></li>
+                <li><a href="{% url 'pagina_estatica' 'especializacionDerechoAdministrativo' %}">Especialización en Derecho Administrativo</a></li>
+              </ul>
+            </li>
+
+            <li><a href="{% url 'pagina_estatica' 'financiacion' %}">Financiación, Becas y Convenios</a></li>
+          </ul>
+        </li>
+
+        <!-- ============================================ BIENESTAR ============================================ -->
+        <li class="submenu">
+          <a href="{% url 'pagina_estatica' 'bienestar' %}">Bienestar <span class="flecha">&#8250;</span></a>
+          <ul class="submenu-nivel2">
+            <li><a href="{% url 'pagina_estatica' 'tutorias' %}">Tutorías Académicas</a></li>
+            <li><a href="{% url 'pagina_estatica' 'atencionPsicologica' %}">Atención Psicológica</a></li>
+            <li><a href="{% url 'pagina_estatica' 'zonaBienestar' %}">Zona de Bien-Estar</a></li>
+            <li><a href="{% url 'pagina_estatica' 'acompañamientoPermanente' %}">Acompañamiento Permanente</a></li>
+          </ul>
+        </li>
+
+        <!-- ============================================ EXTENSIÓN ============================================ -->
+        <li class="submenu">
+          <a href="{% url 'pagina_estatica' 'extension' %}">Extensión <span class="flecha">&#8250;</span></a>
+          <ul class="submenu-nivel2">
+            <li class="submenu">
+              <a href="#">Educación Continua <span class="flecha">&#8250;</span></a>
+              <ul class="submenu-nivel3">
+                <li><a href="{% url 'pagina_estatica' 'formulacionProyectosSociales' %}">Formulación de Proyectos Sociales</a></li>
+                <li><a href="{% url 'pagina_estatica' 'analisisAtlas' %}">Análisis de Datos Cualitativos Con Atlas TI 23</a></li>
+                <li><a href="{% url 'pagina_estatica' 'investigacionCualitativa' %}">Investigación Cualitativa</a></li>
+                <li><a href="{% url 'pagina_estatica' 'apa7a' %}">APA 7a Edición Citas y Referencias</a></li>
+              </ul>
+            </li>
+            <li><a href="{% url 'pagina_estatica' 'consultorioJuridico' %}">Consultorio Jurídico</a></li>
+            <li><a href="{% url 'pagina_estatica' 'biblioteca' %}">Biblioteca</a></li>
+          </ul>
+        </li>
+
+        <!-- ============================================ CIENCIA E INNOVACIÓN ============================================ -->
+        <li class="submenu">
+          <a href="#">Ciencia e Innovación <span class="flecha">&#8250;</span></a>
+          <ul class="submenu-nivel2">
+            <li><a href="{% url 'pagina_estatica' 'cienciaInnovacion' %}">Innovación y Emprendimiento</a></li>
+          </ul>
+        </li>
+
+        <!-- ============================================ PQRSF Y CERTIFICADOS ============================================ -->
+        <li><a href="{% url 'pagina_estatica' 'PQRSF' %}">PQRSF</a></li>
+        <li><a href="https://appcerficados.uanorte.edu.co/" target="_blank" rel="noopener noreferrer">Certificados</a></li>
+
+        <div class="buscador-container">
+          <div class="gcse-search"></div>
+        </div>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script async src="https://cse.google.com/cse.js?cx=b6470703d264642c8"></script>
+<script src="{% static 'miapp/js/headerPrueba.js' %}"></script>
+</body>
+</html>

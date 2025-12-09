@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Derechos Pecuniarios - UAnorte</title>
+        <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'miapp/css/derechosPecuniarios.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'miapp/css/whatsappButtom.css' %}">
+    </head>
+
+    <body>
+        <!-- ========================================== INCLUDES ========================================== -->
+        {% include 'miapp/preloader.html' %}
+
+        {% include 'miapp/whatsappButton.html' %}
+        
+        {% include 'miapp/headerPrueba.html' %}
+
+        <!-- ========================================== CONTENIDO ========================================== -->
+
+        <div class="imagen">
+            <img src="https://uanorte.edu.co/web/wp-content/uploads/2023/12/portada-de-identidad-institucional-7.png" alt="">
+        </div>
+
+        <div class="PDF">
+            <iframe src="https://uanorte.edu.co/web/wp-content/uploads/2023/11/Certificacion_Derechos_pecuniarios_y_Valores_de_matricula_vigencia_2024-1.pdf" width="100%" height="600px" style="border: none;">
+            </iframe>
+        </div>
+
+        <!-- ========================================== FOOTER ========================================== -->
+        
+        {% include 'miapp/footer.html' %}
+
+        <!-- ========================================== SCRIPTS ========================================== -->
+
+        <script src="{% static 'miapp/js/preloader.js' %}"></script>
+        <script src="{% static 'miapp/js/whatsappButtom.js' %}"></script>
+    </body>
+</html>
