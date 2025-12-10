@@ -1,4 +1,3 @@
-/* ============== ESTILOS GENERALES ============== */
 body, html {
     margin: 0;
     padding: 0;
@@ -22,8 +21,7 @@ body, html {
     object-position: center;  
     display: block;
 }
-  
-/* Ajustes para pantallas más pequeñas */ 
+
 @media (max-width: 720px) {
     .imagen {
       height: 300px;
