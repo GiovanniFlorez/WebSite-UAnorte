@@ -4,10 +4,6 @@ body, html {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
-
-body img{
-  pointer-events: none;
-}
   
 .titulo {
   color: rgb(19, 19, 138);

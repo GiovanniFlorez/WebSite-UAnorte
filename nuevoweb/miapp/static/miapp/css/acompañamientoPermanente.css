@@ -5,10 +5,6 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
-body img{
-    pointer-events: none;
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;

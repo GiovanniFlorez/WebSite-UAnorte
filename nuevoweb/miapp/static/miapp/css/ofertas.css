@@ -8,11 +8,6 @@ body, html {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
-
-body img{
-  pointer-events: none;
-}
-
 img {
   width: 100%;
   height: auto;

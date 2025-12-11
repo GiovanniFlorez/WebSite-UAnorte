@@ -6,10 +6,6 @@ body {
   padding: 0;
 }
 
-body img{
-  pointer-events: none;
-}
-
 .header {
   display: flex;
   flex-direction: column;
