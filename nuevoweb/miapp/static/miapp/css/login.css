@@ -13,10 +13,6 @@ body {
   align-items: center;
 }
 
-body img{
-  pointer-events: none;
-}
-
 .login-container {
   width: 100%;
   display: flex;

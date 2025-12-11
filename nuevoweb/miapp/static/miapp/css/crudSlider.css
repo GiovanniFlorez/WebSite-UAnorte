@@ -2,10 +2,6 @@
   font-family: "Montserrat", sans-serif;
 }
 
-body img{
-  pointer-events: none;
-}
-
 h2{
   color: #001d9e;
   font-weight: 700;

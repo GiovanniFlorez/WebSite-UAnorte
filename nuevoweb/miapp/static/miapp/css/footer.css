@@ -6,10 +6,6 @@
   font-size: 14px;
 }
 
-.footer img{
-  pointer-events: none;
-}
-
 .footer-container {
   max-width: 1200px;
   margin: auto;
