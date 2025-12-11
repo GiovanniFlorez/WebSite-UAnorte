@@ -1,9 +1,10 @@
 const images = document.querySelectorAll("#editor-slider img");
 let index = 0;
-let interval;
+let interval = null;
 let selectedImage = null;
 
-// MOVIMIENTO AUTOMÁTICO DEL SLIDER
+/* ============================== AUTOPLAY DEL SLIDER ============================== */
+
 function showImage(i) {
     images.forEach(img => img.classList.remove("active"));
     images[i].classList.add("active");
@@ -19,34 +20,48 @@ function prevImage() {
     showImage(index);
 }
 
-document.querySelector(".next").onclick = () => { nextImage(); resetInterval(); };
-document.querySelector(".prev").onclick = () => { prevImage(); resetInterval(); };
-
 function startInterval() {
     interval = setInterval(nextImage, 6000);
 }
 
 function resetInterval() {
     clearInterval(interval);
-    startInterval();
+    if (!selectedImage) startInterval();
 }
 
 startInterval();
 
-/* === SELECCIÓN DE IMAGEN AL HACER CLICK === */
+/* ============================== BOTONES SIGUIENTE / ANTERIOR ============================== */
+
+document.querySelector(".next").onclick = () => { 
+    nextImage(); 
+    resetInterval();  
+};
+
+document.querySelector(".prev").onclick = () => { 
+    prevImage(); 
+    resetInterval();  
+};
+
+
+/* ============================== SELECCIONAR UNA IMAGEN ============================== */
+
 images.forEach(img => {
     img.addEventListener("click", () => {
 
         if (selectedImage === img) {
             img.classList.remove("selected");
             selectedImage = null;
+
             document.getElementById("delete-image-id").value = "";
             document.querySelector(".delete-btn").disabled = true;
-            startInterval(); 
+
+            startInterval();
             return;
         }
 
-        clearInterval(interval);  
+        clearInterval(interval);
+
         if (selectedImage) selectedImage.classList.remove("selected");
 
         selectedImage = img;
@@ -58,12 +73,14 @@ images.forEach(img => {
 });
 
 
-/* === PREVISUALIZACIÓN DE IMAGEN ANTES DE SUBIR === */
+/* ============================== PREVISUALIZACIÓN DE IMAGEN ============================== */
+
 function previewImage(event) {
     const file = event.target.files[0];
     if (!file) return;
 
     const reader = new FileReader();
+
     reader.onload = function(e) {
         Swal.fire({
             title: '¿Subir esta imagen?',
@@ -82,14 +99,19 @@ function previewImage(event) {
             }
         });
     };
+
     reader.readAsDataURL(file);
 }
 
-/* === CONFIRMACIÓN ANTES DE BORRAR === */
+
+/* ============================== CONFIRMACIÓN DE ELIMINAR ============================== */
+
 const deleteForm = document.getElementById("delete-form");
+
 deleteForm.addEventListener("submit", function(e){
     e.preventDefault();
     const selected = document.getElementById("delete-image-id").value;
+
     if (!selected) return;
 
     Swal.fire({
@@ -102,13 +124,13 @@ deleteForm.addEventListener("submit", function(e){
         confirmButtonText: 'Sí, eliminar',
         cancelButtonText: 'Cancelar'
     }).then((result) => {
-        if (result.isConfirmed) {
-            deleteForm.submit();
-        }
+        if (result.isConfirmed) deleteForm.submit();
     });
 });
 
-/* === SWIPE PARA MÓVILES === */
+
+/* ============================== SLIDER MÓVIL (SWIPE) ============================== */
+
 let startX = 0;
 let isDragging = false;
 
@@ -117,12 +139,7 @@ const slider = document.getElementById("editor-slider");
 slider.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     isDragging = true;
-    clearInterval(interval); 
-});
-
-slider.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    
+    clearInterval(interval);
 });
 
 slider.addEventListener("touchend", (e) => {
@@ -132,13 +149,10 @@ slider.addEventListener("touchend", (e) => {
     const diff = endX - startX;
 
     if (Math.abs(diff) > 30) {
-        if (diff > 0) {
-            prevImage(); 
-        } else {
-            nextImage(); 
-        }
+        diff > 0 ? prevImage() : nextImage();
     }
 
     isDragging = false;
-    startInterval(); 
+
+    if (!selectedImage) startInterval();
 });

@@ -45,23 +45,24 @@ h2{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: rgb(255, 255, 255);
-  background: rgba(0, 0, 0, 0);
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  font-size: 4rem;
+  width: clamp(35px, 6vw, 55px);
+  height: clamp(35px, 6vw, 55px);
+  font-size: clamp(1.5rem, 4vw, 3rem);
   cursor: pointer;
   z-index: 10;
-  transition: background 0.3s, transform 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s, transform 0.3s;
 }
+
   
 .slider-btn:hover {
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.4);
   transform: translateY(-50%) scale(1.1);
 }
   
@@ -84,6 +85,12 @@ h2{
     width: 50px;
     height: 50px;
     font-size: 1.8rem;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .delete-btn, .add-btn {
+    font-size: clamp(13px, 2.5vw, 17px);
+    padding: clamp(7px, 2.5vw, 11px) clamp(14px, 4vw, 20px);
   }
 }
   
@@ -96,6 +103,7 @@ h2{
     width: 45px;
     height: 45px;
     font-size: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
   }
   
   .slider-btn.prev {
@@ -105,11 +113,21 @@ h2{
   .slider-btn.next {
     right: 10px;
   }
+
+  .delete-btn, .add-btn {
+    font-size: clamp(12px, 2.5vw, 16px);
+    padding: clamp(6px, 2.5vw, 10px) clamp(12px, 4vw, 18px);
+  }
 }
   
 @media (max-width: 767px) {
   .slider-btn {
-    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .delete-btn, .add-btn {
+    font-size: clamp(12px, 2.5vw, 16px);
+    padding: clamp(6px, 2.5vw, 10px) clamp(12px, 4vw, 18px);
   }
 }
   
@@ -133,6 +151,11 @@ h2{
     font-size: 1.3rem;
     background: rgba(0, 0, 0, 0.4);
   }
+
+  .delete-btn, .add-btn {
+    font-size: clamp(12px, 3vw, 16px);
+    padding: clamp(6px, 2vw, 10px) clamp(12px, 4vw, 18px);
+  }
 }
 
 .selected {
@@ -140,25 +163,18 @@ h2{
   box-sizing: border-box;
 }
 
-.delete-btn{
-  padding: 10px 20px;
-  background: #ff0000;
-  color: white;
+.delete-btn, .add-btn {
+  padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px);
+  font-size: clamp(14px, 2.5vw, 18px);
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   font-weight: bold;
-  border-radius: 5px;
 }
 
-.add-btn {
-  padding: 10px 20px;
-  background: #005bbb;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-}
+.delete-btn { background: #ff0000; color: white; }
+.add-btn { background: #005bbb; color: white; }
+
 
 .delete-btn[disabled] {
   background: #777;
@@ -167,8 +183,8 @@ h2{
 
 .logout-global {
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 20px;
+  right: 20px;
   z-index: 10;
 }
     
@@ -214,4 +230,16 @@ h2{
   margin-right: 8px;
   position: relative;
   z-index: 2;
+}
+
+@media (max-width: 480px) {
+  .logout-global {
+    top: 10px;
+    right: 10px;
+  }
+
+  .logout-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
 }

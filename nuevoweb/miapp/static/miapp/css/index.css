@@ -566,6 +566,9 @@ a:hover {
     margin: 10px auto;
     display: block;
   }
+  .campus{
+    width: 100%;
+  }
   .map-responsive {
     width: 90%;
     margin: 5%;
@@ -607,6 +610,9 @@ a:hover {
   .contenedorEnlaces {
     flex-direction: column;
     gap: 20px;
+  }
+  .campus {
+    width: 100%;
   }
   .imgEnlaces,
   .imgEnlacesCiencia {
