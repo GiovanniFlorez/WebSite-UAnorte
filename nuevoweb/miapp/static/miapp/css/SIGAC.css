@@ -2,6 +2,11 @@ body, html{
     margin: 0;
     padding: 0;
     overflow: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body img{
+    pointer-events: none;
 }
 
 .imagen {

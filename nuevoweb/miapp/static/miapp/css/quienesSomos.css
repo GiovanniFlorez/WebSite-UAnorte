@@ -5,6 +5,10 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
+body img{
+    pointer-events: none;
+}
+
 .imagen {
     display: flex;
     justify-content: center;

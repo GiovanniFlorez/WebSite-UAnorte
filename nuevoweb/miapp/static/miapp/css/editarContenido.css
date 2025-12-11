@@ -4,6 +4,10 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+
+body img{
+    pointer-events: none;
+}
   
 html, body {
     height: 100vh;

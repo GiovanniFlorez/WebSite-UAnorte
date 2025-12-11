@@ -11,6 +11,10 @@ html, body {
     margin: 0;
     overflow: hidden;
 }
+
+body img{
+    pointer-events: none;
+}
   
 .login-container {
     position: fixed;
