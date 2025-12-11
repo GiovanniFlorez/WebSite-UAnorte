@@ -51,6 +51,7 @@ def pagina_estatica(request, pagina):
         'registrarUsuarios',
         'modificarUsuarios',
         'eliminarUsuarios',
+        'crudSlider', 
     ]
 
     if pagina in protected:
@@ -76,6 +77,7 @@ def cerrar_sesion(request):
 logger = logging.getLogger(__name__)
 
 # FUNCIÓN PARA ENVIAR EL FORMULARIO DE CONTACTO
+
 def enviar_contacto(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -152,8 +154,8 @@ Este correo es automático, por favor no responder directamente.
 
 
 
-
 # FUNCIÓN PARA ENVIAR EL FORMULARIO DE PQRSF
+
 def enviar_pqrsf(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
@@ -169,7 +171,6 @@ def enviar_pqrsf(request):
 
         asunto = f"PQRSF de {nombre} {apellido} - {tipo_pqrsf}"
 
-        # Convertir saltos de línea antes del f-string (evita SyntaxError)
         descripcion_html = descripcion.replace("\n", "<br>")
 
         texto_plano = f"""
@@ -217,7 +218,6 @@ Este correo proviene de la página web, por favor no responder directamente.
             reply_to=[email]
         )
 
-        # Adjuntar versión HTML
         email_msg.attach_alternative(html, "text/html")
 
         # Adjuntar archivo si existe
