@@ -10,6 +10,7 @@
     <link rel="icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="https://uanorte.edu.co/web/wp-content/uploads/2023/10/Diseno_sin_titulo-removebg-preview-59x59.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'miapp/css/index.css' %}">
     <link rel="stylesheet" href="{% static 'miapp/css/headerPrueba.css' %}">
     <link rel="stylesheet" href="{% static 'miapp/css/preloader.css' %}">
@@ -21,29 +22,29 @@
   <body> 
 
     <!-- ========================================== INCLUDES ========================================== -->
-    <!--{% include 'miapp/modal.html' %}-->
+    <div class="mi-header">
+      {% include 'miapp/headerPrueba.html' %}
+    </div>  
 
     {% include 'miapp/preloader.html' %}
 
     {% include 'miapp/whatsappButton.html' %}
-    
-    {% include 'miapp/headerPrueba.html' %}
 
     <!-- ========================================== SLIDER ========================================== -->
-    <div class="slider">
-
+    <div class="swiper slider-swiper">
+      <div class="swiper-wrapper">
+        {% for img in slider_images %}
+          <div class="swiper-slide">
+            <img src="{{ img.image.url }}" alt="Slide {{ forloop.counter }}">
+          </div>
+        {% endfor %}
+      </div>
+  
       {% if slider_images|length > 1 %}
-        <button class="slider-btn prev">&#10094;</button>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
       {% endif %}
-  
-      {% for img in slider_images %}
-        <img src="{{ img.image.url }}" class="{% if forloop.first %}active{% endif %}">
-      {% endfor %}
-  
-      {% if slider_images|length > 1 %}
-        <button class="slider-btn next">&#10095;</button>
-      {% endif %}
-  
     </div>
 
     <!-- ========================================== IMAGENES ENLACES ========================================== -->
@@ -297,5 +298,7 @@
     <script src="{% static 'miapp/js/jsCheckBox.js' %}"></script>
     <script src="{% static 'miapp/js/preloader.js' %}"></script>
     <script src="{% static 'miapp/js/headerPrueba.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% include 'miapp/modal.html' %}
   </body>
 </html>
