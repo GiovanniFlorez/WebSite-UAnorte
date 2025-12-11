@@ -5,6 +5,10 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
+body img{
+    pointer-events: none;
+}
+
 .imagen {
     width: 100%;
     max-height: 520px;

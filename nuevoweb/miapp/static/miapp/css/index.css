@@ -6,128 +6,123 @@ body, html{
   font-weight: bold;
 }
 
-.slider {
-  position: relative;
-  width: 100%;
-  height: auto;           
-  overflow: hidden;
-  margin: 0 auto;
-  z-index: 1;
+.mi-header,
+.mi-header * {
+  all: unset;
+  display: revert;
+}
+
+
+/* ========================================== SLIDER ==========================================  */
+.slider-swiper,
+.swiper-container,
+.swiper-wrapper,
+.swiper-slide {
   border-radius: 0;
 }
 
-.slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       
-  display: none;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.slider img.active {
-  display: block;
-  opacity: 1;
+.slider-swiper {
+  position: relative;
   width: 100%;
   height: auto;
-  object-fit: cover;
-  animation: fade 1s ease-in-out;
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: 1;
+  background-color: transparent;
+  border-radius: 0;
+  transition: height 0.3s ease-in-out; /* suaviza el cambio de altura */
 }
 
-@keyframes fade {
-  from { opacity: 0.4; }
-  to { opacity: 1; }
+.slider-swiper .swiper-slide img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  cursor: grab;
+  transition: transform 0.5s ease, opacity 0.8s ease-in-out;
+  border-radius: 0;
 }
 
-.slider-btn {
+.slider-swiper .swiper-slide img:active {
+  cursor: grabbing;
+}
+
+.slider-swiper .swiper-button-prev,
+.slider-swiper .swiper-button-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: rgb(255, 255, 255);
+  color: #fff;
   background: rgba(0, 0, 0, 0);
   border: none;
-  border-radius: 50%;
   width: 55px;
   height: 55px;
   font-size: 4rem;
   cursor: pointer;
   z-index: 10;
-  transition: background 0.3s, transform 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s, background 0.3s;
 }
 
-.slider-btn:hover {
-  background: rgba(0, 0, 0, 0);
+.slider-swiper .swiper-button-prev:hover,
+.slider-swiper .swiper-button-next:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
-.slider-btn.prev {
+.slider-swiper .swiper-button-prev {
   left: 15px;
 }
 
-.slider-btn.next {
+.slider-swiper .swiper-button-next {
   right: 15px;
 }
 
-/* ======== RESPONSIVE DEL SLIDER ======== */
+.slider-swiper .swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.7;
+  border-radius: 5px;
+}
 
+.slider-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* ======== RESPONSIVE ======== */
 @media (max-width: 992px) {
-  .slider {
-    height: 400px;
-  }
-
-  .slider-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.8rem;
+  .slider-swiper .swiper-button-prev,
+  .slider-swiper .swiper-button-next {
+    width: 10px;
+    height: 10px;
+    font-size: 1px;
   }
 }
 
 @media (max-width: 768px) {
-  .slider {
-    height: 320px;
+  .slider-swiper .swiper-button-prev,
+  .slider-swiper .swiper-button-next {
+    width: 15px;
+    height: 15px;
+    font-size: 1px;
   }
 
-  .slider-btn {
-    width: 45px;
-    height: 45px;
-    font-size: 1.5rem;
-  }
-
-  .slider-btn.prev {
+  .slider-swiper .swiper-button-prev {
     left: 10px;
   }
 
-  .slider-btn.next {
+  .slider-swiper .swiper-button-next {
     right: 10px;
   }
 }
 
-@media (max-width: 767px) {
-  .slider-btn {
-    display: none;
-  }
-}
-
 @media (max-width: 480px) {
-  .slider {
-    height: auto; 
-    line-height: 0;        
-  }
-
-  .slider img {
-    margin: 0;
-    width: 100%;
-    height: auto;          
-    object-fit: cover;    
-    background-color: #000; 
-  }
-
-  .slider-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1.3rem;
+  .slider-swiper .swiper-button-prev,
+  .slider-swiper .swiper-button-next {
+    width: 10px;
+    height: 10px;
+    font-size: 1px;
     background: rgba(0, 0, 0, 0.4);
   }
 }
@@ -144,6 +139,7 @@ body, html{
   width: 99%;
   height: 100%;
   transition: transform 0.3s;
+  pointer-events: none;
 }
 
 .imagenes a img:hover{
@@ -175,6 +171,7 @@ body, html{
 .columna.imagenes img {
   height: 45%;
   width: 95%;
+  pointer-events: none;
 }
 
 .columna.admisiones .iconUAnorte {
@@ -385,6 +382,7 @@ select {
 
 .campus{
   width: 125%;
+  pointer-events: none;
 }
 
 #colomnaFinal{
@@ -404,6 +402,7 @@ select {
 .iconUAnorte {
   width: 40px;   
   height: auto;
+  pointer-events: none;
 }
 
 .tituloAdmisiones {
@@ -483,6 +482,7 @@ a:hover {
   width: 100%;
   height: auto;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .botonVerMas{
@@ -521,6 +521,8 @@ a:hover {
   margin: 0 20px;
   vertical-align: middle;
   transition: transform 0.3s;
+  pointer-events: none;
+  
 }
 
 .imgEnlaces:hover {
@@ -532,6 +534,7 @@ a:hover {
   margin: 0 20px;
   vertical-align: middle;
   transition: transform 0.3s;
+  pointer-events: none;
 }
 
 .imgEnlacesCiencia:hover{
@@ -548,7 +551,7 @@ a:hover {
   border-radius: 8px;
 }
 
-/* ============== RESPONSIVE ============== */
+/* ========================================== RESPONSIVE ========================================== */
 @media (max-width: 1024px) {
   .educacion {
     grid-template-columns: 1fr;

@@ -5,6 +5,10 @@
     font-family: "Montserrat", sans-serif;
 }
 
+body img{
+    pointer-events: none;
+}
+
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #4ad8f8, #001d9e);

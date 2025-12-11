@@ -1,11 +1,10 @@
-html, body {
-  margin: 0;
-  padding: 0;
+.header {
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
 }
 
-.header {
-  width: 100%;
+.header img{
+  pointer-events: none;
 }
 
 .div1 {

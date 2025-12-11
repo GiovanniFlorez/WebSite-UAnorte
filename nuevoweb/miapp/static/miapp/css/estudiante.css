@@ -5,6 +5,10 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
+body img{
+    pointer-events: none;
+}
+
 .imagen {
     position: relative;       
     width: 100%;
@@ -20,6 +24,7 @@ body, html {
     object-fit: cover;        
     object-position: center;  
     display: block;
+    pointer-events: none;
 }
   
   
