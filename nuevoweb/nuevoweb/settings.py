@@ -118,7 +118,7 @@ EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "apikey"
-EMAIL_HOST_PASSWORD = "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"
+EMAIL_HOST_PASSWORD = "" #La API KEY de SendGrid
 DEFAULT_FROM_EMAIL = "soporte.sistemas@uanorte.edu.co"  
 
 
@@ -129,4 +129,5 @@ AUTH_USER_MODEL = 'miapp.Usuario'
 
 # REDIRECCIONES DE LOGIN
 LOGIN_REDIRECT_URL = '/login-redirigir/' 
+
 LOGIN_URL = '/login/' 
